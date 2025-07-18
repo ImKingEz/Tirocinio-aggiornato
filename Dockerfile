@@ -2,7 +2,6 @@
 FROM openjdk:17-jdk-slim
 
 # Installazione delle dipendenze di sistema necessarie
-# Aggiunto 'jq' per il parsing JSON per la versione di ChromeDriver
 RUN apt-get update && apt-get install -y \
     bash \
     curl \
@@ -70,20 +69,15 @@ RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) &
     rm -rf /tmp/chromedriver.zip /usr/local/bin/chromedriver-linux64
 
 # Copia i file del tuo progetto
-COPY mutanti_paper_ed_utilities/script_Bandiera_Mutants ./script_Bandiera_Mutants
-COPY runMutantsScript.sh ./script_Bandiera_Mutants/runMutantsScript.sh
+COPY mutanti_paper_ed_utilities/script_paolella_volpe_mutants ./script_paolella_volpe_mutants
+COPY runMutantsScript.sh ./script_paolella_volpe_mutants/runMutantsScript.sh
 
 # Correggi i line ending e i permessi dello script
-WORKDIR ./script_Bandiera_Mutants
+WORKDIR ./script_paolella_volpe_mutants
 RUN dos2unix runMutantsScript.sh && chmod +x runMutantsScript.sh
 
-# La seguente riga è stata commentata. Le dipendenze di Angular dovrebbero essere gestite dal package.json del tuo progetto Angular.
-# Se querystring è effettivamente una dipendenza isolata e necessaria solo lì, potresti doverla riattivare.
-# WORKDIR /script_Bandiera_Mutants/UtilitiesForPaper/angular-java-example/src/main/ui
-# RUN npm install querystring
-
 # Imposta la directory di lavoro finale
-WORKDIR /script_Bandiera_Mutants
+WORKDIR /script_paolella_volpe_mutants
 
 # Esegui lo script
 ENTRYPOINT ["./runMutantsScript.sh"]

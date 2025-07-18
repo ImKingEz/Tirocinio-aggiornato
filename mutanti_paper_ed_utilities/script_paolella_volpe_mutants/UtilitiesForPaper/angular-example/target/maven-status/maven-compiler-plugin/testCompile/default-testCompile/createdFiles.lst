@@ -1,0 +1,7 @@
+test\java\com\bbtutorials\users\SeleniumXPathTest.class
+test\java\com\bbtutorials\users\RelativeXPathTest.class
+test\java\com\bbtutorials\users\BaseTest.class
+test\java\com\bbtutorials\users\RobulaXPathTest.class
+test\java\com\bbtutorials\users\KatalonXPathTest.class
+test\java\com\bbtutorials\users\AbsoluteXPathTest.class
+test\java\com\bbtutorials\users\HookTest.class

@@ -8,11 +8,9 @@ mkdir -p "$CSV_DIR"
 TODAY=$(date +"%d-%m-%Y")
 NOW=$(date +"%H-%M")
 TIMESTAMP="${TODAY}_${NOW}"
-
-PROJECT_DIR="$(pwd)/UtilitiesForPaper/angular-java-example/src/main/ui/src"
-# Modificato: Questo è ora il percorso della root del progetto Maven che contiene i test.
+PROJECT_DIR="$(pwd)/UtilitiesForPaper/angular-example/frontend-example/src"
 # Il backend Spring Boot non verrà avviato, ma il progetto Maven è ancora necessario per eseguire i test Selenium.
-MAVEN_PROJECT_ROOT="$(pwd)/UtilitiesForPaper/angular-java-example"
+MAVEN_PROJECT_ROOT="$(pwd)/UtilitiesForPaper/angular-example/frontend-example"
 LOG_DIR="$(pwd)/UtilitiesForPaper/logs"
 LOG_FILE="$LOG_DIR/ng-serve-log.txt"
 # Rimosso SPRING_LOG: non è più necessario in quanto non avviamo Spring Boot.
@@ -93,8 +91,6 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
         continue
     fi
 
-    # Rimosso: Logica di avvio e attesa di Spring Boot
-
     # Ciclo sui mutanti
     for MUTANT_FILE in "$SOURCE_DIR"/*; do
         CURRENT_MUTANT="$MUTANT_FILE"
@@ -134,7 +130,6 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
                 FAILURE_CAUSE="TestNG: AssertionError - Asserzione fallita nel test (il comportamento atteso non è stato riscontrato)."
             elif grep -q "java.lang.NullPointerException" "$MAVEN_TEST_LOG"; then
                 FAILURE_CAUSE="Java: NullPointerException - Errore interno nel codice del test o dell'applicazione."
-            # Rimosso: Validazione form o binding (specifico per Spring Boot)
             elif grep -q "Could not start Chrome for testing" "$MAVEN_TEST_LOG"; then
                 FAILURE_CAUSE="Selenium: Errore all'avvio di ChromeDriver. Controlla se Chrome e ChromeDriver sono compatibili."
             elif grep -q "org.testng.TestNGException" "$MAVEN_TEST_LOG"; then
@@ -160,7 +155,6 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
         cp "$BACKUP_FILE" "$DEST_FILE" # Ripristina il file originale HTML
     done
 
-    # Rimosso: Logica di terminazione di Spring Boot
 done
 
 # Termina Angular alla fine di tutto
@@ -173,6 +167,5 @@ echo "I risultati sono in $GLOBAL_CSV_FILE"
 echo "Log dettagliati in $RESULT_LOG e $MAVEN_TEST_LOG"
 echo "Screenshot (se generati) in $SCREENSHOT_DIR"
 
-cd "/script_Bandiera_Mutants/UtilitiesForPaper/logs"
+cd "/script_paolella_volpe_mutants/UtilitiesForPaper/logs"
 cat "mutant_test_results.log"
-# Rimosso il comando 'bash' per assicurare che il container si chiuda dopo l'esecuzione.
