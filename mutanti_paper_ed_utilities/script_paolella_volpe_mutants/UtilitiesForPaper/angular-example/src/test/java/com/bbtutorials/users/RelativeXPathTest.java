@@ -5,21 +5,18 @@ import org.openqa.selenium.By;
 
 public class RelativeXPathTest extends BaseTest {
   @Test
-  public void testUserCreationRelativeXPath() throws Exception {
-    driver.findElement(By.xpath("//input[@formControlName='firstName']")).click();
-    driver.findElement(By.xpath("//input[@formControlName='firstName']")).clear();
-    driver.findElement(By.xpath("//input[@formControlName='firstName']")).sendKeys("RelativeFN");
+  public void testContactFormRelativeXPath() throws Exception {
+    // Campo Nome (usa name attribute)
+    driver.findElement(By.xpath("//input[@name='name']")).click();
+    driver.findElement(By.xpath("//input[@name='name']")).clear();
+    driver.findElement(By.xpath("//input[@name='name']")).sendKeys("RelativeNome");
 
-    driver.findElement(By.xpath("//input[@formControlName='lastName']")).click();
-    driver.findElement(By.xpath("//input[@formControlName='lastName']")).clear();
-    driver.findElement(By.xpath("//input[@formControlName='lastName']")).sendKeys("RelativeLN");
+    // Campo Email (usa name attribute)
+    driver.findElement(By.xpath("//input[@name='email']")).click();
+    driver.findElement(By.xpath("//input[@name='email']")).clear();
+    driver.findElement(By.xpath("//input[@name='email']")).sendKeys("relative@example.com");
 
-    driver.findElement(By.xpath("//input[@formControlName='email']")).click();
-    driver.findElement(By.xpath("//input[@formControlName='email']")).clear();
-    driver.findElement(By.xpath("//input[@formControlName='email']")).sendKeys("relative@example.com");
-
-    driver.findElement(By.xpath("//button[@type='submit' and contains(text(), 'Create')]")).click();
-
-    driver.findElement(By.xpath("//app-display-board//button[contains(text(),'Get All Users')]")).click();
+    // Bottone "Invia Messaggio" (usa testo)
+    driver.findElement(By.xpath("//button[contains(text(), 'Invia Messaggio')]")).click();
   }
 }

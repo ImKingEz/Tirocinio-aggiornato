@@ -5,21 +5,18 @@ import org.openqa.selenium.By;
 
 public class SeleniumXPathTest extends BaseTest {
   @Test
-  public void testUserCreationSeleniumXPath() throws Exception {
-    driver.findElement(By.xpath("//input[@id='exampleInputEmail1']")).click();
-    driver.findElement(By.xpath("//input[@id='exampleInputEmail1']")).clear();
-    driver.findElement(By.xpath("//input[@id='exampleInputEmail1']")).sendKeys("s");
+  public void testContactFormSeleniumXPath() throws Exception {
+    // Campo Nome (usa id)
+    driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("name")).clear();
+    driver.findElement(By.id("name")).sendKeys("SeleniumNome");
 
-    driver.findElement(By.xpath("//input[@id='exampleInputPassword1']")).click();
-    driver.findElement(By.xpath("//input[@id='exampleInputPassword1']")).clear();
-    driver.findElement(By.xpath("//input[@id='exampleInputPassword1']")).sendKeys("s");
+    // Campo Email (usa id)
+    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("selenium@example.com");
 
-    driver.findElement(By.xpath("(//input[@id='exampleInputEmail1'])[2]")).click();
-    driver.findElement(By.xpath("(//input[@id='exampleInputEmail1'])[2]\")")).clear();
-    driver.findElement(By.xpath("(//input[@id='exampleInputEmail1'])[2]\")")).sendKeys("s");
-
-    driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-    driver.findElement(By.xpath("//div[2]/button")).click();
+    // Bottone "Invia Messaggio" (usa CSS Selector)
+    driver.findElement(By.cssSelector("button[type='submit']")).click();
   }
 }

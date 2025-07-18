@@ -5,21 +5,18 @@ import org.openqa.selenium.By;
 
 public class RobulaXPathTest extends BaseTest {
   @Test
-  public void testUserCreationRobulaXPath() throws Exception {
-    driver.findElement(By.xpath("//div[@class='form-group col-md-6']/input[@formcontrolname='firstName']")).click();
-    driver.findElement(By.xpath("//div[@class='form-group col-md-6']/input[@formcontrolname='firstName']")).clear();
-    driver.findElement(By.xpath("//div[@class='form-group col-md-6']/input[@formcontrolname='firstName']")).sendKeys("RobulaFN");
+  public void testContactFormRobulaXPath() throws Exception {
+    // Campo Nome (combina div class e input id)
+    driver.findElement(By.xpath("//div[@class='form-group']/input[@id='name']")).click();
+    driver.findElement(By.xpath("//div[@class='form-group']/input[@id='name']")).clear();
+    driver.findElement(By.xpath("//div[@class='form-group']/input[@id='name']")).sendKeys("RobulaNome");
 
-    driver.findElement(By.xpath("//div[@class='form-group col-md-6'][2]/input[@formcontrolname='lastName']")).click();
-    driver.findElement(By.xpath("//div[@class='form-group col-md-6'][2]/input[@formcontrolname='lastName']")).clear();
-    driver.findElement(By.xpath("//div[@class='form-group col-md-6'][2]/input[@formcontrolname='lastName']")).sendKeys("RobulaLN");
+    // Campo Email (combina div class e input id, usando la posizione se necessario)
+    driver.findElement(By.xpath("//div[@class='form-group'][2]/input[@id='email']")).click(); // Assumendo sia il secondo form-group
+    driver.findElement(By.xpath("//div[@class='form-group'][2]/input[@id='email']")).clear();
+    driver.findElement(By.xpath("//div[@class='form-group'][2]/input[@id='email']")).sendKeys("robula@example.com");
 
-    driver.findElement(By.xpath("//div[@class='form-group col-md-12']/input[@formcontrolname='email']")).click();
-    driver.findElement(By.xpath("//div[@class='form-group col-md-12']/input[@formcontrolname='email']")).clear();
-    driver.findElement(By.xpath("//div[@class='form-group col-md-12']/input[@formcontrolname='email']")).sendKeys("robula@example.com");
-
-    driver.findElement(By.xpath("//form[@x-test-hook-form-6]/button[@type='submit']")).click();
-
-    driver.findElement(By.xpath("//app-display-board[@x-test-hook-app-display-board-20]//button[contains(@class,'btn-warning') and normalize-space()='Get All Users']")).click();
+    // Bottone "Invia Messaggio" (usa form hook e type)
+    driver.findElement(By.xpath("//form[@x-test-hook-form-2]/button[@type='submit']")).click();
   }
 }
