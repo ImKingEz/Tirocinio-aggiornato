@@ -1,0 +1,30 @@
+<div x-test-tpl-85>
+    <div class="form-group" x-test-hook-86>
+        <button type="button" ng-click="ctrl.newUser = {}" class="btn btn-default" x-test-hook-87>New</button>
+    </div>
+    <table class="table" x-test-hook-88>
+        <thead x-test-hook-89>
+            <tr x-test-hook-90>
+                <th style="width:40%" x-test-hook-91>Name</th><th style="width:40%" x-test-hook-92>Date of birth</th><th style="width:20%" x-test-hook-93>Actions</th>
+            </tr>
+        </thead>
+        <tbody x-test-hook-94>
+            <tr ng-repeat="user in ctrl.users" x-test-hook-95>
+                <td x-test-hook-96>{{user.name}}</td>
+                <td x-test-hook-97>{{user.dateOfBirth | date}}</td>
+				<td x-test-hook-98>
+                    <button type="button" class="btn btn-default" x-test-hook-99>Edit</button>
+                </td>
+            </tr>
+			<tr ng-if="ctrl.newUser" x-test-hook-100>
+				<td x-test-hook-101><input class="form-control" ng-model="ctrl.newUser.name" x-test-hook-102></td>
+				<td x-test-hook-103><calendar ng-model="ctrl.newUser.dateOfBirth" x-test-hook-104></calendar></td>
+				<td x-test-hook-105>
+					<button type="button" class="btn btn-default" ng-click="ctrl.addNewUser()" x-test-hook-106>Add</button>
+					<button type="button" class="btn btn-default" ng-click="ctrl.newUser = undefined" x-test-hook-107>Cancel</button>
+				</td>
+			</tr>
+        </tbody>
+    </table>
+
+</div>

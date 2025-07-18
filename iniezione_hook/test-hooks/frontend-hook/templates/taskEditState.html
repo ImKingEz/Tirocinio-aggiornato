@@ -1,0 +1,14 @@
+<div class="form-group" x-test-tpl-52>
+    <form x-test-hook-53>
+        <div class="form-group" x-test-hook-57>
+            <label x-test-hook-58>Assigned to:</label>
+            <select ng-options="user.name as user.name for user in ctrl.users" ng-model="ctrl.task.user" class="form-control" x-test-hook-59></select>
+        </div>
+		<div class="form-group" x-test-hook-54>
+            <label x-test-hook-55>Task descripttion:</label>
+            <input type="text" class="form-control" ng-model="ctrl.task.description" x-test-hook-56>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="ctrl.save()" x-test-hook-60>Save</button>
+        <button type="button" class="btn btn-default" ui-sref="^" x-test-hook-61>Cancel</button>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="calendar">
+    <div>
+        <span>{{ctrl.modelValue | date}}</span>&nbsp;
+        <a href="" ng-click="ctrl.toggleCalendar()">[Toggle calendar]</a>
+    </div>
+
+    <table class="calendar-table table table-bordered" ng-if="ctrl.showCalendar">
+        <thead>
+            <tr class="calendar-header">
+                <th colspan="3" style="border: none;">
+                    <select ng-options="index*1 as month for (index, month) in ctrl.months" ng-model="ctrl.selectedMonth"></select>
+                </th>
+                <th colspan="2" style="border: none;">
+                    <select ng-options="year for year in ctrl.years" ng-model="ctrl.selectedYear"></select>
+                </th>
+                <th colspan="2" style="text-align:right; border: none;">
+                    <a href="" ng-click="ctrl.setToday()">Today</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="calendar-header">
+                <td class="calendar-header-day" ng-repeat="dayName in ctrl.dayNames">{{::dayName}}</td>
+            </tr>
+            <tr ng-repeat="week in ctrl.weeks">
+                <td ng-repeat="day in week.days track by $index" ng-class="{'selected-day': ctrl.isSelected(day), 'calendar-day' : !!day}"
+                    ng-click="ctrl.selectDay(day)">{{::day.getDate()}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

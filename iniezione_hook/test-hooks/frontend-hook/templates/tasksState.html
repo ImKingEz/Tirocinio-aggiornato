@@ -1,0 +1,36 @@
+<ui-view x-test-tpl-62>
+    <div class="form-group" x-test-hook-63>
+        <button type="button" class="btn btn-default" ui-sref=".edit" x-test-hook-64>New</button>
+    </div>
+    <table class="table" x-test-hook-65>
+        <thead x-test-hook-66>
+            <tr x-test-hook-67>
+                <th style="width:35%" x-test-hook-68>Task description</th>
+                <th style="width:25%" x-test-hook-69>Assigned to</th>
+                <th style="width:10%" x-test-hook-70>Status</th>
+                <th style="width:30%" x-test-hook-71>Actions</th>
+            </tr>
+        </thead>
+        <tbody x-test-hook-72>
+            <tr ng-repeat="task in ctrl.tasks" x-test-hook-73>
+                <td ng-class="{strikethrough : !!task.done}" x-test-hook-74>{{::task.description}}</td>
+                <td ng-class="{strikethrough : !!task.done}" x-test-hook-75>{{::task.user}}</td>
+                <td x-test-hook-76>
+                    <span class="label label-default" ng-if="!task.done" x-test-hook-77>To Do</span>
+                    <span class="label label-success" ng-if="!!task.done" x-test-hook-78>Done</span>
+                    &nbsp;
+                </td>
+                <td x-test-hook-79>
+                    <div class="form-group" x-test-hook-80>
+                        <button type="button" class="btn btn-xs btn-default" ng-if="!!task.done" ng-click="task.done = false" x-test-hook-82>&#x270E; Mark as To Dooooo</button>
+                        <button type="button" class="btn btn-xs btn-success" ng-if="!task.done" ng-click="task.done = true" x-test-hook-81>&#x2714; Mark as Doneeeeee</button>
+
+                        <button type="button" class="btn btn-xs btn-default" ng-if="!task.done" ui-sref=".edit({taskIndex: $index})" x-test-hook-83>&#x270E; Edit</button>
+                        <button type="button" class="btn btn-xs btn-danger" x-test-hook-84>&#x2718; Remove</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</ui-view>

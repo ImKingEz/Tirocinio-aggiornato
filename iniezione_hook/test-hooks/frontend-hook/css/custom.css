@@ -1,0 +1,41 @@
+body {
+    padding-top: 10px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.calendar {
+
+}
+
+.calendar .calendar-table {
+    background-color: #eee;
+    width: auto;
+    font-size: 80%;
+}
+
+.calendar .calendar-table .calendar-header a {
+    text-decoration: none;
+}
+
+.calendar .calendar-table .calendar-header .calendar-header-day {
+    width: 3em;
+    background-color: #333;
+    color: #eee;
+}
+
+.calendar .calendar-table .calendar-day {
+    margin: 1px;
+    cursor: pointer;
+}
+
+.calendar .calendar-table .calendar-day.selected-day {
+    background-color: #ee4;
+    font-weight: bold;
+}
+
+.calendar .calendar-table .calendar-day:hover {
+    background-color: #e44;
+}

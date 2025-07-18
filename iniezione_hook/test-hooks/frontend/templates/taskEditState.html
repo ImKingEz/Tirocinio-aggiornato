@@ -1,0 +1,14 @@
+<div class="form-group">
+    <form>
+        <div class="form-group">
+            <label>Task description:</label>
+            <input type="text" class="form-control" ng-model="ctrl.task.description">
+        </div>
+        <div class="form-group">
+            <label>Assigned to:</label>
+            <select ng-options="user.name as user.name for user in ctrl.users" ng-model="ctrl.task.user" class="form-control"></select>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="ctrl.save()">Save</button>
+        <button type="button" class="btn btn-default" ui-sref="^">Cancel</button>
+    </form>
+</div>

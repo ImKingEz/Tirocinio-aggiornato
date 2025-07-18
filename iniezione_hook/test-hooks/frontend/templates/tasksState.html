@@ -1,0 +1,36 @@
+<ui-view>
+    <div class="form-group">
+        <button type="button" class="btn btn-default" ui-sref=".edit">New</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width:35%">Task description</th>
+                <th style="width:25%">Assigned to</th>
+                <th style="width:10%">Status</th>
+                <th style="width:30%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in ctrl.tasks">
+                <td ng-class="{strikethrough : !!task.done}">{{::task.description}}</td>
+                <td ng-class="{strikethrough : !!task.done}">{{::task.user}}</td>
+                <td>
+                    <span class="label label-default" ng-if="!task.done">To Do</span>
+                    <span class="label label-success" ng-if="!!task.done">Done</span>
+                    &nbsp;
+                </td>
+                <td>
+                    <div class="form-group">
+
+                        <button type="button" class="btn btn-xs btn-success" ng-if="!task.done" ng-click="task.done = true">&#x2714; Mark as Done</button>
+                        <button type="button" class="btn btn-xs btn-default" ng-if="!!task.done" ng-click="task.done = false">&#x270E; Mark as To Do</button>
+                        <button type="button" class="btn btn-xs btn-default" ng-if="!task.done" ui-sref=".edit({taskIndex: $index})">&#x270E; Edit</button>
+                        <button type="button" class="btn btn-xs btn-danger">&#x2718; Remove</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</ui-view>

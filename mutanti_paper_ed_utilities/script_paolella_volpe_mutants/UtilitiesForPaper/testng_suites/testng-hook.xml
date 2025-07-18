@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HookLocatorSuite">
+    <test name="HookLocatorTest">
+        <classes>
+            <class name="test.java.com.bbtutorials.users.HookTest"/>
+        </classes>
+    </test>
+</suite>

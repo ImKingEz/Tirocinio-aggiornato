@@ -1,0 +1,11 @@
+<div class="app-container">
+  <h1>{{ title }}</h1>
+  <p>{{ welcomeMessage }}</p>
+  <p>{{ description }}</p>
+
+  <hr>
+
+  <h2>Compila il Form di Contatto</h2>
+  <app-contact-form (formSubmitted)="handleFormSubmission($event)"></app-contact-form>
+
+</div>

@@ -1,0 +1,30 @@
+<div>
+    <div class="form-group">
+        <button type="button" ng-click="ctrl.newUser = {}" class="btn btn-default">New</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width:40%">Name</th><th style="width:40%">Date of birth</th><th style="width:20%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in ctrl.users">
+                <td>{{user.name}}</td>
+                <td>{{user.dateOfBirth | date}}</td>
+				<td>
+                    <button type="button" class="btn btn-default">Edit</button>
+                </td>
+            </tr>
+			<tr ng-if="ctrl.newUser">
+				<td><input class="form-control" ng-model="ctrl.newUser.name"></td>
+				<td><calendar ng-model="ctrl.newUser.dateOfBirth"></calendar></td>
+				<td>
+					<button type="button" class="btn btn-default" ng-click="ctrl.addNewUser()">Add</button>
+					<button type="button" class="btn btn-default" ng-click="ctrl.newUser = undefined">Cancel</button>
+				</td>
+			</tr>
+        </tbody>
+    </table>
+
+</div>

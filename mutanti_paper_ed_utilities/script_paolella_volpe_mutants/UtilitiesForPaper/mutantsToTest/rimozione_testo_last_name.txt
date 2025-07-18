@@ -1,0 +1,37 @@
+<app-header x-test-tpl-app-header-1></app-header>
+<div class="container" x-test-tpl-div-2>
+  <div class="row" x-test-hook-div-3>
+    <div class="col-md-7 mrgnbtm" x-test-hook-div-4>
+      <h2 x-test-hook-h2-5>Create User</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" x-test-hook-form-6>
+        <div class="row" x-test-hook-div-7>
+          <div class="form-group col-md-6" x-test-hook-div-8>
+            <label for="exampleInputEmail1" x-test-hook-label-9>First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" x-test-hook-input-10>
+          </div>
+          <div class="form-group col-md-6" x-test-hook-div-11>
+            <label for="exampleInputPassword1" x-test-hook-label-12></label> <!-- MODIFICATO: Testo "Last Name" rimosso -->
+            <input type="text" class="form-control" formControlName="lastName" id="exampleInputPassword1" placeholder="Last Name" x-test-hook-input-13>
+          </div>
+        </div>
+        <div class="row" x-test-hook-div-14>
+          <div class="form-group col-md-12" x-test-hook-div-15>
+            <label for="exampleInputEmail1" x-test-hook-label-16>Email</label>
+            <input type="text" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" x-test-hook-input-17>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!userForm.valid" class="btn btn-danger" x-test-hook-button-18>Create</button>
+      </form>
+    </div>
+    <div class="col-md-4 mrgnbtm" x-test-hook-div-19>
+      <app-display-board
+        [userCount]="userCount"
+        (getUsersEvent)="getAllUsers()"
+        x-test-hook-app-display-board-20>
+      </app-display-board>
+    </div>
+  </div>
+</div>
+<div class="mrgnbtm" x-test-tpl-div-21>
+  <app-users *ngIf="users.length !== 0" [users]="users" x-test-hook-app-users-22></app-users>
+</div>

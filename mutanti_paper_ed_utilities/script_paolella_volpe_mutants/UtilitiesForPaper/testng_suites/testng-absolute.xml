@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AbsoluteLocatorSuite">
+    <test name="AbsoluteLocatorTest">
+        <classes>
+            <class name="test.java.com.bbtutorials.users.AbsoluteXPathTest"/>
+        </classes>
+    </test>
+</suite>
