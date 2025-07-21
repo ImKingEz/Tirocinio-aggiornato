@@ -10,21 +10,5 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
-  userName: string = '';
-  userEmail: string = '';
-
-  @Output() formSubmitted = new EventEmitter<{ name: string, email: string }>();
-
-  constructor() { }
-
-  onSubmit() {
-    console.log('Form sottomesso!');
-    console.log('Nome:', this.userName);
-    console.log('Email:', this.userEmail);
-
-    this.formSubmitted.emit({ name: this.userName, email: this.userEmail });
-
-    this.userName = '';
-    this.userEmail = '';
-  }
+  
 }

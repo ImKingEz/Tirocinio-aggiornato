@@ -29,23 +29,23 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
     rm google-chrome-stable_current_amd64.deb
 
 # Installazione di Node.js 18 LTS (richiesto per Angular 19.2.0) tramite nvm
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 18.20.1
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
+ENV NVM_DIR=/usr/local/nvm
+ENV NODE_VERSION=22.15.0
+RUN mkdir -p "$NVM_DIR" && \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
     . "$NVM_DIR/nvm.sh" && \
     nvm install $NODE_VERSION && \
     nvm use $NODE_VERSION && \
-    nvm alias default $NODE_VERSION && \
-    npm install -g npm@latest
+    nvm alias default $NODE_VERSION
 
 # Configura il PATH per Node.js
-ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ENV NODE_PATH="$NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules"
+ENV PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
 # Installazione di Maven (3.9.9 è una versione recente e stabile)
-ENV MAVEN_VERSION 3.9.9
+ENV MAVEN_VERSION=3.9.9
 RUN mkdir -p /opt && \
-    curl -fsSL https://archive.apache.org/dist/maven/maven-${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar -xz -C /opt/ && \
+    curl -fsSL "https://archive.apache.org/dist/maven/maven-$(echo ${MAVEN_VERSION} | cut -d. -f1)/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" | tar -xz -C /opt/ && \
     ln -s /opt/apache-maven-${MAVEN_VERSION} /opt/maven
 ENV MAVEN_HOME=/opt/maven
 ENV PATH="$MAVEN_HOME/bin:$PATH"
@@ -69,11 +69,11 @@ RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) &
     rm -rf /tmp/chromedriver.zip /usr/local/bin/chromedriver-linux64
 
 # Copia i file del tuo progetto
-COPY mutanti_paper_ed_utilities/script_paolella_volpe_mutants ./script_paolella_volpe_mutants
-COPY runMutantsScript.sh ./script_paolella_volpe_mutants/runMutantsScript.sh
+COPY mutanti_paper_ed_utilities/script_paolella_volpe_mutants /script_paolella_volpe_mutants
+COPY runMutantsScript.sh /script_paolella_volpe_mutants/runMutantsScript.sh
 
 # Correggi i line ending e i permessi dello script
-WORKDIR ./script_paolella_volpe_mutants
+WORKDIR /script_paolella_volpe_mutants
 RUN dos2unix runMutantsScript.sh && chmod +x runMutantsScript.sh
 
 # Imposta la directory di lavoro finale

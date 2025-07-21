@@ -2,7 +2,7 @@
 <suite name="SeleniumLocatorSuite">
     <test name="SeleniumLocatorTest">
         <classes>
-            <class name="test.java.com.bbtutorials.users.SeleniumXPathTest"/>
+            <class name="com.bbtutorials.users.SeleniumXPathTest"/>
         </classes>
     </test>
 </suite>

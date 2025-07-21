@@ -2,7 +2,7 @@
 <suite name="HookLocatorSuite">
     <test name="HookLocatorTest">
         <classes>
-            <class name="test.java.com.bbtutorials.users.HookTest"/>
+            <class name="com.bbtutorials.users.HookTest"/>
         </classes>
     </test>
 </suite>

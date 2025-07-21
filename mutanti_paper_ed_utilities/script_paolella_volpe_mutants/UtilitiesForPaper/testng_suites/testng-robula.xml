@@ -2,7 +2,7 @@
 <suite name="RobulaLocatorSuite">
     <test name="RobulaLocatorTest">
         <classes>
-            <class name="test.java.com.bbtutorials.users.RobulaXPathTest"/>
+            <class name="com.bbtutorials.users.RobulaXPathTest"/>
         </classes>
     </test>
 </suite>

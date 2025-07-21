@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot; // Aggiunto per screenshot
 import java.io.IOException; // Aggiunto per gestione eccezioni di I/O
 import java.text.SimpleDateFormat; // Aggiunto per timestamp screenshot
 import java.util.Date; // Aggiunto per timestamp screenshot
+import java.util.NoSuchElementException;
 
 
 public abstract class BaseTest {
@@ -44,7 +45,8 @@ public abstract class BaseTest {
 
   // Aggiunto metodo per fare screenshot
   protected void takeScreenshot(String testName) {
-    File screenshotDir = new File("/script_Bandiera_Mutants/screenshots"); // Percorso dentro il container
+    String screenshotPath = System.getProperty("screenshot.path", "/script_paolella_volpe_mutants/screenshots"); // Fallback
+  File screenshotDir = new File(screenshotPath); // Percorso dentro il container
     if (!screenshotDir.exists()) {
         screenshotDir.mkdirs(); // Crea le directory se non esistono
     }

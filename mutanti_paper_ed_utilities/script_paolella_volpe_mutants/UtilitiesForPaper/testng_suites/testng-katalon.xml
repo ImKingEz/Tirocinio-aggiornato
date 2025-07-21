@@ -2,7 +2,7 @@
 <suite name="KatalonLocatorSuite">
     <test name="KatalonLocatorTest">
         <classes>
-            <class name="test.java.com.bbtutorials.users.KatalonXPathTest"/>
+            <class name="com.bbtutorials.users.KatalonXPathTest"/>
         </classes>
     </test>
 </suite>

@@ -10,7 +10,7 @@ NOW=$(date +"%H-%M")
 TIMESTAMP="${TODAY}_${NOW}"
 PROJECT_DIR="$(pwd)/UtilitiesForPaper/angular-example/frontend-example/src"
 # Il backend Spring Boot non verrà avviato, ma il progetto Maven è ancora necessario per eseguire i test Selenium.
-MAVEN_PROJECT_ROOT="$(pwd)/UtilitiesForPaper/angular-example/frontend-example"
+MAVEN_PROJECT_ROOT="$(pwd)/UtilitiesForPaper/angular-example"
 LOG_DIR="$(pwd)/UtilitiesForPaper/logs"
 LOG_FILE="$LOG_DIR/ng-serve-log.txt"
 # Rimosso SPRING_LOG: non è più necessario in quanto non avviamo Spring Boot.
@@ -51,13 +51,13 @@ rm -f "$LOG_FILE" # Pulisci il log precedente
 
 # Attesa avvio Angular
 echo "Attesa avvio Angular..."
-ANGULAR_TIMEOUT=180 # Aumentato timeout per maggiore robustezza
+ANGULAR_INITIAL_TIMEOUT=180 # Aumentato timeout per maggiore robustezza all'avvio iniziale
 ANGULAR_WAITED=0
-until grep -q "Angular Live Development Server is listening on" "$LOG_FILE"; do
+until grep -q "Application bundle generation complete." "$LOG_FILE"; do
     sleep 2
     ANGULAR_WAITED=$((ANGULAR_WAITED + 2))
-    if [ "$ANGULAR_WAITED" -ge "$ANGULAR_TIMEOUT" ]; then
-        echo "❌ Timeout durante l'avvio di Angular."
+    if [ "$ANGULAR_WAITED" -ge "$ANGULAR_INITIAL_TIMEOUT" ]; then
+        echo "❌ Timeout durante l'avvio iniziale di Angular."
         exit 1
     fi
 done
@@ -104,10 +104,46 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
         cat "$DEST_FILE" # Stampa il contenuto dell'HTML mutato
         echo "-------------------------------------"
 
+        # --- INIZIO NUOVA LOGICA: Attesa della ricompilazione Angular dopo mutazione ---
+        echo "Mutante applicato. In attesa della ricompilazione di Angular..."
+
+        # Pulisci il log di Angular per monitorare solo la nuova compilazione
+        truncate -s 0 "$LOG_FILE"
+        
+        # Attendi un breve momento per dare a ng serve il tempo di iniziare a scrivere nel log dopo la modifica
+        sleep 1 
+        
+        ANGULAR_RECOMPILE_TIMEOUT=20 # Timeout per la ricompilazione dopo una mutazione
+        ANGULAR_RECOMPILE_WAITED=0
+        RECOMPILE_SUCCESS=false
+
+        # Monitora il log di Angular per il messaggio di compilazione completata
+        # Nota: il messaggio esatto può variare, "Application bundle generation complete" o "Compiled successfully"
+        while [ "$ANGULAR_RECOMPILE_WAITED" -lt "$ANGULAR_RECOMPILE_TIMEOUT" ]; do
+            if grep -q -E "Application bundle generation complete|Compiled successfully" "$LOG_FILE"; then
+                RECOMPILE_SUCCESS=true
+                break
+            fi
+            sleep 2
+            ANGULAR_RECOMPILE_WAITED=$((ANGULAR_RECOMPILE_WAITED + 2))
+        done
+
+        if [ "$RECOMPILE_SUCCESS" = true ]; then
+            echo "✅ Angular ha ricompilato dopo la mutazione."
+            # Aggiungi una piccola pausa extra per assicurare che il browser abbia avuto il tempo di ricaricare
+            sleep 3
+        else
+            echo "❌ Timeout durante la ricompilazione di Angular dopo la mutazione. L'app potrebbe essere instabile."
+            # Se Angular non ricompila, il test probabilmente fallirà con NoSuchElementException
+            # Puoi scegliere di marcare questo come un fallimento di "ambiente" invece che di "mutante"
+        fi
+        # --- FINE NUOVA LOGICA ---
+
         cd "$MAVEN_PROJECT_ROOT" # Assicurati di essere nella root del progetto Maven per eseguire i test
 
         echo "Esecuzione test per il mutante: $CURRENT_NAME con locator ${CURRENT_LOCATOR_TYPE}"
-        mvn test -Dtest.suite.file="$CURRENT_TEST_SUITE_FILE" > "$MAVEN_TEST_LOG" 2>&1
+        # Passo il percorso degli screenshot come system property a Maven/TestNG
+        mvn test -Dtest.suite.file="$CURRENT_TEST_SUITE_FILE" -Dscreenshot.path="$SCREENSHOT_DIR" > "$MAVEN_TEST_LOG" 2>&1
         TEST_EXIT_CODE=$?
 
         TEST_RESULT="failure"
