@@ -19,7 +19,7 @@ MAVEN_TEST_LOG="$LOG_DIR/maven_test_output.log"
 TESTNG_SUITES_DIR="$(pwd)/UtilitiesForPaper/testng_suites"
 
 SOURCE_DIR="$(pwd)/UtilitiesForPaper/mutantsToTest"
-DEST_FILE="$PROJECT_DIR/app/app.component.html"
+DEST_FILE="$PROJECT_DIR/app/contact-form/contact-form.component.html"
 BACKUP_FILE="/tmp/dest_backup.html" # Utilizzato per ripristinare lo stato iniziale di app.component.html
 
 SCREENSHOT_DIR="$(pwd)/screenshots" # Nuova directory per gli screenshot
@@ -205,3 +205,5 @@ echo "Screenshot (se generati) in $SCREENSHOT_DIR"
 
 cd "/script_paolella_volpe_mutants/UtilitiesForPaper/logs"
 cat "mutant_test_results.log"
+
+bash
