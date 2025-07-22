@@ -8,13 +8,6 @@ import java.util.Optional;
 
 public class HtmlTagMovementBetweenTemplatesRule implements MutationRule {
 
-    /**
-     * Simula la regola 'h': Spostamento di un tag HTML tra template.
-     * Cerca un altro contenitore con un attributo "x-test-tpl" nel documento
-     * e sposta l'elemento lì.
-     * @param element L'elemento da spostare.
-     * @return true se la mutazione è stata applicata con successo, false altrimenti.
-     */
     @Override
     public boolean apply(Element element) {
         Document doc = element.ownerDocument();
@@ -42,13 +35,12 @@ public class HtmlTagMovementBetweenTemplatesRule implements MutationRule {
                 .findFirst();
 
         if (destinationTemplateOpt.isPresent()) {
-            // 4. Abbiamo una destinazione! Spostiamo l'elemento.
+            // 4. Spostiamo l'elemento.
             Element destinationTemplate = destinationTemplateOpt.get();
             destinationTemplate.appendChild(element);
             return true;
         }
 
-        // Se siamo qui, qualcosa è andato storto (es. l'unico altro template è stato rimosso?).
         return false;
     }
 

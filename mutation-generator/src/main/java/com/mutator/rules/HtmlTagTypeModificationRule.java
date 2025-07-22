@@ -23,7 +23,6 @@ public class HtmlTagTypeModificationRule implements MutationRule {
                 newTagName = "a";
                 break;
             case "input":
-                // Cambiare un input in un div è un test di robustezza eccellente
                 newTagName = "div";
                 break;
             case "div":
@@ -34,9 +33,7 @@ public class HtmlTagTypeModificationRule implements MutationRule {
                 break;
             case "h1": newTagName = "h2"; break;
             case "h2": newTagName = "h3"; break;
-            // ... altre regole specifiche
             default:
-                // Fallback generico per altri tag
                 newTagName = "div";
                 break;
         }

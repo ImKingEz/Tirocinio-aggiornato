@@ -15,7 +15,7 @@ public class TextContentModificationRule implements MutationRule {
                 String originalText = textNode.getWholeText();
                 // Modifichiamo solo se il testo non è composto solo da spazi/a capo.
                 if (originalText.trim().length() > 0) {
-                    textNode.text(originalText + "_mutated");
+                    textNode.text("Text mutated");
                     return true;
                 }
             }

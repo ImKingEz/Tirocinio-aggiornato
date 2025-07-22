@@ -1,31 +1,52 @@
 package com.mutator.rules;
 
 import org.jsoup.nodes.Attribute;
+import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Element;
-
-import java.util.Optional;
 
 public class AttributeIdentifierModificationRule implements MutationRule {
 
     @Override
     public boolean apply(Element element) {
-        // Trova il primo attributo che NON è un hook.
-        Optional<Attribute> attrToMutate = element.attributes().asList().stream()
-                .filter(attr -> !attr.getKey().toLowerCase().startsWith("x-test-"))
-                .findFirst();
+        Attributes attributes = element.attributes();
+        if (attributes.isEmpty()) {
+            return false;
+        }
 
-        if (attrToMutate.isPresent()) {
-            Attribute attr = attrToMutate.get();
-            String oldKey = attr.getKey();
-            String value = attr.getValue();
-            String newKey = "mutated_" + oldKey;
-
-            // Rimuovi il vecchio attributo e aggiungi quello nuovo
-            element.removeAttr(oldKey);
-            element.attr(newKey, value);
+        // Priorità 1: Modificare l'attributo 'id'
+        if (attributes.hasKeyIgnoreCase("id")) {
+            String value = element.attr("id");
+            element.removeAttr("id");
+            element.attr("mutated_id", value);
             return true;
         }
 
+        // Priorità 2: Modificare l'attributo 'class'
+        if (attributes.hasKeyIgnoreCase("class")) {
+            String value = element.attr("class");
+            element.removeAttr("class");
+            element.attr("mutated_class", value);
+            return true;
+        }
+
+        // Priorità 3: Modificare qualsiasi altro attributo che non sia un hook
+        for (Attribute attr : attributes) {
+            String key = attr.getKey().toLowerCase();
+            // L'id e la classe sono già stati controllati, quindi non è necessario escluderli di nuovo.
+            // Dobbiamo solo assicurarci che non sia un hook di test.
+            if (!key.startsWith("x-test-")) {
+                String oldKey = attr.getKey();
+                String value = attr.getValue();
+                String newKey = "mutated_" + oldKey;
+
+                // Rimuovi il vecchio attributo e aggiungi quello nuovo
+                element.removeAttr(oldKey);
+                element.attr(newKey, value);
+                return true;
+            }
+        }
+
+        // Se siamo qui, l'elemento ha solo attributi hook o nessun attributo modificabile.
         return false;
     }
 

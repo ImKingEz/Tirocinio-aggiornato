@@ -5,27 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/MutationGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/Mutator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/AttributeIdentifierModificationRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/AttributeRemovalRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/AttributeValueModificationRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/HtmlTagInsertionRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/HtmlTagMovementBetweenTemplatesRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/HtmlTagMovementToRootRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/HtmlTagMovementWithinContainerRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/HtmlTagRemovalRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/HtmlTagTypeModificationRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/MutationRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/TextContentModificationRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mutator/rules/TextContentRemovalRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/mutator/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_attribute_identifier_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_attribute_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_attribute_value_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_insertion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_movement_between_templates.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_movement_to_root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_type_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_insertion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_movement_between_templates.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_movement_to_root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_type_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_text_content_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_text_content_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_attribute_identifier_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_attribute_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_attribute_value_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_insertion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_movement_between_templates.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_movement_within_container.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_type_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_attribute_identifier_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_attribute_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_attribute_value_modification.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_insertion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_movement_between_templates.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_movement_to_root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_movement_within_container.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_removal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_type_modification.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +52,20 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ImKingEz"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ImKingEz/Tirocinio-aggiornato.git",
+    "accountId": "52be8375-f2d0-47ac-9a14-7b2d0318bd33"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -54,25 +77,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/WIN10/Desktop/Tirocinio-aggiornato/mutation-generator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -95,6 +119,7 @@
       <workItem from="1753110999955" duration="475000" />
       <workItem from="1753111962225" duration="648000" />
       <workItem from="1753178815601" duration="95000" />
+      <workItem from="1753192126915" duration="3565000" />
     </task>
     <servers />
   </component>

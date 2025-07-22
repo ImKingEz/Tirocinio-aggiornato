@@ -58,16 +58,12 @@ public class Mutator {
             targets.put("delta_prev(" + deltaPrev.tagName() + ")", deltaPrev);
         }
 
-        // 5. --- LOGICA CORRETTA PER EPSILON ---
         // Cerca tra gli antenati di 'alpha' il primo che ha un attributo che inizia con "x-test-tpl".
         // Usiamo un selettore di attributi che iniziano con una data stringa: [^attributo]
         Element epsilon = alpha.closest("[^x-test-tpl]");
 
-        if (epsilon != null) {
-            // Aggiungiamo epsilon solo se non è già stato aggiunto come un altro target (es. gamma)
-            if (!targets.containsValue(epsilon)) {
-                targets.put("epsilon(" + epsilon.tagName() + ")", epsilon);
-            }
+        if (epsilon != null && !targets.containsValue(epsilon)) {
+            targets.put("epsilon(" + epsilon.tagName() + ")", epsilon);
         }
 
         System.out.println("Identified targets: " + targets.keySet());
@@ -97,7 +93,6 @@ public class Mutator {
                 Element targetInClone = findElementInClone(docClone, targetEntry.getValue());
 
                 if (targetInClone != null) {
-                    // --- NUOVA LOGICA DI CONTROLLO ---
                     // 1. Salva l'HTML prima della mutazione
                     String htmlBefore = docClone.body().html();
 
@@ -119,8 +114,6 @@ public class Mutator {
         }
         return count;
     }
-
-    // Trova l'elemento corrispondente nel documento clonato
 
     private Element findElementInClone(Document clone, Element originalElement) {
         // Il target 'epsilon' è il documento stesso, quindi il suo clone è il documento clonato.

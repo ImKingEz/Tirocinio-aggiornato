@@ -11,7 +11,6 @@ public class TextContentRemovalRule implements MutationRule {
 
     @Override
     public boolean apply(Element element) {
-        // Troviamo tutti i nodi di testo da rimuovere per non causare ConcurrentModificationException
         List<Node> nodesToRemove = new ArrayList<>();
         for (Node child : element.childNodes()) {
             if (child instanceof TextNode) {
