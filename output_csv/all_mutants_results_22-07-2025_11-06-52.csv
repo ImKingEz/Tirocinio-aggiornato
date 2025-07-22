@@ -1,8 +1,0 @@
-locator_type,mutant,result,failure_cause
-hook,mutant_alpha(input)_attribute_identifier_modification.txt,success,"N/A"
-hook,mutant_alpha(input)_attribute_removal.txt,success,"N/A"
-hook,mutant_alpha(input)_attribute_value_modification.txt,success,"N/A"
-hook,mutant_alpha(input)_html_tag_insertion.txt,success,"N/A"
-hook,mutant_alpha(input)_html_tag_movement_between_templates.txt,failure,"Selenium: NoSuchElementException"
-hook,mutant_alpha(input)_html_tag_movement_to_root.txt,failure,"Selenium: NoSuchElementException"
-hook,mutant_alpha(input)_html_tag_removal.txt,failure,"Selenium: NoSuchElementException"
