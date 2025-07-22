@@ -1,82 +1,120 @@
 #!/bin/bash
 
+# ==============================================================================
+#           SCRIPT PER ESECUZIONE TEST DI MUTAZIONE SU APPLICAZIONE ANGULAR
+# ==============================================================================
+#
+# Questo script automatizza il processo di test di mutazione:
+# 1. Avvia un'applicazione Angular.
+# 2. Cicla attraverso diversi tipi di locator Selenium (es. hook, robula, etc.).
+# 3. Per ogni tipo di locator, cicla attraverso una serie di file "mutanti".
+# 4. Per ogni mutante:
+#    a. Sostituisce un file sorgente dell'app con il mutante.
+#    b. Attende la ricompilazione di Angular.
+#    c. Esegue una suite di test Maven/TestNG specifica per il locator.
+#    d. Registra il risultato (success/failure) e la causa del fallimento.
+#    e. Ripristina il file sorgente originale.
+# 5. Produce un file CSV completo con tutti i risultati.
+#
+
 # === CONFIGURAZIONE ===
-echo "START"
-CSV_DIR="$(pwd)/outputCsv"
-mkdir -p "$CSV_DIR"
+echo "=== INIZIO PROCESSO DI TEST DI MUTAZIONE ==="
+START_TIME=$(date +%s)
 
-TODAY=$(date +"%d-%m-%Y")
-NOW=$(date +"%H-%M")
-TIMESTAMP="${TODAY}_${NOW}"
-PROJECT_DIR="$(pwd)/UtilitiesForPaper/angular-example/frontend-example/src"
-# Il backend Spring Boot non verrà avviato, ma il progetto Maven è ancora necessario per eseguire i test Selenium.
-MAVEN_PROJECT_ROOT="$(pwd)/UtilitiesForPaper/angular-example"
-LOG_DIR="$(pwd)/UtilitiesForPaper/logs"
-LOG_FILE="$LOG_DIR/ng-serve-log.txt"
-# Rimosso SPRING_LOG: non è più necessario in quanto non avviamo Spring Boot.
-RESULT_LOG="$LOG_DIR/mutant_test_results.log"
+# --- PERCORSI FISSI E ROBUSTI ALL'INTERNO DEL CONTAINER ---
+# Questi percorsi sono standardizzati grazie alla struttura definita nel Dockerfile.
+# 'pwd' all'avvio del container è /app.
+# --- PERCORSI FISSI E ROBUSTI ALL'INTERNO DEL CONTAINER ---
+# 'pwd' all'avvio del container è /app, che contiene la struttura del progetto.
+APP_ROOT_DIR="$(pwd)/frontend"         # La root dell'app Angular
+MAVEN_PROJECT_ROOT="$(pwd)/selenium-tests"     # La root del progetto Maven per i test
+TESTNG_SUITES_DIR="$(pwd)/testng_suites"       # Directory con le suite di test TestNG
+SOURCE_DIR="$(pwd)/mutantsToTest"              # Directory con i file HTML mutanti
+
+# --- DIRECTORY DI OUTPUT (create fuori dalla struttura del progetto) ---
+LOG_DIR="$(pwd)/output_logs"
+CSV_DIR="$(pwd)/output_csv"
+SCREENSHOT_DIR="$(pwd)/output_screenshots"
+
+mkdir -p "$LOG_DIR" "$CSV_DIR" "$SCREENSHOT_DIR"
+echo "Directory di output preparate."
+
+# --- FILE DI LOG E RISULTATI ---
+TIMESTAMP=$(date +"%d-%m-%Y_%H-%M-%S")
+LOG_FILE="$LOG_DIR/ng-serve.log"
+RESULT_LOG="$LOG_DIR/mutant_test_results_${TIMESTAMP}.log"
 MAVEN_TEST_LOG="$LOG_DIR/maven_test_output.log"
-TESTNG_SUITES_DIR="$(pwd)/UtilitiesForPaper/testng_suites"
-
-SOURCE_DIR="$(pwd)/UtilitiesForPaper/mutantsToTest"
-DEST_FILE="$PROJECT_DIR/app/contact-form/contact-form.component.html"
-BACKUP_FILE="/tmp/dest_backup.html" # Utilizzato per ripristinare lo stato iniziale di app.component.html
-
-SCREENSHOT_DIR="$(pwd)/screenshots" # Nuova directory per gli screenshot
-mkdir -p "$SCREENSHOT_DIR" # Crea la directory degli screenshot
-
-mkdir -p "$LOG_DIR"
-rm -f "$RESULT_LOG"
-rm -f "$MAVEN_TEST_LOG"
-# Rimuovi eventuali screenshot precedenti per evitare confusione
-rm -rf "$SCREENSHOT_DIR"/*
-
-# Array con i tipi di locator da testare
-LOCATOR_TYPES=("hook" "absolute" "relative" "robula" "selenium" "katalon")
-
-# Copia il file HTML originale nel backup prima di iniziare qualsiasi operazione
-cp "$DEST_FILE" "$BACKUP_FILE"
-pkill -f node || true # Assicurati che non ci siano processi node attivi
-
-# Avvia Angular una sola volta per tutte le esecuzioni dei test
-echo "Avvio Angular..."
-cd "$PROJECT_DIR"
-# Esegui npm install solo se node_modules non esiste (per velocizzare run successive se i layer Docker non cambiano)
-if [ ! -d "node_modules" ]; then
-    echo "Eseguo npm install per l'applicazione Angular..."
-    npm install --silent
-fi
-rm -f "$LOG_FILE" # Pulisci il log precedente
-(cd "$PROJECT_DIR" && ng serve --host 0.0.0.0 > "$LOG_FILE" 2>&1 &)
-
-# Attesa avvio Angular
-echo "Attesa avvio Angular..."
-ANGULAR_INITIAL_TIMEOUT=180 # Aumentato timeout per maggiore robustezza all'avvio iniziale
-ANGULAR_WAITED=0
-until grep -q "Application bundle generation complete." "$LOG_FILE"; do
-    sleep 2
-    ANGULAR_WAITED=$((ANGULAR_WAITED + 2))
-    if [ "$ANGULAR_WAITED" -ge "$ANGULAR_INITIAL_TIMEOUT" ]; then
-        echo "❌ Timeout durante l'avvio iniziale di Angular."
-        exit 1
-    fi
-done
-echo "✅ Angular avviato."
-
-# Inizializza il file CSV per i risultati globali
 GLOBAL_CSV_FILE="$CSV_DIR/all_mutants_results_${TIMESTAMP}.csv"
-echo "locator_type,mutant,result,failure_cause" > "$GLOBAL_CSV_FILE"
 
-# Pre-installazione delle dipendenze Maven per il progetto dei test (una sola volta)
-echo "Esecuzione mvn clean install -DskipTests per il progetto dei test..."
-cd "$MAVEN_PROJECT_ROOT"
-mvn clean install -DskipTests > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-    echo "❌ Errore durante mvn clean install del progetto dei test. Controlla il log."
+# --- CONFIGURAZIONE TEST (FILE TARGET DINAMICO) ---
+if [ -z "$TARGET_FILE" ]; then
+    echo "❌ Errore Critico: La variabile d'ambiente TARGET_FILE non è stata impostata." >&2
+    echo "   Usa il flag '-e TARGET_FILE=\"percorso/relativo/al/file.html\"' nel comando docker run." >&2
     exit 1
 fi
-echo "✅ Dipendenze Maven per i test installate."
 
+# Il percorso del file target è relativo alla root dell'app Angular
+DEST_FILE="$APP_ROOT_DIR/$TARGET_FILE"
+TARGET_FILENAME=$(basename "$TARGET_FILE")
+BACKUP_FILE="/tmp/backup_${TARGET_FILENAME}"
+
+echo "File target per la mutazione: $DEST_FILE"
+
+if [ ! -f "$DEST_FILE" ]; then
+    echo "❌ Errore Critico: Il file target specificato non esiste nel percorso: $DEST_FILE" >&2
+    exit 1
+fi
+
+LOCATOR_TYPES=("hook" "absolute" "relative" "robula" "selenium" "katalon")
+
+# Pulizia di esecuzioni precedenti
+echo "Pulizia di log e screenshot di esecuzioni precedenti..."
+rm -f "$LOG_DIR"/*_results_*.log "$LOG_DIR"/*.log
+rm -rf "$SCREENSHOT_DIR"/*
+
+# === PREPARAZIONE AMBIENTE ===
+
+# 1. Backup del file originale per ripristinarlo dopo ogni mutazione
+echo "Creazione backup del file HTML originale..."
+cp "$DEST_FILE" "$BACKUP_FILE"
+
+# 2. Pre-installazione delle dipendenze Maven
+echo "Installazione delle dipendenze Maven per il progetto di test (mvn clean install -DskipTests)..."
+cd "$MAVEN_PROJECT_ROOT"
+mvn clean install -DskipTests > "$LOG_DIR/maven_initial_setup.log" 2>&1
+if [ $? -ne 0 ]; then
+    echo "❌ Errore critico durante 'mvn clean install'. Controllare il file '$LOG_DIR/maven_initial_setup.log'."
+    exit 1
+fi
+echo "✅ Dipendenze Maven installate."
+
+# 3. Avvio dell'applicazione Angular
+echo "Avvio dell'applicazione Angular..."
+cd "$APP_ROOT_DIR"
+if [ ! -d "node_modules" ]; then
+    echo "Esecuzione 'npm install' per l'applicazione Angular..."
+    npm install --silent
+fi
+
+(ng serve --host 0.0.0.0 > "$LOG_FILE" 2>&1 &)
+NG_PID=$!
+
+# Attesa avvio iniziale di Angular
+echo "In attesa che l'applicazione Angular si avvii (max 180s)..."
+if ! timeout 180 grep -q "Application bundle generation complete." <(tail -f "$LOG_FILE"); then
+    echo "❌ Timeout durante l'avvio iniziale di Angular. Lo script verrà interrotto."
+    cat "$LOG_FILE"
+    kill $NG_PID
+    exit 1
+fi
+echo "✅ Applicazione Angular avviata con successo."
+
+
+# === ESECUZIONE CICLO DI TEST ===
+
+# Inizializza il file CSV per i risultati globali
+echo "locator_type,mutant,result,failure_cause" > "$GLOBAL_CSV_FILE"
+echo "Inizio del ciclo di test sui mutanti..."
 
 # Cicla su ogni tipo di locator
 for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
@@ -86,124 +124,113 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
 
     CURRENT_TEST_SUITE_FILE="$TESTNG_SUITES_DIR/testng-${CURRENT_LOCATOR_TYPE}.xml"
     if [ ! -f "$CURRENT_TEST_SUITE_FILE" ]; then
-        echo "Errore: File suite TestNG non trovato per ${CURRENT_LOCATOR_TYPE}: $CURRENT_TEST_SUITE_FILE"
+        echo "⚠️  Attenzione: File suite TestNG non trovato per ${CURRENT_LOCATOR_TYPE} in $CURRENT_TEST_SUITE_FILE. Salto questo locator."
         echo "${CURRENT_LOCATOR_TYPE},N/A,error,\"TestNG suite file not found\"" >> "$GLOBAL_CSV_FILE"
         continue
     fi
 
-    # Ciclo sui mutanti
+    # Ciclo su ogni file mutante
     for MUTANT_FILE in "$SOURCE_DIR"/*; do
-        CURRENT_MUTANT="$MUTANT_FILE"
-        CURRENT_NAME=$(basename "$MUTANT_FILE")
+        CURRENT_MUTANT_NAME=$(basename "$MUTANT_FILE")
         echo "-------------------------------------"
-        echo "Mutante processato: $CURRENT_MUTANT (Tipo Locator: ${CURRENT_LOCATOR_TYPE})"
+        echo "Processing Mutant: $CURRENT_MUTANT_NAME (Locator Type: $CURRENT_LOCATOR_TYPE)"
 
-        # Applica il mutante
-        cp "$CURRENT_MUTANT" "$DEST_FILE"
-        echo "=== CONTENUTO DI ${DEST_FILE} DOPO MUTAZIONE ==="
-        cat "$DEST_FILE" # Stampa il contenuto dell'HTML mutato
-        echo "-------------------------------------"
+        # 1. Applica il mutante
+        cp "$MUTANT_FILE" "$DEST_FILE"
 
-        # --- INIZIO NUOVA LOGICA: Attesa della ricompilazione Angular dopo mutazione ---
-        echo "Mutante applicato. In attesa della ricompilazione di Angular..."
-
-        # Pulisci il log di Angular per monitorare solo la nuova compilazione
+        # 2. Attendi la ricompilazione di Angular
+        echo "Mutante applicato. In attesa della ricompilazione di Angular (max 30s)..."
+        # Svuota il log di ng serve per monitorare solo il nuovo evento
         truncate -s 0 "$LOG_FILE"
         
-        # Attendi un breve momento per dare a ng serve il tempo di iniziare a scrivere nel log dopo la modifica
-        sleep 1 
-        
-        ANGULAR_RECOMPILE_TIMEOUT=20 # Timeout per la ricompilazione dopo una mutazione
-        ANGULAR_RECOMPILE_WAITED=0
-        RECOMPILE_SUCCESS=false
-
-        # Monitora il log di Angular per il messaggio di compilazione completata
-        # Nota: il messaggio esatto può variare, "Application bundle generation complete" o "Compiled successfully"
-        while [ "$ANGULAR_RECOMPILE_WAITED" -lt "$ANGULAR_RECOMPILE_TIMEOUT" ]; do
-            if grep -q -E "Application bundle generation complete|Compiled successfully" "$LOG_FILE"; then
-                RECOMPILE_SUCCESS=true
-                break
-            fi
-            sleep 2
-            ANGULAR_RECOMPILE_WAITED=$((ANGULAR_RECOMPILE_WAITED + 2))
-        done
-
-        if [ "$RECOMPILE_SUCCESS" = true ]; then
-            echo "✅ Angular ha ricompilato dopo la mutazione."
-            # Aggiungi una piccola pausa extra per assicurare che il browser abbia avuto il tempo di ricaricare
-            sleep 3
+        if ! timeout 30 grep -q -E "Application bundle generation complete|Compiled successfully" <(tail -f "$LOG_FILE"); then
+            echo "❌ Timeout durante la ricompilazione di Angular. Il test potrebbe fallire."
+            # Non interrompiamo lo script, ma il test successivo probabilmente fallirà, il che è un risultato valido.
         else
-            echo "❌ Timeout durante la ricompilazione di Angular dopo la mutazione. L'app potrebbe essere instabile."
-            # Se Angular non ricompila, il test probabilmente fallirà con NoSuchElementException
-            # Puoi scegliere di marcare questo come un fallimento di "ambiente" invece che di "mutante"
+            echo "✅ Angular ha ricompilato."
+            sleep 2 # Pausa aggiuntiva per stabilizzazione
         fi
-        # --- FINE NUOVA LOGICA ---
 
-        cd "$MAVEN_PROJECT_ROOT" # Assicurati di essere nella root del progetto Maven per eseguire i test
-
-        echo "Esecuzione test per il mutante: $CURRENT_NAME con locator ${CURRENT_LOCATOR_TYPE}"
-        # Passo il percorso degli screenshot come system property a Maven/TestNG
+        # 3. Esegui i test Maven
+        cd "$MAVEN_PROJECT_ROOT"
+        echo "Esecuzione test Maven..."
+        # Passiamo il percorso degli screenshot come system property a Maven/TestNG
         mvn test -Dtest.suite.file="$CURRENT_TEST_SUITE_FILE" -Dscreenshot.path="$SCREENSHOT_DIR" > "$MAVEN_TEST_LOG" 2>&1
         TEST_EXIT_CODE=$?
 
+        # 4. Analizza il risultato
         TEST_RESULT="failure"
-        FAILURE_CAUSE="Causa sconosciuta o generica. Controlla $MAVEN_TEST_LOG per i dettagli."
+        FAILURE_CAUSE="Unknown cause. Check $MAVEN_TEST_LOG for details."
 
         if [ "$TEST_EXIT_CODE" -eq 0 ]; then
             TEST_RESULT="success"
             FAILURE_CAUSE="N/A"
         else
-            # Analisi del log di Maven Test per determinare la causa
+            # Analisi più dettagliata del log di Maven Test
             if grep -q "org.openqa.selenium.NoSuchElementException" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="Selenium: NoSuchElementException - Elemento non trovato o XPath errato/mancante nel DOM."
-            elif grep -q "org.openqa.selenium.ElementNotInteractableException" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="Selenium: ElementNotInteractableException - Elemento trovato ma non interagibile (es. disabilitato, nascosto, coperto)."
-            elif grep -q "org.openqa.selenium.ElementClickInterceptedException" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="Selenium: ElementClickInterceptedException - Click intercettato da altro elemento (es. popup, overlay)."
+                FAILURE_CAUSE="Selenium: NoSuchElementException"
             elif grep -q "org.openqa.selenium.TimeoutException" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="Selenium: TimeoutException - Elemento non trovato entro il timeout specificato."
+                FAILURE_CAUSE="Selenium: TimeoutException"
+            elif grep -q "org.openqa.selenium.ElementNotInteractableException" "$MAVEN_TEST_LOG"; then
+                FAILURE_CAUSE="Selenium: ElementNotInteractableException"
+            elif grep -q "org.openqa.selenium.ElementClickInterceptedException" "$MAVEN_TEST_LOG"; then
+                FAILURE_CAUSE="Selenium: ElementClickInterceptedException"
             elif grep -q "java.lang.AssertionError" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="TestNG: AssertionError - Asserzione fallita nel test (il comportamento atteso non è stato riscontrato)."
-            elif grep -q "java.lang.NullPointerException" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="Java: NullPointerException - Errore interno nel codice del test o dell'applicazione."
-            elif grep -q "Could not start Chrome for testing" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="Selenium: Errore all'avvio di ChromeDriver. Controlla se Chrome e ChromeDriver sono compatibili."
-            elif grep -q "org.testng.TestNGException" "$MAVEN_TEST_LOG"; then
-                FAILURE_CAUSE="TestNG: Eccezione TestNG (es. classe non trovata, configurazione errata della suite)."
-            else # Aggiunta una causa generica per fallimenti non specifici
-                 FAILURE_CAUSE="Maven Test Fallito. Controlla il log per altri dettagli."
+                FAILURE_CAUSE="TestNG: AssertionError"
+            elif grep -q "Could not start a new session" "$MAVEN_TEST_LOG"; then
+                FAILURE_CAUSE="Selenium: Could not start a new session (WebDriver/Browser issue)"
+            else
+                FAILURE_CAUSE="Generic Maven Test Failure"
             fi
         fi
+        
+        echo "Risultato: $TEST_RESULT"
 
-        echo "Risultato Test (${CURRENT_LOCATOR_TYPE}): $TEST_RESULT"
-        echo "${CURRENT_LOCATOR_TYPE},${CURRENT_NAME},${TEST_RESULT},\"${FAILURE_CAUSE}\"" >> "$GLOBAL_CSV_FILE"
+        # 5. Scrivi i risultati nei file di log e CSV
+        echo "${CURRENT_LOCATOR_TYPE},${CURRENT_MUTANT_NAME},${TEST_RESULT},\"${FAILURE_CAUSE}\"" >> "$GLOBAL_CSV_FILE"
+        
         {
-            echo "Tipo Locator: ${CURRENT_LOCATOR_TYPE}"
-            echo "Mutante: $CURRENT_MUTANT"
-            echo "Risultato Test: $TEST_RESULT"
+            echo "Timestamp: $(date)"
+            echo "Locator Type: ${CURRENT_LOCATOR_TYPE}"
+            echo "Mutant: $CURRENT_MUTANT_NAME"
+            echo "Test Result: $TEST_RESULT"
             if [ "$TEST_RESULT" = "failure" ]; then
-                echo "Causa Fallimento: $FAILURE_CAUSE"
-                echo "Per dettagli: controlla $MAVEN_TEST_LOG"
+                echo "Failure Cause: $FAILURE_CAUSE"
+                echo "See $MAVEN_TEST_LOG for full details."
             fi
             echo "-------------------------------------"
         } >> "$RESULT_LOG"
 
-        cp "$BACKUP_FILE" "$DEST_FILE" # Ripristina il file originale HTML
+        # 6. Ripristina il file originale
+        cp "$BACKUP_FILE" "$DEST_FILE"
     done
-
 done
 
-# Termina Angular alla fine di tutto
-echo "Terminazione Angular..."
-pkill -f node || true
+# === PULIZIA FINALE ===
+echo "====================================================="
+echo "Terminazione dei processi..."
 
+# Termina il processo di Angular
+kill $NG_PID
+wait $NG_PID 2>/dev/null
+echo "Applicazione Angular terminata."
+
+# Rimuovi il file di backup
 rm -f "$BACKUP_FILE"
-echo "=== TUTTI I MUTANTI PROCESSATI PER TUTTI I TIPI DI LOCATOR ==="
-echo "I risultati sono in $GLOBAL_CSV_FILE"
-echo "Log dettagliati in $RESULT_LOG e $MAVEN_TEST_LOG"
-echo "Screenshot (se generati) in $SCREENSHOT_DIR"
 
-cd "/script_paolella_volpe_mutants/UtilitiesForPaper/logs"
-cat "mutant_test_results.log"
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
+
+echo "=== PROCESSO DI TEST DI MUTAZIONE COMPLETATO ==="
+echo "Tempo totale di esecuzione: ${DURATION} secondi."
+echo "I risultati completi sono nel file CSV: $GLOBAL_CSV_FILE"
+echo "Log dettagliati dei singoli test in: $RESULT_LOG"
+echo "Screenshot dei fallimenti (se generati) in: $SCREENSHOT_DIR"
+echo "Ultimo log di output di Maven è in: $MAVEN_TEST_LOG"
+echo "====================================================="
+
+# Opzionale: stampa a video un riassunto dei risultati dal CSV
+echo "Riepilogo dei risultati:"
+tail -n +2 "$GLOBAL_CSV_FILE" | cut -d, -f1,3 | sort | uniq -c
 
 bash

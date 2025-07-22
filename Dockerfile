@@ -1,48 +1,33 @@
-# Usa OpenJDK 17 (versione LTS) come base, adatta per le parti Java del tuo progetto
+# Usa OpenJDK 17 (versione LTS) come base
 FROM openjdk:17-jdk-slim
 
-# Installazione delle dipendenze di sistema necessarie
-RUN apt-get update && apt-get install -y \
-    bash \
-    curl \
-    wget \
-    gnupg \
-    ca-certificates \
-    build-essential \
-    unzip \
-    libnss3 \
-    fonts-liberation \
-    procps \
-    dos2unix \
-    libxss1 \
-    libappindicator3-1 \
-    libgbm1 \
-    lsb-release \
-    xdg-utils \
-    jq \
-    && rm -rf /var/lib/apt/lists/*
+# === ARGOMENTO DI BUILD PER IL NOME DELLA CARTELLA DEL PROGETTO ===
+# Definisci un argomento con un valore di default.
+# Questo valore può essere sovrascritto durante la build con --build-arg PROJECT_DIR_NAME=...
+ARG PROJECT_DIR_NAME=angular-example-no-id
 
-# Installazione di Google Chrome stable (la versione più recente)
+# Installazione delle dipendenze di sistema (invariato)
+RUN apt-get update && apt-get install -y \
+    bash curl wget gnupg ca-certificates build-essential unzip libnss3 \
+    fonts-liberation procps dos2unix libxss1 libappindicator3-1 libgbm1 \
+    lsb-release xdg-utils jq && rm -rf /var/lib/apt/lists/*
+
+# Installazione di Google Chrome (invariato)
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     apt-get update && \
     apt-get install -y ./google-chrome-stable_current_amd64.deb && \
     rm google-chrome-stable_current_amd64.deb
 
-# Installazione di Node.js 18 LTS (richiesto per Angular 19.2.0) tramite nvm
+# Installazione di Node.js via nvm (invariato)
 ENV NVM_DIR=/usr/local/nvm
 ENV NODE_VERSION=22.15.0
 RUN mkdir -p "$NVM_DIR" && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
-    . "$NVM_DIR/nvm.sh" && \
-    nvm install $NODE_VERSION && \
-    nvm use $NODE_VERSION && \
-    nvm alias default $NODE_VERSION
-
-# Configura il PATH per Node.js
+    . "$NVM_DIR/nvm.sh" && nvm install $NODE_VERSION && nvm use $NODE_VERSION && nvm alias default $NODE_VERSION
 ENV NODE_PATH="$NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules"
 ENV PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
-# Installazione di Maven (3.9.9 è una versione recente e stabile)
+# Installazione di Maven (invariato)
 ENV MAVEN_VERSION=3.9.9
 RUN mkdir -p /opt && \
     curl -fsSL "https://archive.apache.org/dist/maven/maven-$(echo ${MAVEN_VERSION} | cut -d. -f1)/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" | tar -xz -C /opt/ && \
@@ -50,14 +35,13 @@ RUN mkdir -p /opt && \
 ENV MAVEN_HOME=/opt/maven
 ENV PATH="$MAVEN_HOME/bin:$PATH"
 
-# Installazione di Angular CLI 19.2.0 globalmente
+# Installazione di Angular CLI (invariato)
 RUN npm install -g @angular/cli@19.2.0
 
-# Verifica le versioni installate
+# Verifica versioni (invariato)
 RUN node -v && npm -v && ng version && google-chrome --version
 
-# Installazione di ChromeDriver, recuperando dinamicamente la versione compatibile
-# con la versione di Chrome installata.
+# Installazione di ChromeDriver (invariato)
 RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) && \
     CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | \
                        jq -r ".channels.Stable.downloads.chromedriver[] | select(.platform == \"linux64\") | .url") && \
@@ -68,16 +52,17 @@ RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) &
     chmod +x /usr/local/bin/chromedriver && \
     rm -rf /tmp/chromedriver.zip /usr/local/bin/chromedriver-linux64
 
-# Copia i file del tuo progetto
-COPY mutanti_paper_ed_utilities/script_paolella_volpe_mutants /script_paolella_volpe_mutants
-COPY runMutantsScript.sh /script_paolella_volpe_mutants/runMutantsScript.sh
+# === MODIFICA CHIAVE: COPIA DEI FILE E IMPOSTAZIONE WORKDIR ===
+# Imposta la directory di lavoro principale
+WORKDIR /app
 
-# Correggi i line ending e i permessi dello script
-WORKDIR /script_paolella_volpe_mutants
+# Copia l'intero contenuto della cartella del progetto (il cui nome è variabile)
+# direttamente nella directory di lavoro /app.
+COPY mutanti_paper_ed_utilities/${PROJECT_DIR_NAME}/ .
+
+# Copia lo script di esecuzione e imposta i permessi
+COPY runMutantsScript.sh .
 RUN dos2unix runMutantsScript.sh && chmod +x runMutantsScript.sh
 
-# Imposta la directory di lavoro finale
-WORKDIR /script_paolella_volpe_mutants
-
-# Esegui lo script
+# Definisce il comando che verrà eseguito all'avvio del container
 ENTRYPOINT ["./runMutantsScript.sh"]
