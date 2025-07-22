@@ -1,0 +1,11 @@
+<div x-test-tpl-div-1>
+ <form x-test-hook-form-2>
+  <div class="form-group" x-test-hook-div-3>
+   <label x-test-hook-label-4> Nome: <input type="text" name="name" required x-test-hook-input-5> </label>
+  </div>
+  <div class="form-group" x-test-hook-div-6>
+   <label x-test-hook-label-7> Email: <input type="email" name="email" required x-test-hook-input-8> </label>
+  </div><button type="submit" x-test-hook-button-9>Invia Messaggio</button>
+ </form>
+</div>
+<div x-test-tpl-div-11></div>

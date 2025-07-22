@@ -55,7 +55,7 @@ docker build --build-arg PROJECT_DIR_NAME=angular-example-no-id -t mutant-tester
 Per eseguire i test, devi specificare il percorso del file HTML da mutare (relativo alla directory `frontend`) e mappare le directory di output per salvare i risultati.
 
 # 1. (Opzionale ma consigliato) Crea le directory di output sulla tua macchina host
-mkdir -p output_csv output_logs output_screenshots
+New-Item -Path 'output_csv', 'output_logs', 'output_screenshots' -ItemType Directory -Force
 
 # 2. Esegui il container
 docker run `

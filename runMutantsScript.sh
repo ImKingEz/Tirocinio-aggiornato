@@ -121,8 +121,8 @@ fi
 
 # Attesa avvio iniziale di Angular
 # MODIFICA: Utilizza -E per l'espressione regolare "OR" come nella sezione successiva
-echo "In attesa che l'applicazione Angular si avvii (max 180s)..."
-if ! timeout 180 grep -q -E "Application bundle generation complete|Compiled successfully" <(tail -f "$LOG_FILE"); then
+echo "In attesa che l'applicazione Angular si avvii (max 30s)..."
+if ! timeout 30 grep -q -E "Application bundle generation complete|Compiled successfully" <(tail -f "$LOG_FILE"); then
     echo "❌ Timeout durante l'avvio iniziale di Angular. Lo script verrà interrotto."
     cat "$LOG_FILE"
     if [ ! -z "$NG_PID" ]; then
