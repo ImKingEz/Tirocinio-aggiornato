@@ -52,13 +52,26 @@ RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) &
     chmod +x /usr/local/bin/chromedriver && \
     rm -rf /tmp/chromedriver.zip /usr/local/bin/chromedriver-linux64
 
-# === MODIFICA CHIAVE: COPIA DEI FILE E IMPOSTAZIONE WORKDIR ===
+# === MODIFICA CHIAVE QUI ===
 # Imposta la directory di lavoro principale
 WORKDIR /app
 
-# Copia l'intero contenuto della cartella del progetto (il cui nome è variabile)
-# direttamente nella directory di lavoro /app.
+# Copia l'intero contenuto della cartella del progetto.
+# Assumiamo che all'interno di ${PROJECT_DIR_NAME} ci sia una cartella 'frontend'
+# che contiene l'applicazione Angular.
 COPY mutanti_paper_ed_utilities/${PROJECT_DIR_NAME}/ .
+
+# Naviga alla directory dell'applicazione Angular all'interno del container
+# per installare le dipendenze in un ambiente pulito.
+WORKDIR /app/frontend
+
+# Rimuovi eventuali dipendenze e package-lock.json preesistenti
+# (specialmente se copiati dal sistema host) e reinstalla.
+# Questo risolve il problema delle dipendenze opzionali e architetture mismatch.
+RUN rm -rf node_modules package-lock.json && npm install --silent
+
+# Torna alla directory root del progetto per gli script successivi
+WORKDIR /app
 
 # Copia lo script di esecuzione e imposta i permessi
 COPY runMutantsScript.sh .

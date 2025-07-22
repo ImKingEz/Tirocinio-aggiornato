@@ -1,0 +1,41 @@
+Timestamp: Tue Jul 22 11:07:21 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Tue Jul 22 11:07:27 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Tue Jul 22 11:07:35 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Tue Jul 22 11:07:42 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Tue Jul 22 11:08:02 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_movement_between_templates.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Tue Jul 22 11:08:22 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Tue Jul 22 11:08:39 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------

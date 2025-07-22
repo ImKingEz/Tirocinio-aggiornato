@@ -48,9 +48,9 @@ Usa il flag `--build-arg` per specificare il nome della cartella del tuo progett
 Sostituisci `angular-example-no-id` con il nome effettivo della tua cartella.
 
 
-docker build --build-arg PROJECT_DIR_NAME=angular-example -t mutant-tester .
+docker build --build-arg PROJECT_DIR_NAME=angular-example-no-id -t mutant-tester .
 
-2.2. Eseguire il Container Docker
+2.2. Eseguire il Container Docker (Windows Powershell)
 
 Per eseguire i test, devi specificare il percorso del file HTML da mutare (relativo alla directory `frontend`) e mappare le directory di output per salvare i risultati.
 
@@ -58,8 +58,12 @@ Per eseguire i test, devi specificare il percorso del file HTML da mutare (relat
 mkdir -p output_csv output_logs output_screenshots
 
 # 2. Esegui il container
-docker run \
-  -e TARGET_FILE="src/app/contact-form/contact-form.component.html" -v "$(pwd)/output_csv:/app/output_csv" -v "$(pwd)/output_logs:/app/output_logs" -v "$(pwd)/output_screenshots:/app/output_screenshots" mutant-tester
+docker run `
+  -e TARGET_FILE="src/app/contact-form/contact-form.component.html" `
+  -v "${PWD}\output_csv:/app/output_csv" `
+  -v "${PWD}\output_logs:/app/output_logs" `
+  -v "${PWD}\output_screenshots:/app/output_screenshots" `
+  mutant-tester
 
 
 Output dei risultati:
