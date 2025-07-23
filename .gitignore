@@ -77,6 +77,6 @@ build/
 /dataSources.local.xml
 
 # Log mutanti
-*.csv
-*.log
+output_csv/
+output_logs/
 *.png
