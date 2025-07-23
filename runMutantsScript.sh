@@ -132,6 +132,19 @@ if ! timeout 30 grep -q -E "Application bundle generation complete|Compiled succ
 fi
 echo "✅ Applicazione Angular avviata con successo."
 
+echo "Esecuzione di un 'warm-up' per il compilatore di Angular..."
+
+# 1. PRIMA misuriamo lo stato attuale del log.
+LAST_LOG_LINE_WARMUP=$(wc -l < "$LOG_FILE")
+
+# 2. ORA triggeriamo la modifica che aggiungerà nuove righe al log.
+touch "$DEST_FILE"
+
+# 3. Adesso il ciclo aspetterà correttamente le righe aggiunte DOPO la nostra misurazione.
+if timeout 10 sh -c "while ! tail -n +$((LAST_LOG_LINE_WARMUP + 1)) \"$LOG_FILE\" | grep -q -E 'Application bundle generation complete|Compiled successfully'; do sleep 1; done"; then
+    sleep 2 # Pausa di stabilizzazione
+fi
+
 
 # === ESECUZIONE CICLO DI TEST ===
 
@@ -163,13 +176,28 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
 
         # 2. Attendi la ricompilazione di Angular
         echo "Mutante applicato. In attesa della ricompilazione di Angular (max 30s)..."
-        truncate -s 0 "$LOG_FILE"
         
-        if ! timeout 30 grep -q -E "Application bundle generation complete|Compiled successfully" <(tail -f "$LOG_FILE"); then
-            echo "❌ Timeout durante la ricompilazione di Angular. Il test potrebbe fallire."
-        else
+        RECOMPILE_SUCCESS=false
+        SECONDS=0
+        TIMEOUT=30
+        # Registra quante righe ci sono nel log PRIMA di iniziare ad aspettare
+        LAST_LOG_LINE=$(wc -l < "$LOG_FILE")
+
+        while [ $SECONDS -lt $TIMEOUT ]; do
+            # Controlla solo le NUOVE righe aggiunte al file di log
+            if tail -n +$((LAST_LOG_LINE + 1)) "$LOG_FILE" | grep -q -E "Application bundle generation complete|Compiled successfully"; then
+                RECOMPILE_SUCCESS=true
+                break # Esce dal ciclo while
+            fi
+            sleep 1
+            SECONDS=$((SECONDS + 1))
+        done
+
+        if [ "$RECOMPILE_SUCCESS" = true ]; then
             echo "✅ Angular ha ricompilato."
             sleep 2 # Pausa aggiuntiva per stabilizzazione
+        else
+            echo "❌ Timeout durante la ricompilazione di Angular. Il test potrebbe fallire."
         fi
 
         # 3. Esegui i test Maven

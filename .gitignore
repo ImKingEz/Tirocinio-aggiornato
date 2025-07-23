@@ -75,3 +75,8 @@ build/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Log mutanti
+*.csv
+*.log
+*.png
