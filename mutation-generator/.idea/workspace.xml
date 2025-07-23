@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_attribute_identifier_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_attribute_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_attribute_value_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_insertion.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_movement_between_templates.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_movement_to_root.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_alpha(input)_html_tag_type_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_insertion.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_movement_between_templates.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_movement_to_root.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_html_tag_type_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_text_content_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_beta(label)_text_content_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_attribute_identifier_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_attribute_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_attribute_value_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_insertion.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_movement_between_templates.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_movement_within_container.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_epsilon(div)_html_tag_type_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_attribute_identifier_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_attribute_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_attribute_value_modification.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_insertion.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_movement_between_templates.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_movement_to_root.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_movement_within_container.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_removal.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mutanti_paper_ed_utilities/angular-example-no-id/mutantsToTest/mutant_gamma(div)_html_tag_type_modification.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +86,7 @@
       <workItem from="1753110999955" duration="475000" />
       <workItem from="1753111962225" duration="648000" />
       <workItem from="1753178815601" duration="95000" />
-      <workItem from="1753192126915" duration="3565000" />
+      <workItem from="1753192126915" duration="3678000" />
     </task>
     <servers />
   </component>
