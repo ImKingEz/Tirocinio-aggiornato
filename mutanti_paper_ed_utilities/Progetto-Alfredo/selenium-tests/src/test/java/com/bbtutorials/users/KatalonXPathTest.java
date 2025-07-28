@@ -2,6 +2,7 @@ package com.bbtutorials.users;
 
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 public class KatalonXPathTest extends BaseTest {
   @Test
