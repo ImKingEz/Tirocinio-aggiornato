@@ -6,17 +6,15 @@ import org.openqa.selenium.By;
 public class SeleniumXPathTest extends BaseTest {
   @Test
   public void testContactFormSeleniumXPath() throws Exception {
-    // Campo Nome (usa id)
-    driver.findElement(By.id("name")).click();
-    driver.findElement(By.id("name")).clear();
-    driver.findElement(By.id("name")).sendKeys("SeleniumNome");
+    driver.get("http://localhost:4200/");
 
-    // Campo Email (usa id)
-    driver.findElement(By.id("email")).click();
-    driver.findElement(By.id("email")).clear();
-    driver.findElement(By.id("email")).sendKeys("selenium@example.com");
+    driver.findElement(By.xpath("//div[2]/div/input")).click();
+    driver.findElement(By.xpath("//div[2]/div/input")).clear();
+    driver.findElement(By.xpath("//div[2]/div/input")).sendKeys("calcio,passione");
 
-    // Bottone "Invia Messaggio" (usa CSS Selector)
-    driver.findElement(By.cssSelector("button[type='submit']")).click();
+    driver.findElement(By.xpath("//select[@id='sortorder']")).click();
+    new Select(driver.findElement(By.xpath("//select[@id='sortorder']"))).selectByVisibleText("crescente");
+    
+    driver.findElement(By.xpath("//div/div[2]/div[2]/button")).click();
   }
 }

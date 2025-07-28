@@ -290,8 +290,33 @@ class TagTokenGroup extends BaseTokenGroup {
         if (this.attributeNames.find(t => t.name === name)) {
             throw new Error(`Attribute with name ${name} already found in tag ${this.name}`);
         }
-        const pos = this.children.findIndex(c => !!(c.scopes && c.scopes.find(s => s.match(/\.tag\.end\.html$/))));
-        this.children.splice(pos, 0, new SyntheticToken(' '), AttributeTokenGroup.emptyAttribute(name));
+
+        // Trova l'indice del token di chiusura del tag ('>')
+        const endTagIndex = this.children.findIndex(c => !!(c.scopes && c.scopes.find(s => s.match(/\.tag\.end\.html$/))));
+
+        if (endTagIndex === -1) {
+            // Non è stato trovato un token di chiusura, meglio non fare nulla per sicurezza
+            console.warn(`Could not find closing token for tag <${this.name}>. Skipping attribute injection.`);
+            return;
+        }
+
+        let insertionIndex = endTagIndex;
+
+        // Controlliamo se il token prima di '>' è uno slash '/', tipico dei tag auto-chiudenti
+        if (endTagIndex > 0) {
+            const precedingToken = this.children[endTagIndex - 1];
+            // Controlliamo il valore del token, pulendo eventuali spazi bianchi
+            // In alcuni tokenizer, lo spazio e lo slash potrebbero essere nello stesso token.
+            if (precedingToken && precedingToken.value && precedingToken.value.trim() === '/') {
+                // Se è un tag auto-chiudente (es. <path... />),
+                // dobbiamo inserire l'attributo PRIMA dello slash.
+                insertionIndex = endTagIndex - 1;
+            }
+        }
+
+        // Inseriamo un token per lo spazio e poi il token per l'attributo
+        // nella posizione calcolata.
+        this.children.splice(insertionIndex, 0, new SyntheticToken(' '), AttributeTokenGroup.emptyAttribute(name));
     }
 
     removeAttribute(name) {
