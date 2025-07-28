@@ -1,0 +1,59 @@
+<section class="bg-[#eef1f5] flex-grow flex flex-col relative">
+  <div class="flex flex-col items-center justify-center px-6 pt-8 pb-24 mx-auto flex-grow w-full">
+    <div class="w-full bg-white rounded-lg shadow border border-[#d1d9e0] md:mt-0 sm:max-w-md xl:p-0">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-800 md:text-2xl">
+          Accedi al tuo account
+        </h1>
+        <form data-testid="login-form" id="login-form" class="space-y-4 md:space-y-6" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+          <div>
+            <label for="user" class="block mb-2 text-sm font-medium text-gray-700">Username</label>
+            <input type="text" formControlName="user" id="user" data-testid="login-username-input"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#D97706] focus:border-[#D97706] block w-full p-2.5"
+              required="">
+              @if (loginForm.get('user')?.invalid && (loginForm.get('user')?.dirty || loginForm.get('user')?.touched)) {
+                <div class="mt-1 form-error text-sm text-red-600">
+                  @if (loginForm.get('user')?.hasError('required')) {
+                    <p>L'username è obbligatorio.</p>
+                  }
+                  @if (loginForm.get('user')?.hasError('whitespace')) {
+                    <p>Non si possono inserire solo spazi vuoti.</p>
+                  }
+                </div>
+              }
+          </div>
+          <div>
+            <label for="pass" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+            <input type="password" formControlName="pass" id="pass" data-testid="login-password-input"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#D97706] focus:border-[#D97706] block w-full p-2.5"
+              required="">
+              @if (loginForm.get('pass')?.invalid && (loginForm.get('pass')?.dirty || loginForm.get('pass')?.touched)) {
+                <div class="mt-1 form-error text-sm text-red-600">
+                  @if (loginForm.get('pass')?.hasError('required')) {
+                    <p>La Password è obbligatoria.</p>
+                  }
+                  @if (loginForm.get('pass')?.hasError('whitespace')) {
+                    <p>Non si possono inserire solo spazi vuoti.</p>
+                  }
+                </div>
+              }
+          </div>
+          <button data-testid="login-submit-button" id="button-accedi" type="submit" [disabled]="loginForm.invalid"
+            class="w-full text-white bg-[#D97706] hover:bg-[#B45309] focus:outline-none focus:ring-2 focus:ring-[#B45309] focus:ring-offset-2 focus:ring-offset-white rounded-lg text-sm px-5 py-2.5 text-center disabled:opacity-50 disabled:cursor-not-allowed">Accedi</button>
+          <p class="text-sm font-medium text-gray-500">
+            Non hai ancora un account? <a routerLink="/signup"
+              class="font-medium text-[#4EA8DE] hover:underline">Registrati</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8">
+    <button type="button" (click)="navigateToHome()"
+      class="bg-[#D97706] hover:bg-[#B45309] text-white font-semibold text-base py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#B45309] focus:ring-offset-2 focus:ring-offset-[#eef1f5] transition duration-150 ease-in-out">
+      Torna alla Home
+    </button>
+  </div>
+
+</section>

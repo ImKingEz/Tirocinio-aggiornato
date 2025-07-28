@@ -1,0 +1,63 @@
+<div
+    class="meme-card relative flex h-full w-[300px] border border-gray-300 rounded-md overflow-hidden bg-white shadow-[0_2px_6px_rgba(0,0,0,0.1)]">
+    
+    <div class="meme-card__content flex-1 p-4 flex flex-col min-w-0">
+        
+        <div class="meme-card__header flex justify-between items-baseline mb-2">
+            <span class="meme-card__user font-bold text-gray-800">&commat;{{ meme.uploaderUsername }}</span>
+            <span class="meme-card__date text-gray-500 text-[0.9rem]">{{ meme.createdAt | date:'dd/MM/yyyy' }}</span>
+        </div>
+        <img class="w-full aspect-[4/5] object-contain rounded-[4px] mb-2" [src]="apiUrl + '/' + meme.imageUrl"
+            [alt]="'Meme di ' + meme.uploaderUsername" />
+
+        <div class="meme-card__tags text-[0.9rem] text-gray-800 mt-auto break-words">
+            @for (tag of meme.Tags; track tag.id) {
+            <span class="mr-2">#{{ tag.name }}</span>
+            }
+        </div>
+    </div>
+    <div
+        class="meme-card__stats w-16 bg-gray-50 flex flex-col items-center justify-center gap-4 py-2 border-l border-gray-200">
+
+        <div class="meme-card__stat flex flex-col items-center text-[0.9rem]">
+            <div data-testid="meme-card-like-button" [id]="'like-button-' + meme.id" class="icon cursor-pointer transition-all duration-150 ease-in-out hover:scale-110 active:scale-95"
+                role="button" tabindex="0" aria-label="Like this meme" (click)="onUpvote($event)"
+                 [class.text-green-500]="meme.userVote == 1"
+                 [class.text-gray-600]="meme.userVote != 1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-current">
+                    <path
+                        d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z" />
+                </svg>
+            </div>
+            <div class="stat-number mt-[0.2rem] text-gray-700">{{ meme.upvotes }}</div>
+        </div>
+
+        <div class="meme-card__stat flex flex-col items-center text-[0.9rem]">
+            <div data-testid="meme-card-dislike-button" [id]="'dislike-button-' + meme.id" class="icon cursor-pointer transition-all duration-150 ease-in-out hover:scale-110 active:scale-95"
+                role="button" tabindex="0" aria-label="Dislike this meme" (click)="onDownvote($event)"
+                 [class.text-red-500]="meme.userVote == -1"
+                 [class.text-gray-600]="meme.userVote != -1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-current">
+                    <path
+                        d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z" />
+                </svg>
+            </div>
+            <div class="stat-number mt-[0.2rem] text-gray-700">{{ meme.downvotes }}</div>
+        </div>
+
+        <div class="meme-card__stat relative flex flex-col items-center text-[0.9rem]">
+            <div data-testid="meme-card-comments-button" [id]="'comment-button-' + meme.id" (click)="toggleCommentsPanel($event)" class="icon text-gray-600 cursor-pointer" aria-label="Comments">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-current">
+                    <path
+                        d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z" />
+                </svg>
+            </div>
+            <div class="stat-number mt-[0.2rem] text-gray-700">{{ meme.commentCount }}</div>
+        </div>
+    </div>
+    <app-comments-panel 
+        [isOpen]="isCommentsPanelOpen"
+        [memeId]="meme.id"
+        (memeStateUpdated)="handleMemeStateUpdate($event)">
+    </app-comments-panel>
+</div>

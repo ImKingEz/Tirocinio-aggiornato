@@ -1,0 +1,32 @@
+<div class="meme-del-giorno-page bg-[#eef1f5] flex-grow flex flex-col">
+
+  <div class="flex-grow flex flex-col items-center justify-center px-4 pt-8 pb-24">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8 text-center">
+      Il meme del giorno è...
+    </h1>
+
+    <div class="flex justify-center">
+      @if (isLoading) {
+        <div class="text-center text-gray-600">
+          <p class="font-semibold">Caricamento in corso...</p>
+        </div>
+      }
+      @else if (error) {
+        <div class="text-center text-red-600 bg-red-100 p-4 rounded-lg">
+          <p class="font-bold">Attenzione!</p>
+          <p>{{ error }}</p>
+        </div>
+      }
+      @else if (meme) {
+        <app-meme-item [meme]="meme"></app-meme-item>
+      }
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 p-4 sm:p-6 md:p-8">
+    <button type="button" (click)="navigateToHome()"
+            class="bg-[#D97706] hover:bg-[#B45309] text-white font-semibold text-base py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#B45309] focus:ring-offset-2 focus:ring-offset-[#eef1f5] transition duration-150 ease-in-out">
+      Torna alla Home
+    </button>
+  </div>
+</div>
