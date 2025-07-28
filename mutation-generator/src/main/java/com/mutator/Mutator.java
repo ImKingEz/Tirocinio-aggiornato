@@ -3,6 +3,7 @@ package com.mutator;
 import com.mutator.rules.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements; // <-- IMPORT AGGIUNTO
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,6 +12,10 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class Mutator {
+
+    // --- MODIFICA 1: Definiamo il nome del nostro attributo temporaneo ---
+    // Useremo questo attributo per marcare in modo univoco ogni elemento.
+    private static final String TEMP_ID_ATTR = "data-mutator-temp-id";
 
     private final Document originalDoc;
     private final Element alpha; // Target principale
@@ -22,33 +27,45 @@ public class Mutator {
         this.originalDoc = doc;
         this.alpha = alpha;
         this.outputDir = outputDir;
+
+        // --- MODIFICA 2: Marchiamo ogni elemento del documento originale PRIMA di fare qualsiasi altra cosa ---
+        // Questa operazione viene eseguita una sola volta e rende affidabile la ricerca successiva.
+        addTemporaryIds(this.originalDoc);
+
         identifyTargets();
         initializeRules();
     }
 
+    /**
+     * NUOVO METODO: Aggiunge un attributo temporaneo con un ID univoco a ogni elemento del documento.
+     * Questo ci permette di trovare in modo infallibile l'elemento corrispondente in un clone.
+     * @param doc Il documento da marcare.
+     */
+    private void addTemporaryIds(Document doc) {
+        Elements allElements = doc.getAllElements();
+        for (int i = 0; i < allElements.size(); i++) {
+            Element el = allElements.get(i);
+            // Assegniamo l'indice del ciclo come ID univoco.
+            if (!el.hasAttr(TEMP_ID_ATTR)) {
+                el.attr(TEMP_ID_ATTR, String.valueOf(i));
+            }
+        }
+    }
+
     private void identifyTargets() {
-        // Pulisce la mappa dei target per ogni esecuzione (se il Mutator venisse riutilizzato)
+        // Questo metodo rimane invariato.
         targets.clear();
-
-        // 1. Identifica il target principale
         targets.put("alpha(" + alpha.tagName() + ")", alpha);
-
-        // 2. Identifica il genitore (beta)
         if (alpha.parent() != null) {
             Element beta = alpha.parent();
             targets.put("beta(" + beta.tagName() + ")", beta);
-
-            // 3. Identifica l'antenato a 2 livelli (gamma)
             if (beta.parent() != null) {
                 Element gamma = beta.parent();
-                // Evitiamo di aggiungere il <body> come gamma, non è significativo
                 if (!gamma.tagName().equalsIgnoreCase("body")) {
                     targets.put("gamma(" + gamma.tagName() + ")", gamma);
                 }
             }
         }
-
-        // 4. Identifica i fratelli (delta)
         if (alpha.nextElementSibling() != null) {
             Element deltaNext = alpha.nextElementSibling();
             targets.put("delta_next(" + deltaNext.tagName() + ")", deltaNext);
@@ -57,53 +74,44 @@ public class Mutator {
             Element deltaPrev = alpha.previousElementSibling();
             targets.put("delta_prev(" + deltaPrev.tagName() + ")", deltaPrev);
         }
-
-        // Cerca tra gli antenati di 'alpha' il primo che ha un attributo che inizia con "x-test-tpl".
-        // Usiamo un selettore di attributi che iniziano con una data stringa: [^attributo]
         Element epsilon = alpha.closest("[^x-test-tpl]");
-
         if (epsilon != null && !targets.containsValue(epsilon)) {
             targets.put("epsilon(" + epsilon.tagName() + ")", epsilon);
         }
-
         System.out.println("Identified targets: " + targets.keySet());
     }
 
     private void initializeRules() {
-        mutationRules.add(new AttributeValueModificationRule());        // Rule 'a'
-        mutationRules.add(new AttributeRemovalRule());                  // Rule 'b'
-        mutationRules.add(new AttributeIdentifierModificationRule());   // Rule 'c'
-        mutationRules.add(new TextContentModificationRule());           // Rule 'd'
-        mutationRules.add(new TextContentRemovalRule());                // Rule 'e'
-        mutationRules.add(new HtmlTagMovementWithinContainerRule());    // Rule 'f'
-        mutationRules.add(new HtmlTagMovementToRootRule());             // Rule 'g'
-        mutationRules.add(new HtmlTagMovementBetweenTemplatesRule());   // Rule 'h'
-        mutationRules.add(new HtmlTagRemovalRule());                    // Rule 'i'
-        mutationRules.add(new HtmlTagTypeModificationRule());           // Rule 'j'
-        mutationRules.add(new HtmlTagInsertionRule());                  // Rule 'k'
+        // Questo metodo rimane invariato.
+        mutationRules.add(new AttributeValueModificationRule());
+        mutationRules.add(new AttributeRemovalRule());
+        mutationRules.add(new AttributeIdentifierModificationRule());
+        mutationRules.add(new TextContentModificationRule());
+        mutationRules.add(new TextContentRemovalRule());
+        mutationRules.add(new HtmlTagMovementWithinContainerRule());
+        mutationRules.add(new HtmlTagMovementToRootRule());
+        mutationRules.add(new HtmlTagMovementBetweenTemplatesRule());
+        mutationRules.add(new HtmlTagRemovalRule());
+        mutationRules.add(new HtmlTagTypeModificationRule());
+        mutationRules.add(new HtmlTagInsertionRule());
     }
 
     public int generateMutations() {
+        // Questo metodo rimane invariato nella sua logica principale.
         int count = 0;
         for (MutationRule rule : mutationRules) {
             for (Map.Entry<String, Element> targetEntry : targets.entrySet()) {
                 String targetName = targetEntry.getKey();
 
+                // Il clone erediterà tutti gli attributi temporanei che abbiamo aggiunto.
                 Document docClone = originalDoc.clone();
                 Element targetInClone = findElementInClone(docClone, targetEntry.getValue());
 
                 if (targetInClone != null) {
-                    // 1. Salva l'HTML prima della mutazione
                     String htmlBefore = docClone.body().html();
-
-                    // 2. Applica la regola di mutazione
                     boolean mutationAttempted = rule.apply(targetInClone);
-
-                    // 3. Salva l'HTML dopo la mutazione
                     String htmlAfter = docClone.body().html();
 
-                    // 4. Salva il file SOLO se la regola ha tentato una modifica
-                    //    E il contenuto HTML è effettivamente cambiato.
                     if (mutationAttempted && !htmlBefore.equals(htmlAfter)) {
                         String filename = String.format("mutant_%s_%s.txt", targetName, rule.getRuleName());
                         saveMutant(docClone, filename);
@@ -115,32 +123,46 @@ public class Mutator {
         return count;
     }
 
+    /**
+     * --- MODIFICA 3: Metodo di ricerca completamente riscritto e reso infallibile ---
+     * Invece di usare il fragile cssSelector(), ora usiamo il nostro attributo temporaneo.
+     */
     private Element findElementInClone(Document clone, Element originalElement) {
-        // Il target 'epsilon' è il documento stesso, quindi il suo clone è il documento clonato.
-        // Il metodo cssSelector() fallisce sulla radice. Gestiamo questo caso speciale.
-        if (originalElement == this.originalDoc.root()) {
-            return clone.root();
-        }
+        // 1. Recupera l'ID temporaneo che abbiamo assegnato all'elemento originale.
+        String tempId = originalElement.attr(TEMP_ID_ATTR);
 
-        String selector = originalElement.cssSelector();
-
-        if (selector.isEmpty()) {
-            System.err.println("Warning: Could not generate a reliable CSS selector for element: <" + originalElement.tagName() + ">. Skipping mutations for this target.");
+        // 2. Controlla se l'ID esiste (non dovrebbe mai fallire in questo flusso).
+        if (tempId.isEmpty()) {
+            System.err.println("CRITICAL ERROR: Original element is missing a temporary ID. Cannot find in clone. Element: <" + originalElement.tagName() + ">");
             return null;
         }
 
-        return clone.select(selector).first();
+        // 3. Crea un selettore di attributi. Questo è sicuro, veloce e non genera errori di parsing.
+        // Esempio: [data-mutator-temp-id="42"]
+        String safeSelector = String.format("[%s=\"%s\"]", TEMP_ID_ATTR, tempId);
+
+        // 4. Cerca l'elemento nel clone usando il selettore sicuro.
+        Element foundElement = clone.selectFirst(safeSelector);
+
+        if (foundElement == null) {
+             System.err.println("CRITICAL ERROR: Failed to find element in clone using selector: '" + safeSelector + "'");
+        }
+        return foundElement;
     }
 
+    /**
+     * --- MODIFICA 4: Aggiunta fase di pulizia prima di salvare ---
+     */
     private void saveMutant(Document mutatedDoc, String filename) {
         try {
             Path outputPath = outputDir.resolve(filename);
 
-            // --- MODIFICA CHIAVE ---
-            // Invece di mutatedDoc.outerHtml(), che restituisce l'intero documento (incluso <html>, ecc.),
-            // usiamo mutatedDoc.body().html().
-            // Questo restituisce solo l'HTML INTERNO del tag <body>, che corrisponde
-            // al nostro frammento originale, ma con le mutazioni applicate.
+            // --- FASE DI PULIZIA ---
+            // Prima di salvare, rimuoviamo tutti gli attributi temporanei dal documento
+            // per non "sporcare" l'output finale.
+            mutatedDoc.select("[" + TEMP_ID_ATTR + "]").removeAttr(TEMP_ID_ATTR);
+
+            // Ora il contenuto è pulito e pronto per essere salvato.
             String mutantContent = mutatedDoc.body().html();
 
             Files.write(outputPath, mutantContent.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);

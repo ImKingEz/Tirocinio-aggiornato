@@ -59,7 +59,7 @@ New-Item -Path 'output_csv', 'output_logs', 'output_screenshots' -ItemType Direc
 
 # 2. Esegui il container
 docker run `
-  -e TARGET_FILE="src/app/contact-form/contact-form.component.html" `
+  -e TARGET_FILE="src/app/home-page/home-page.component.html" `
   -v "${PWD}\output_csv:/app/output_csv" `
   -v "${PWD}\output_logs:/app/output_logs" `
   -v "${PWD}\output_screenshots:/app/output_screenshots" `
