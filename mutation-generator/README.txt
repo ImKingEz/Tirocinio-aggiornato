@@ -9,7 +9,7 @@ Comandi per la creazione automatica dei mutanti in maniera analitica:
 mvn clean install
 
 2.
-java -jar target/mutation-generator-1.0-SNAPSHOT.jar -f "C:\Users\WIN10\Desktop\Tirocinio-aggiornato\mutanti_paper_ed_utilities\Progetto-Alfredo\frontend\src\app\home-page\home-page.component.html" -s "#tagsQuery" -o "C:\Users\WIN10\Desktop\Tirocinio-aggiornato\mutanti_paper_ed_utilities\Progetto-Alfredo\mutantsToTest"
+java -jar target/mutation-generator-1.0-SNAPSHOT.jar -f "C:\Users\WIN10\Desktop\Tirocinio-aggiornato\mutanti_paper_ed_utilities\Progetto-Angelo\frontend\src\app\components\nav\nav.component.html" -s "[routerLink='/home']" -o "C:\Users\WIN10\Desktop\Tirocinio-aggiornato\mutanti_paper_ed_utilities\Progetto-Angelo\mutantsToTest"
 
 -f: file su cui generare i mutanti
 -s: selettore css del tag da mutare

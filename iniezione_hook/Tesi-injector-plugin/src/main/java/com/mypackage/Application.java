@@ -43,7 +43,7 @@ public class Application {
             System.out.println("La lista dei file di FE è:");
             System.out.println(feFilePathList);
             List<String> commmandList = createHookInjectionContent(feFilePathList, args[1]);
-            commmandList.add(0,"cd C:\\Users\\volpe\\OneDrive\\Desktop\\Tirocinio-aggiornato\\iniezione_hook\\test-hooks\\test-guard");
+            commmandList.add(0,"cd C:\\Users\\WIN10\\Desktop\\Tirocinio-aggiornato\\iniezione_hook\\test-hooks\\test-guard");
             System.out.println("La lista dei comandi da inserire nel file hookInjection.bat:");
             System.out.println(commmandList);
 

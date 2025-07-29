@@ -1,0 +1,80 @@
+<div class="md:w-fit w-full flex flex-col md:flex-row" x-test-tpl-div-1>
+    <div #postContainer class="md:w-[360px] w-full bg-[#2B2B2B] text-white p-4 space-y-3.5"
+    [ngClass]="{
+        'md:rounded-[15px]': !showComments(),
+        'md:rounded-l-[15px] rounded-r-none': showComments()
+    }" x-test-hook-div-2>
+        <div class="flex justify-between items-center" x-test-hook-div-3>
+            <div class="flex flex-col justify-center items-start" x-test-hook-div-4>
+                <p class="post-username font-semibold text-lg" x-test-hook-p-5>&#64;{{ memeState().UserUserName }}</p>
+                <p class="post-date text-xs text-gray-400" x-test-hook-p-6>{{ memeState().createdAt | date:'dd/MM/yyyy' }} alle ore {{ memeState().createdAt | date:'HH.mm' }}</p>
+            </div>
+            <div class="post-votes text-[#2B2B2B] font-bold flex justify-center items-center space-x-2" x-test-hook-div-7>
+                <div (click)="toggleUpvote()"
+                class="upvote-btn px-2 py-1 rounded-full bg-green-500 hover:bg-green-600 flex items-center text-sm space-x-1 cursor-pointer shadow-md"
+                [ngClass]="{
+                    'outline-2 outline-green-600 outline-offset-2': memeState().userVoteStatus === 1
+                }" x-test-hook-div-8>
+                    <p class="upvote-num" x-test-hook-p-9>{{ memeState().upvotes }}</p>
+                    <img src="arrow-up.png" alt="Upvote" class="size-4" x-test-hook-img-10>
+                </div>
+                <div (click)="toggleDownvote()"
+                class="downvote-btn px-2 py-1 rounded-full bg-red-500 hover:bg-red-600 flex items-center text-sm space-x-1 cursor-pointer shadow-md"
+                [ngClass]="{
+                    'outline-2 outline-red-600 outline-offset-2': memeState().userVoteStatus === -1
+                }" x-test-hook-div-11>
+                    <p class="downvote-num" x-test-hook-p-12>{{ memeState().downvotes }}</p>
+                    <img src="arrow-down.png" alt="Downvote" class="size-4" x-test-hook-img-13>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-start" x-test-hook-div-14>
+            <div class="post-tags flex items-center" x-test-hook-div-15>
+                <p class="post-hashtag text-5xl font-bold mr-2.5" x-test-hook-p-16>#</p>
+                <p class="post-tags-list text-sm max-w-[80%]" x-test-hook-p-17>
+                    {{ formattedTags() }}
+                </p>
+            </div>
+            <div data-testid="post-toggle-comments-button" (click)="toggleComments()" class="comments-btn bg-[#63B2FF] hover:bg-blue-400 text-[#2B2B2B] px-2.5 py-1 rounded-full flex items-center text-sm font-bold space-x-1.5 cursor-pointer shadow-md" x-test-hook-div-18>
+                <p class="comments-num" x-test-hook-p-19>{{ memeState().totalComments }}</p>
+                <img src="comments.png" alt="Commenti" class="size-4" x-test-hook-img-20>
+            </div>
+        </div>
+
+        <div x-test-hook-div-21>
+            <img class="post-image w-full h-auto object-cover rounded-lg" src="http://localhost:3000{{memeState().imgPath}}" alt="Immagine del meme" x-test-hook-img-22>
+        </div>
+
+    </div>
+    @if (showComments()) {
+        <div [style.height.px]="postHeight()" class="flex flex-col md:w-[250px] bg-[#0080FF] p-2  md:rounded-bl-[0px] md:rounded-r-[15px] rounded-b-[15px]" x-test-hook-div-23>
+            <button type="button" (click)="toggleComments()" class="w-fit flex items-center justify-center text-sm bg-[#E8E8E8] rounded-full p-1 cursor-pointer shadow-md hover:bg-[#C2C2C2]" x-test-hook-button-24>
+                <img src="arrow-drop-down.png" alt="Chiudi i commenti" class="size-7 object-contain md:rotate-90 rotate-180" x-test-hook-img-25>
+            </button>
+            <ul data-testid="post-comments-list" class="flex flex-col py-3 mb-3 pl-1 flex-1 space-y-5 overflow-y-auto pr-1" x-test-hook-ul-26>
+            @for (comment of memeState().Comments; track comment.id) {
+                <li x-test-hook-li-27> <app-comment [commentItem]="comment" x-test-hook-app-comment-28 /> </li>
+            }
+            @if (memeState().Comments.length < memeState().totalComments) {
+                <li x-test-hook-li-29>
+                    <button data-testid="post-load-more-comments-button" (click)="loadMoreComments()" class="flex items-center justify-center text-sm bg-[#E8E8E8] rounded-[15px] px-2 py-1 cursor-pointer shadow-md hover:bg-[#C2C2C2]" x-test-hook-button-30>
+                        Mostra di più
+                        <img src="arrow-drop-down.png" alt="Mostra più commenti" class="size-6 inline object-contain" x-test-hook-img-31 />
+                    </button>
+                </li>
+            }
+            </ul>
+            <form [formGroup]="commentForm" (ngSubmit)="onCommentSubmit()"
+            class="flex justify-between md:w-fit w-full bg-[#E8E8E8] py-1 px-6 rounded-r-full rounded-bl-full text-sm shadow-md" x-test-hook-form-32>
+                <input type="text" placeholder="Scrivi un commento..." formControlName="commentText"
+                class="bg-transparent text-m focus:outline-none w-[90%] pr-2"
+                data-testid="post-comment-input" x-test-hook-input-33>
+                <button type="submit" class="bg-[#63B2FF] rounded-full hover:bg-blue-400 cursor-pointer w-fit h-fit flex items-center justify-center p-1.5"
+                data-testid="post-comment-submit-button" x-test-hook-button-34>
+                <img src="submit.png" alt="Invia commento" x-test-hook-img-35 />
+                </button>
+            </form>
+        </div>
+    }
+</div>

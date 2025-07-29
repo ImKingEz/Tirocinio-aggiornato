@@ -1,0 +1,52 @@
+<div class="flex items-center justify-center h-[150px] md:w-[400px]" x-test-tpl-div-1>
+  <form
+    [formGroup]="memeForm"
+    (ngSubmit)="onSubmit()"
+    class="grid place-items-center grid-cols-[75%_25%] grid-rows-[40%_40%_20%] bg-[#2B2B2B] text-[#C3C3C3] w-full h-full rounded-[15px] md:p-3 py-3 px-1" x-test-hook-form-2>
+    
+    <div class="col-span-2 w-[80%]" x-test-hook-div-3>
+      <input
+        class="w-full rounded-[10px] bg-[#484848] px-3 py-2 text-sm placeholder-[#C3C3C3] focus:outline-none"
+        type="text"
+        formControlName="tags"
+        placeholder="Tag1,tag2,tag3"
+        data-testid="create-post-tags"
+        name="create-post-tags"
+      x-test-hook-input-4 />
+      @if (memeForm.get('tags')?.invalid && (memeForm.get('tags')?.dirty || memeForm.get('tags')?.touched)) {
+        <div data-testid="create-post-tags-error" class="text-red-400 text-xs mt-1 pl-1" x-test-hook-div-5>
+          @if (memeForm.get('tags')?.errors?.['required']) {
+            <p x-test-hook-p-6>Devi inserire almeno un tag.</p>
+          }
+          @if (memeForm.get('tags')?.errors?.['tagsPattern']) {
+            <p x-test-hook-p-7>{{ memeForm.get('tags')?.errors?.['tagsPattern'].message }}</p>
+          }
+        </div>
+      }
+    </div>
+    
+    <input
+      #fileInput
+      class="text-sm text-gray-400 file:mr-1 file:ml-8 md:file:ml-4 file:py-1 file:px-2 file:rounded-md 
+             file:border-0 file:text-s file:font-semibold 
+             file:bg-[#63B2FF] file:text-[#2B2B2B] 
+             hover:file:bg-blue-400 file:cursor-pointer cursor-pointer"
+      type="file"
+      (change)="onFileChange($event)"
+      accept="image/*"
+      data-testid="create-post-file-input"
+    x-test-hook-input-8 />
+
+    <button
+      type="submit"
+      class="bg-[#63B2FF] rounded-[50%] hover:bg-blue-400 cursor-pointer w-fit h-fit 
+             flex items-center justify-center p-1.5"
+      data-testid="create-post-submit-button" x-test-hook-button-9>
+      <img src="submit.png" alt="Invia Meme" class="size-6" x-test-hook-img-10 />
+    </button>
+
+    <p class="col-span-2 m-0 text-xs self-start pt-1 text-center" x-test-hook-p-11>
+      I tag devono essere separati da una virgola (es. tag1,tag2)
+    </p>
+  </form>
+</div>

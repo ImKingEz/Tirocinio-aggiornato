@@ -1,0 +1,98 @@
+<div class="w-[300px] bg-[#2B2B2B] text-white rounded-[15px] p-5 shadow-xl space-y-4" x-test-tpl-div-1>
+  <form [formGroup]="authForm" x-test-hook-form-2>
+    <div x-test-hook-div-3>
+      <label for="username" class="block text-sm font-medium mb-1.5" x-test-hook-label-4>Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        formControlName="username"
+        class="w-full p-2.5 rounded-md bg-[#C3C3C3] text-black placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-[#63B2FF]"
+        placeholder="Inserisci username"
+        data-testid="auth-username-input"
+      x-test-hook-input-5 />
+      @if (authForm.get('username')?.invalid && (authForm.get('username')?.dirty || authForm.get('username')?.touched || submitted)) {
+        <div data-testid="auth-username-error" class="text-red-400 text-xs mt-1" x-test-hook-div-6>
+          @if (authForm.get('username')?.errors?.['required']) {
+            <p x-test-hook-p-7>L'username è richiesto.</p>
+          }
+          @if (authForm.get('username')?.errors?.['minlength']) {
+            <p x-test-hook-p-8>L'username deve avere almeno {{ authForm.get('username')?.errors?.['minlength'].requiredLength }} caratteri.</p>
+          }
+          @if (authForm.get('username')?.errors?.['usernamePattern']) {
+            <p x-test-hook-p-9>{{ authForm.get('username')?.errors?.['usernamePattern'].message }}</p>
+          }
+          @if (authForm.get('username')?.errors?.['usernameNeedsLetter']) {
+            <p x-test-hook-p-10>{{ authForm.get('username')?.errors?.['usernameNeedsLetter'].message }}</p>
+          }
+        </div>
+      }
+    </div>
+
+    <div x-test-hook-div-11>
+      <label for="password" class="block text-sm font-medium mb-1.5" x-test-hook-label-12>Password</label>
+      <div class="relative" x-test-hook-div-13>
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          id="password"
+          name="password"
+          formControlName="password"
+          class="w-full p-2.5 rounded-md bg-[#C3C3C3] text-black placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-[#63B2FF] pr-10"
+          placeholder="Inserisci password"
+          data-testid="auth-password-input"
+        x-test-hook-input-14 />
+        <button
+          (click)="togglePasswordVisibility(); $event.stopPropagation()"
+          type="button"
+          class="absolute inset-y-0 right-0 flex items-center pr-3 text-neutral-700 hover:text-neutral-900"
+          aria-label="Mostra o nascondi la password"
+          data-testid="auth-toggle-password-button"
+         x-test-hook-button-15>
+          @if(!showPassword) {
+            <img src="visibility_off.png" class="size-5" x-test-hook-img-16/>
+          } @else {
+            <img src="visibility.png" class="size-5" x-test-hook-img-17/>
+          }
+        </button>
+      </div>
+      @if (authForm.get('password')?.invalid && (authForm.get('password')?.dirty || authForm.get('password')?.touched || submitted)) {
+        <div data-testid="auth-password-error" class="text-red-400 text-xs mt-1" x-test-hook-div-18>
+          @if (authForm.get('password')?.errors?.['required']) {
+            <p x-test-hook-p-19>La password è richiesta.</p>
+          }
+          @if (authForm.get('password')?.errors?.['minlength']) {
+            <p x-test-hook-p-20>La password deve avere almeno {{ authForm.get('password')?.errors?.['minlength'].requiredLength }} caratteri.</p>
+          }
+          @if (authForm.get('password')?.errors?.['passwordNeedsLowercase']) {
+            <p x-test-hook-p-21>{{ authForm.get('password')?.errors?.['passwordNeedsLowercase'].message }}</p>
+          }
+          @if (authForm.get('password')?.errors?.['passwordNeedsUppercase']) {
+            <p x-test-hook-p-22>{{ authForm.get('password')?.errors?.['passwordNeedsUppercase'].message }}</p>
+          }
+          @if (authForm.get('password')?.errors?.['passwordNeedsNumber']) {
+            <p x-test-hook-p-23>{{ authForm.get('password')?.errors?.['passwordNeedsNumber'].message }}</p>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="flex space-x-3 pt-2" x-test-hook-div-24>
+      <button
+        (click)="onRegister()"
+        [disabled]="authForm.invalid && submitted"
+        class="flex-1 py-2.5 px-4 rounded-lg bg-[#63B2FF] text-black hover:bg-blue-400 active:bg-blue-500 font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1C1C1C] focus:ring-[#63B2FF] disabled:opacity-50 disabled:cursor-not-allowed"
+        data-testid="auth-register-button"
+       x-test-hook-button-25>
+        Registrati
+      </button>
+      <button
+        (click)="onLogin()"
+        [disabled]="authForm.invalid && submitted"
+        class="flex-1 py-2.5 px-4 rounded-lg bg-[#63B2FF] text-black hover:bg-blue-400 active:bg-blue-500 font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#1C1C1C] focus:ring-[#63B2FF] disabled:opacity-50 disabled:cursor-not-allowed"
+        data-testid="auth-login-button"
+       x-test-hook-button-26>
+        Login
+      </button>
+    </div>
+  </form>
+</div>

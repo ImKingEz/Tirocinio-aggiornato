@@ -1,0 +1,24 @@
+<div class="flex flex-col grow w-full items-center" x-test-tpl-div-1>
+  <create-post class="mb-15 flex items-center justify-center" x-test-hook-create-post-2 />
+
+  <div class="grid w-full max-w-7xl grid-cols-1 2xl:grid-cols-2 gap-10 justify-items-center items-start mb-10 md:px-4" x-test-hook-div-3>
+    @for(item of memes(); track item.id){
+      <app-post class="md:w-fit w-full" [memeItemInput]="item" (memeUpdated)="onMemeUpdated($event)" x-test-hook-app-post-4 />
+    } @empty {
+      @if (!isLoading()) {
+        <div class="2xl:col-span-2 flex justify-center" x-test-hook-div-5>
+          <img data-testid="no-meme-found-image" src="no-meme-found.png" alt="Nessun meme trovato" class="max-w-[360px] h-auto" x-test-hook-img-6 />
+        </div>
+      }
+    }
+  </div>
+
+  <div class="flex flex-col items-center justify-center" x-test-hook-div-7>
+    <p class="text-white font-semibold" x-test-hook-p-8>Pagina</p>
+    <div class="flex space-x-3 mt-2" x-test-hook-div-9>
+      <img data-testid="previous-page-button" (click)="previousPage()" src="arrow.png" alt="Pagina precedente" class="size-6 rotate-270 cursor-pointer" x-test-hook-img-10 />
+      <p data-testid="current-page" class="text-white font-semibold" x-test-hook-p-11>{{currentPage()}}</p>
+      <img data-testid="next-page-button" (click)="nextPage()" src="arrow.png" alt="Pagina successiva" class="size-6 rotate-90 cursor-pointer" x-test-hook-img-12 />
+    </div>
+  </div>
+</div>

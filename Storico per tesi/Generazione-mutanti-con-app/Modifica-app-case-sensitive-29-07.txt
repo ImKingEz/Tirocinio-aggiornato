@@ -1,0 +1,36 @@
+### Sintesi delle Modifiche Tecniche al Generatore di Mutazioni per la Compatibilità con Framework Moderni (Angular)
+
+Il generatore di mutazioni, basato sulla libreria Java Jsoup, è stato inizialmente sviluppato per operare su documenti HTML standard. L'adattamento del suo funzionamento per processare correttamente i template di un framework moderno come Angular ha richiesto una serie di modifiche architetturali mirate per superare le incompatibilità tra gli standard HTML/XML e la sintassi specifica del framework.
+
+Di seguito sono riassunte le problematiche principali e le relative soluzioni implementate.
+
+#### 1. Gestione della Sensibilità al Maiuscolo/Minuscolo (Case-Sensitivity)
+
+*   **Problema:** Gli attributi specifici di Angular, come la direttiva di property binding `[formGroup]` o l'event binding `(ngSubmit)`, venivano convertiti in minuscolo (es. `[formgroup]`). Questo rendeva il codice HTML mutato invalido per il compilatore di Angular, causando errori in fase di build.
+*   **Causa Tecnica:** Il parser HTML di default di Jsoup, in conformità con lo standard HTML, è case-insensitive e normalizza i nomi degli attributi in minuscolo durante il processo di parsing.
+*   **Soluzione Adottata:** È stato sostituito il parser di default con il parser XML di Jsoup (`Parser.xmlParser()`). A differenza del parser HTML, quello XML è strettamente case-sensitive, garantendo così che la sintassi originale degli attributi Angular venisse letta e preservata fedelmente in memoria.
+
+#### 2. Correzione della Serializzazione del Documento
+
+*   **Problema:** Dopo il passaggio al parser XML, la generazione dei mutanti produceva file vuoti, incompleti o un numero di mutanti inferiore al previsto.
+*   **Causa Tecnica:** Il parser XML, a differenza di quello HTML, non crea una struttura implicita `<html><body>...</body></html>` attorno a un frammento di codice. Di conseguenza, le chiamate a `document.body().html()`, usate per ottenere il contenuto del file, fallivano poiché l'elemento `<body>` non esisteva nel documento parsato.
+*   **Soluzione Adottata:** Tutte le occorrenze di `document.body().html()` sono state sostituite con `document.html()`. Questa modifica ha permesso di serializzare l'intero contenuto del documento parsato, indipendentemente dalla sua struttura interna, ripristinando la corretta generazione dei file mutanti.
+
+#### 3. Gestione degli Attributi Booleani in Output
+
+*   **Problema:** Gli attributi "booleani" (cioè senza valore, come `x-test-tpl-section-1`) venivano scritti nel file di output con un valore vuoto (`x-test-tpl-section-1=""`). Sebbene tecnicamente innocuo per Angular, questo alterava inutilmente il codice e non rispettava la formattazione originale.
+*   **Causa Tecnica:** Questo comportamento era un effetto collaterale dell'impostazione della sintassi di output su XML, poiché lo standard XML richiede che ogni attributo abbia un valore esplicito.
+*   **Soluzione Adottata:** È stato implementato un **approccio ibrido**. Il sistema continua a usare il **parser XML in fase di lettura** per preservare il case, ma è stato configurato per usare la **sintassi HTML in fase di scrittura** (`doc.outputSettings().syntax(Document.OutputSettings.Syntax.html)`). Questo permette di sfruttare il meglio di entrambi i mondi: la preservazione del case del parser XML e la corretta gestione degli attributi booleani del serializzatore HTML.
+
+#### 4. Miglioramenti Architetturali e di Robustezza
+
+Per migliorare la manutenibilità e la solidità del codice, sono stati effettuati i seguenti interventi di rifattorizzazione:
+
+*   **Centralizzazione della Logica di Identificazione dei Template:** La logica per trovare elementi "template" (precedentemente basata su selettori CSS non compatibili con il parser XML) è stata riscritta usando un algoritmo di attraversamento manuale dell'albero DOM. Questa logica è stata poi estratta e centralizzata in una classe di utilità (`TemplateUtils.java`) per eliminare la duplicazione del codice (principio DRY) e garantire coerenza tra le diverse parti del programma (identificazione del target `epsilon` e della regola di mutazione `HtmlTagMovementBetweenTemplatesRule`).
+*   **Indurimento delle Regole di Mutazione:** Tutte le regole di mutazione sono state revisionate per renderle indipendenti dal tipo di parser e dalla struttura del documento. Ad esempio:
+    *   Le operazioni sugli attributi ora preservano il case originale invece di convertirlo in minuscolo.
+    *   Le regole che spostavano elementi alla "radice" sono state modificate per non dipendere più dalla presenza di un tag `<body>`, aggiungendo gli elementi direttamente al documento (`doc.appendChild()`).
+    *   È stata chiarita la differenza tra la rimozione di un tag con i suoi figli (`element.remove()`) e la rimozione del solo tag contenitore (`element.unwrap()`), scegliendo l'approccio più idoneo per la regola `HtmlTagRemovalRule`.
+
+**Risultato Finale:**
+Grazie a questi interventi, il generatore di mutazioni è ora uno strumento robusto, accurato e "framework-aware", capace di processare file di template complessi come quelli di Angular senza corromperne la sintassi, garantendo così la validità dei mutanti generati per i successivi cicli di testing.

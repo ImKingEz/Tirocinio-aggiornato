@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Mutator {
 
@@ -124,12 +125,22 @@ public class Mutator {
         return foundElement;
     }
 
+    // Questa regex trova un carattere '@' che NON è seguito da una parola chiave del control flow di Angular.
+    // L'espressione (?!) è un "negative lookahead".
+    // \b è un "word boundary" per assicurare che non matchi parole come "different".
+    private static final Pattern ANGULAR_AT_SIGN_PATTERN = Pattern.compile(
+            "@(?!(if|for|switch|defer|placeholder|loading|error|else)\\b)"
+    );
+
     private void saveMutant(Document mutatedDoc, String filename) {
         try {
             Path outputPath = outputDir.resolve(filename);
             mutatedDoc.select("[" + TEMP_ID_ATTR + "]").removeAttr(TEMP_ID_ATTR);
 
             String mutantContent = mutatedDoc.html();
+
+            // Questo converte in entità TUTTI gli '@' che non appartengono alla sintassi del control flow di Angular
+            mutantContent = ANGULAR_AT_SIGN_PATTERN.matcher(mutantContent).replaceAll("&#64;");
 
             Files.write(outputPath, mutantContent.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
             System.out.println(" -> Saved: " + filename);
