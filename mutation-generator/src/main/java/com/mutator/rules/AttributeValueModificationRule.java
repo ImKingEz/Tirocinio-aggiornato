@@ -13,30 +13,30 @@ public class AttributeValueModificationRule implements MutationRule {
             return false;
         }
 
-        // Priorità 1: Modificare il valore dell'attributo 'id'
-        if (attributes.hasKeyIgnoreCase("id")) {
+        if (attributes.hasKey("id")) {
             String originalValue = element.id();
             element.id(originalValue + "_mutated");
             return true;
         }
 
-        // Priorità 2: Modificare il valore dell'attributo 'class'
-        if (attributes.hasKeyIgnoreCase("class")) {
+        if (attributes.hasKey("class")) {
             String originalValue = element.className();
             element.addClass(originalValue + "_mutated");
             return true;
         }
 
         for (Attribute attr : attributes) {
-            String key = attr.getKey().toLowerCase();
-            if (!key.equals("id") && !key.equals("class") && !key.startsWith("x-test-")) {
+            String key = attr.getKey();
+            if (!key.equalsIgnoreCase("id") && !key.equalsIgnoreCase("class") && !key.startsWith("x-test-")) {
                 String originalValue = attr.getValue();
-                element.attr(attr.getKey(), originalValue + "_mutated");
+                if (originalValue.isEmpty()) {
+                    element.attr(key, "mutated");
+                } else {
+                    element.attr(key, originalValue + "_mutated");
+                }
                 return true;
             }
         }
-
-        // Se siamo qui, l'elemento ha solo attributi id, class o hook.
         return false;
     }
 

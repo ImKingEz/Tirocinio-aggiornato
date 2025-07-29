@@ -3,6 +3,7 @@ package com.mutator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.parser.Parser;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -32,11 +33,12 @@ public class MutationGenerator implements Callable<Integer> {
             System.err.println("Error: Input file not found at " + inputFile.getAbsolutePath());
             return 1;
         }
-        Files.createDirectories(outputDir); // Crea la directory di output se non esiste
+        Files.createDirectories(outputDir);
         System.out.println("Output directory: " + outputDir.toAbsolutePath());
 
-        // 2. Parsing del file HTML
-        Document doc = Jsoup.parse(inputFile, "UTF-8");
+        // 2. Parsing del file HTML con il PARSER XML per preservare il case
+        Document doc = Jsoup.parse(inputFile, "UTF-8", "", Parser.xmlParser());
+        doc.outputSettings().syntax(Document.OutputSettings.Syntax.html);
 
         // 3. Trova l'elemento target (alpha)
         Element alpha = doc.selectFirst(targetSelector);
@@ -44,7 +46,7 @@ public class MutationGenerator implements Callable<Integer> {
             System.err.println("Error: Target element could not be found with selector: '" + targetSelector + "'");
             return 1;
         }
-        System.out.println("Found target element (α): " + alpha.tagName() + "#" + alpha.id());
+        System.out.println("Found target element (α): " + alpha.tagName() + (alpha.id().isEmpty() ? "" : "#" + alpha.id()));
 
         // 4. Avvia il processo di mutazione
         Mutator mutator = new Mutator(doc, alpha, outputDir);

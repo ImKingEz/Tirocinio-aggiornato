@@ -10,11 +10,10 @@ public class TextContentModificationRule implements MutationRule {
     public boolean apply(Element element) {
         // Iteriamo sui figli diretti dell'elemento per trovare un TextNode non vuoto.
         for (Node child : element.childNodes()) {
-            if (child instanceof TextNode) {
-                TextNode textNode = (TextNode) child;
+            if (child instanceof TextNode textNode) {
                 String originalText = textNode.getWholeText();
                 // Modifichiamo solo se il testo non è composto solo da spazi/a capo.
-                if (originalText.trim().length() > 0) {
+                if (!originalText.trim().isEmpty()) {
                     textNode.text("Text mutated");
                     return true;
                 }

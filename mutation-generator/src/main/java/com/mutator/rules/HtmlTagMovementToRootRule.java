@@ -8,18 +8,22 @@ public class HtmlTagMovementToRootRule implements MutationRule {
     @Override
     public boolean apply(Element element) {
         Document doc = element.ownerDocument();
-        if (doc == null || doc.body() == null) {
+        if (doc == null) {
             return false;
         }
+
         String tagName = element.tagName().toLowerCase();
         if (tagName.equals("html") || tagName.equals("head") || tagName.equals("body")) {
             return false;
         }
-        Element parent = element.parent();
-        if (parent == null || parent == doc.body()) {
+
+        // Se l'elemento è già un figlio diretto della radice, non facciamo nulla.
+        if (element.parent() == doc) {
             return false;
         }
-        doc.body().appendChild(element);
+
+        // Aggiunge l'elemento come ultimo figlio del documento.
+        doc.appendChild(element);
         return true;
     }
 

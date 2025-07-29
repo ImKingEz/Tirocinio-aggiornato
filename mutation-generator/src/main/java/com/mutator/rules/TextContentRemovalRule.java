@@ -13,9 +13,9 @@ public class TextContentRemovalRule implements MutationRule {
     public boolean apply(Element element) {
         List<Node> nodesToRemove = new ArrayList<>();
         for (Node child : element.childNodes()) {
-            if (child instanceof TextNode) {
+            if (child instanceof TextNode textNode) {
                 // Rimuoviamo solo se il testo non è solo whitespace.
-                if (((TextNode) child).getWholeText().trim().length() > 0) {
+                if (!textNode.getWholeText().trim().isEmpty()) {
                     nodesToRemove.add(child);
                 }
             }

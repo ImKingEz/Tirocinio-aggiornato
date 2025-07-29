@@ -1,0 +1,51 @@
+### Titolo: Risoluzione di Errore Critico e Miglioramento della Robustezza del Generatore di Mutanti
+
+#### 1. Il Problema Iniziale
+
+Durante l'esecuzione del generatore di mutanti su un file HTML che utilizzava il framework **Tailwind CSS**, è stato riscontrato un errore critico che bloccava il processo:
+
+`org.jsoup.select.Selector$SelectorParseException: Did not find balanced marker`
+
+L'analisi ha rivelato che la causa risiedeva nel metodo `element.cssSelector()` della libreria Jsoup. Questo metodo, utilizzato per generare un selettore CSS univoco per un dato elemento, non è in grado di gestire correttamente la sintassi delle classi generate da Tailwind CSS. Tali classi contengono caratteri speciali (es. `[`, `]`, `(`, `)`, `:`) che hanno un significato riservato nei selettori CSS. Il selettore generato da Jsoup risultava quindi sintatticamente invalido, causando il fallimento del parser durante la ricerca dell'elemento nel documento clonato.
+
+Questo rendeva l'approccio originale fragile e inaffidabile, poiché il suo successo dipendeva strettamente dalla semplicità degli attributi `class` presenti nell'HTML di input.
+
+#### 2. Strategia di Risoluzione Adottata: Marcatura con Attributo Temporaneo
+
+Dopo aver considerato diverse alternative (come la generazione di un percorso tramite indici o la mappatura diretta degli oggetti), è stata scelta una strategia basata sulla **marcatura temporanea degli elementi**.
+
+Questa soluzione è stata preferita per il suo equilibrio ottimale tra **robustezza, performance e semplicità di implementazione**.
+
+Il concetto è il seguente:
+1.  **Marcatura (Marking):** Prima di avviare il processo di mutazione, si attraversa una sola volta l'intero documento HTML originale in memoria. A ogni singolo elemento viene aggiunto un attributo temporaneo univoco (es. `data-mutator-temp-id="42"`).
+2.  **Ricerca (Lookup):** Per trovare un elemento in un documento clonato, non si genera più un selettore CSS complesso. Si recupera invece l'ID temporaneo dall'elemento originale e si utilizza un selettore di attributo semplice e infallibile (es. `[data-mutator-temp-id="42"]`) per localizzare l'esatto corrispondente nel clone.
+3.  **Pulizia (Cleanup):** Prima di salvare il file mutante su disco, tutti gli attributi temporanei vengono rimossi dal documento, garantendo che l'output sia pulito e non contenga artefatti del processo di mutazione.
+
+#### 3. Descrizione delle Modifiche Implementate nella Classe `Mutator.java`
+
+Per implementare questa strategia, sono state apportate le seguenti modifiche chiave:
+
+1.  **Introduzione di un Attributo di Marcatura:**
+    *   È stata definita una costante `private static final String TEMP_ID_ATTR = "data-mutator-temp-id";` per garantire coerenza e manutenibilità.
+
+2.  **Marcatura Iniziale del Documento:**
+    *   È stato creato un nuovo metodo privato, `addTemporaryIds(Document doc)`, che itera su tutti gli elementi del documento e assegna loro l'attributo temporaneo con un valore progressivo.
+    *   Questo metodo viene invocato nel costruttore della classe `Mutator`, assicurando che il documento originale sia "preparato" prima dell'inizio di qualsiasi operazione.
+
+3.  **Sostituzione della Logica di Ricerca (`findElementInClone`):**
+    *   Il metodo `findElementInClone` è stato completamente riscritto. La vecchia logica basata su `originalElement.cssSelector()` è stata eliminata.
+    *   La nuova implementazione recupera il valore di `TEMP_ID_ATTR` dall'elemento originale e costruisce un selettore di attributo sicuro (`"[%s=\"%s\"]"`) per trovare l'elemento nel clone. Questo elimina alla radice la possibilità di un `SelectorParseException`.
+
+4.  **Pulizia del Documento Mutato (`saveMutant`):**
+    *   Il metodo `saveMutant` è stato aggiornato con una fase di pulizia. Prima di generare la stringa HTML da salvare, viene eseguita l'istruzione `mutatedDoc.select("[" + TEMP_ID_ATTR + "]").removeAttr(TEMP_ID_ATTR);` per rimuovere tutti gli attributi di marcatura.
+
+#### 4. Conclusioni e Vantaggi Ottenuti
+
+L'implementazione di questa nuova strategia ha portato a significativi miglioramenti:
+
+*   **Risoluzione Completa dell'Errore:** L'errore `SelectorParseException` è stato eliminato, consentendo al programma di funzionare correttamente con qualsiasi tipo di file HTML.
+*   **Aumento della Robustezza:** Il generatore è ora agnostico rispetto alla sintassi degli attributi presenti nel codice sorgente. Funziona in modo affidabile con HTML generato da framework moderni come Angular, React o Vue, e con librerie CSS come Tailwind CSS.
+*   **Miglioramento delle Performance:** L'operazione di marcatura, leggermente costosa, viene eseguita una sola volta. Le successive operazioni di ricerca sono estremamente veloci, basandosi su selettori di attributi semplici e ottimizzati.
+*   **Mantenimento della Pulizia dell'Output:** Il processo non lascia tracce nei file mutanti generati, garantendo che siano validi e puliti.
+
+In sintesi, le modifiche apportate hanno trasformato uno strumento fragile in un sistema robusto, affidabile e universalmente applicabile per la generazione di mutanti HTML.
