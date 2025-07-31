@@ -1,0 +1,53 @@
+In questa chat voglio che tieni sempre conto di queste informazioni:
+1)Tipologie di mutazioni (in formato csv):
+Object Type,Change ID,Change Type Description,Original Code,Modified Code
+Attribute,a,Attribute Value Modification,<tag attr="value"> text </tag>,<tag attr="newValue"> text </tag>
+Attribute,b,Attribute Removal,<tag attr="value"> text </tag>,<tag> text </tag>
+Attribute,c,Attribute Identifier Modification,<tag attr="value"> text </tag>,<tag newAttr="value"> text </tag>
+Text,d,Text Content Modification,<tag attr="value"> text </tag>,<tag attr="value"> newText </tag>
+Text,e,Text Content Removal,<tag attr="value"> text </tag>,<tag attr="value"> </tag>
+Tag,f,HTML Tag Movement (within a container),<div> <tag></tag> <tag attr="value"> text </tag> </div>,<div> <tag attr="value"> text </tag> <tag></tag> </div>
+Tag,g,HTML Tag Movement (in any point of the HTML tree),<div> <tag attr="value"> text </tag> <tag></tag> </div>,<tag attr="value"> text </tag> <div> <tag></tag> </div>
+Tag,h,HTML Tag Movement (between two templates),<template1> <tag attr="value"> text </tag> </template1> <template2> </template2>,<template1> </template1> <template2> <tag attr="value"> text </tag> </template2>
+Tag,i,HTML Tag Removal,<tag attr="value"> text </tag>,text
+Tag,j,HTML Tag Type Modification,<tag attr="value"> text </tag>,<newTag attr="value"> text </newTag>
+Tag,k,HTML Tag Insertion,<tag attr="value"> text </tag>,<tag> </tag> <tag attr="newValue"> text </tag>
+
+2) Parentele tra i tag:
+<template>          <!-- $\epsilon$ (template)   -->
+<p>                 <!-- $\gamma$ (ancestor)   -->
+<div>               <!-- $\beta$ (parent)     -->
+<a onclick="go()">  <!-- $\alpha$ (target tag) -->
+<a href="\#top">    <!-- $\delta$ (sibling)    -->
+</div>
+</p>
+</template>
+
+Nei prossimi messaggi ti invierò del codice html e di quel codice ti indicherò quale è il tag target.
+Dovrai inviarmi il codice modificato (mutato), effettuando le modifiche (dall'id "a" all'id "k") presenti nel primo punto scritto sopra.
+
+Tali modifiche saranno effettuate:
+-al tag target
+-al fratello del tag target
+-al genitore del tag target
+-ad un antenato del tag target
+-al template contenente il tag target
+
+Un esempio di questi elementi è riportato nel secondo punto scritto sopra (Ovviamente, se nei codici ricevuti alcuni di questi elementi non dovessero esistere, la mutazione per quell'elemento non viene effettuata).
+
+Tieni conto che per ogni mutazione devi far riferimento solo al tag preso in questione.
+
+Di seguito ti riporto delle informazioni da tenere conto per la generazione dei codici modificati (mutanti) per alcuni id (quelli presenti nel primo punto scritto sopra):
+-Per l'id "a" e "b" ovvero per la modifica di un valore di un attributo o la sua rimozione, dare priorità (in ordine di importanza) agli attributi "id" e "class", se non presenti scegliere un qualsiasi attributo ad eccezione di quelli che iniziano con "x-test-tpl" o "x-test-hook", quest'ultimi non devono essere considerati nelle modifiche.
+-Per l'id "f" la modifica può essere effettuata solo se il tag in questione è contenuto in un altro tag.
+-Per l'id "g" la modifica può essere sempre effettuata.
+-Per l'id "h" la modifica può essere effettuata solo se nel codice sono presenti almeno 2 template, tieni presente che un tag è un template se ha un attributo che inizia con "x-test-tpl", se il tag target è un template e nel codice è presente un altro tag template devi spostare il tag target (con il suo contenuto) nell'altro template.
+-Per l'id "i" si deve eliminare solo il tag preso in considerazione e non anche i tag contenuti in esso ed il testo se presenti.
+-Per l'id "j" il tag modificato dovrà sempre essere un tag html standard.
+-Per l'id "k" si intende l'inserimento di un nuovo tag html standard come fratello del tag in questione.
+
+Un'altra cosa molto importante, voglio che tutti i codici html (mutanti) che mi invii devono essere tutti funzionanti/eseguibili, ovvero non devono generarmi un'errore quando avvio il frontend
+
+Infine voglio che mi strutturi la risposta in modo da avere in ordine le 11 mutazioni (presenti nel primo punto scritto sopra) per ogni tag descritto sopra, inoltre inviami sempre il codice completo mutato e per ogni codice mutato inserisci alla prima riga un commento (in html) che descrive la modifica fatta. Inviami tutti i codici con estensione .txt.
+
+Rispondimi solo con OK se hai capito tutto, dal prossimo messaggio ti invierò il codice da mutare ed il tag target.

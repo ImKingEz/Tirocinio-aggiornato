@@ -2,6 +2,7 @@ Per file di medie/grandi dimensioni l'LLM non è in grado di generare mutazioni,
 
 
 codice d'esempio per cui non funzionava la generazione di mutanti con LLM:
+
 <section class="py-6 bg-[#eef1f5]" x-test-tpl-section-1>
   <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()" x-test-hook-form-2>
     <div class="container max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" x-test-hook-div-3>

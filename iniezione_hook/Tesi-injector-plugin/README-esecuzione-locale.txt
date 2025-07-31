@@ -6,9 +6,3 @@ PASSAGGI PER ESEGUIRE Application.java IN LOCALE SU WINDOWS:
  5) aprire il terminale nella cartella "Tesi-injector-plugin" poi eseguire i comandi:
    - mvn clean install
    - java -jar target\Tesi-injector-plugin-1.0-SNAPSHOT.jar ".html" "angularjs" "C:\\tuo\\path\\Tesi-StrumentoGenerale-master\\insert-here-your-web-app\\tua\\app"
-
-MODIFICHE EFFETTUATE AL FILE Application.java:
- 1) Aggiunta la funzionalità per prendere automaticamente il path assoluto di hookInjection.bat
- 2) L'esecuzione dello script all'interno di "pb.command(...)" avviene tramite "cmd.exe /c hookInjection.bat" e non più con bash
- 3) Modificato il metodo "createHookInjectionShContent" che ora è stato rinominato in "createHookInjectionContent" inserendo tra virgolette il percorso del file per gestire spazi o caratteri speciali
- 4) Correzione del bug che aggiungeva in modo errato l'hook a tag che si chiudevano sulla stessa riga (esempio del bug <path /> => <path /x-test...>)

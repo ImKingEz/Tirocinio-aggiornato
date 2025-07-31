@@ -11,7 +11,7 @@ i test di mutazione UI.
 --------------------------------------------------------------
 
 La struttura delle cartelle locale (sulla tua macchina host) deve essere la seguente:
-* Ricorda che il progetto deve usare Angular 19 !!!
+*** Ricorda che il progetto deve usare Angular 19 !!! ***
 
 Tirocinio-aggiornato/
 │
@@ -46,10 +46,10 @@ Assicurati di essere nella directory radice (`Tirocinio-aggiornato`) quando eseg
 2.1. Costruire l'Immagine Docker
 
 Usa il flag `--build-arg` per specificare il nome della cartella del tuo progetto.
-Sostituisci `angular-example-no-id` con il nome effettivo della tua cartella.
+Sostituisci `NOME_PROGETTO_VARIABILE` con il nome effettivo della tua cartella.
 
 
-docker build --build-arg PROJECT_DIR_NAME=angular-example-no-id -t mutant-tester .
+docker build --build-arg PROJECT_DIR_NAME=NOME_PROGETTO_VARIABILE -t mutant-tester .
 
 2.2. Eseguire il Container Docker (Windows Powershell)
 
@@ -60,7 +60,7 @@ New-Item -Path 'output_csv', 'output_logs', 'output_screenshots' -ItemType Direc
 
 # 2. Esegui il container
 docker run `
-  -e TARGET_FILE="src/app/home-page/home-page.component.html" `
+  -e TARGET_FILE="src/app/path/del/file/da/mutare/file.html" `
   -v "${PWD}\output_csv:/app/output_csv" `
   -v "${PWD}\output_logs:/app/output_logs" `
   -v "${PWD}\output_screenshots:/app/output_screenshots" `
