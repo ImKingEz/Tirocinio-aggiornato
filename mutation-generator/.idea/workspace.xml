@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../iniezione_hook/Tesi-injector-plugin/hookInjection.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../iniezione_hook/Tesi-injector-plugin/hookInjection.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../iniezione_hook/Tesi-injector-plugin/src/main/java/com/mypackage/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../iniezione_hook/Tesi-injector-plugin/src/main/java/com/mypackage/Application.java" afterDir="false" />
-    </list>
+    <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +92,7 @@
       <workItem from="1753794220431" duration="1131000" />
       <workItem from="1753796303729" duration="177000" />
       <workItem from="1753796787680" duration="494000" />
+      <workItem from="1753956655781" duration="1265000" />
     </task>
     <servers />
   </component>

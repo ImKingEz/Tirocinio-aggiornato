@@ -11,6 +11,7 @@ i test di mutazione UI.
 --------------------------------------------------------------
 
 La struttura delle cartelle locale (sulla tua macchina host) deve essere la seguente:
+* Ricorda che il progetto deve usare Angular 19 !!!
 
 Tirocinio-aggiornato/
 │
@@ -18,7 +19,7 @@ Tirocinio-aggiornato/
 │   │
 │   └── NOME_PROGETTO_VARIABILE/  <-- CARTELLA VARIABILE
 │       │                           (Es. "angular-example-no-id", "my-project-v1")
-│       ├── frontend/     	   <-- CARTELLA FISSA (L'applicazione Angular)
+│       ├── frontend/     	       <-- CARTELLA FISSA (L'applicazione Angular 19)
 │       │   ├── src/
 │       │   └── ...
 │       │
@@ -34,7 +35,7 @@ Tirocinio-aggiornato/
 │
 ├── Dockerfile                    <-- Il file Dockerfile per costruire l'immagine
 │
-└── runMutantsScript.sh           <-- Lo script bash che orchestra l'esecuzio
+└── runMutantsScript.sh           <-- Lo script bash che orchestra l'esecuzione
 
 --------------------------------------------------------------
 2. Costruzione ed Esecuzione dell'Immagine Docker
