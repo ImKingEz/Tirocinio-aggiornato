@@ -15,7 +15,7 @@ La struttura delle cartelle locale (sulla tua macchina host) deve essere la segu
 
 Tirocinio-aggiornato/
 │
-├── mutanti_paper_ed_utilities/
+├── progetti-per-test/
 │   │
 │   └── NOME_PROGETTO_VARIABILE/  <-- CARTELLA VARIABILE
 │       │                           (Es. "angular-example-no-id", "my-project-v1")

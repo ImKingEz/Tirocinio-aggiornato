@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="" />
+    <list default="true" id="e281ba2a-74ab-41a6-834f-7ac0805630b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../iniezione_hook/Tesi-injector-plugin/README-esecuzione-locale.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../iniezione_hook/Tesi-injector-plugin/README-esecuzione-locale.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../runMutantsScript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../runMutantsScript.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +31,12 @@
     &quot;assignee&quot;: &quot;ImKingEz&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ImKingEz/Tirocinio-aggiornato.git&quot;,
-    &quot;accountId&quot;: &quot;52be8375-f2d0-47ac-9a14-7b2d0318bd33&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ImKingEz/Tirocinio-Aggiornato.git",
+    "accountId": "52be8375-f2d0-47ac-9a14-7b2d0318bd33"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -93,6 +97,7 @@
       <workItem from="1753796303729" duration="177000" />
       <workItem from="1753796787680" duration="494000" />
       <workItem from="1753956655781" duration="1265000" />
+      <workItem from="1756727477533" duration="135000" />
     </task>
     <servers />
   </component>

@@ -12,9 +12,10 @@
 #    a. Sostituisce un file sorgente dell'app con il mutante.
 #    b. Attende la ricompilazione di Angular.
 #    c. Esegue una suite di test Maven/TestNG specifica per il locator.
-#    d. Registra il risultato (success/failure) e la causa del fallimento.
+#    d. Registra il risultato (success/failure), la causa e il locator fallito.
 #    e. Ripristina il file sorgente originale.
 # 5. Produce un file CSV completo con tutti i risultati.
+# 6. Produce un file CSV di riepilogo con le statistiche aggregate.
 #
 
 # === CONFIGURAZIONE ===
@@ -22,15 +23,13 @@ echo "=== INIZIO PROCESSO DI TEST DI MUTAZIONE ==="
 START_TIME=$(date +%s)
 
 # --- PERCORSI FISSI E ROBUSTI ALL'INTERNO DEL CONTAINER ---
-# Salva la directory di lavoro radice (/app) per garantire percorsi assoluti
 SCRIPT_ROOT_DIR=$(pwd)
+APP_ROOT_DIR="${SCRIPT_ROOT_DIR}/frontend"
+MAVEN_PROJECT_ROOT="${SCRIPT_ROOT_DIR}/selenium-tests"
+TESTNG_SUITES_DIR="${SCRIPT_ROOT_DIR}/testng_suites"
+SOURCE_DIR="${SCRIPT_ROOT_DIR}/mutantsToTest"
 
-APP_ROOT_DIR="${SCRIPT_ROOT_DIR}/frontend" # La root dell'app Angular
-MAVEN_PROJECT_ROOT="${SCRIPT_ROOT_DIR}/selenium-tests"     # La root del progetto Maven per i test
-TESTNG_SUITES_DIR="${SCRIPT_ROOT_DIR}/testng_suites"       # Directory con le suite di test TestNG
-SOURCE_DIR="${SCRIPT_ROOT_DIR}/mutantsToTest"              # Directory con i file HTML mutanti
-
-# --- DIRECTORY DI OUTPUT (create fuori dalla struttura del progetto) ---
+# --- DIRECTORY DI OUTPUT ---
 LOG_DIR="${SCRIPT_ROOT_DIR}/output_logs"
 CSV_DIR="${SCRIPT_ROOT_DIR}/output_csv"
 SCREENSHOT_DIR="${SCRIPT_ROOT_DIR}/output_screenshots"
@@ -38,12 +37,14 @@ SCREENSHOT_DIR="${SCRIPT_ROOT_DIR}/output_screenshots"
 mkdir -p "$LOG_DIR" "$CSV_DIR" "$SCREENSHOT_DIR"
 echo "Directory di output preparate."
 
-# --- FILE DI LOG E RISULTATI (definiti con percorsi assoluti) ---
+# --- FILE DI LOG E RISULTATI ---
 TIMESTAMP=$(date +"%d-%m-%Y_%H-%M-%S")
 LOG_FILE="${LOG_DIR}/ng-serve.log"
 RESULT_LOG="${LOG_DIR}/mutant_test_results_${TIMESTAMP}.log"
 MAVEN_TEST_LOG="${LOG_DIR}/maven_test_output.log"
 GLOBAL_CSV_FILE="${CSV_DIR}/all_mutants_results_${TIMESTAMP}.csv"
+SUMMARY_CSV_FILE="${CSV_DIR}/summary_results_${TIMESTAMP}.csv"
+
 
 # --- CONFIGURAZIONE TEST (FILE TARGET DINAMICO) ---
 if [ -z "$TARGET_FILE" ]; then
@@ -52,7 +53,6 @@ if [ -z "$TARGET_FILE" ]; then
     exit 1
 fi
 
-# Il percorso del file target è relativo alla root dell'app Angular
 DEST_FILE="${APP_ROOT_DIR}/${TARGET_FILE}"
 TARGET_FILENAME=$(basename "$TARGET_FILE")
 BACKUP_FILE="/tmp/backup_${TARGET_FILENAME}"
@@ -73,11 +73,9 @@ rm -rf "$SCREENSHOT_DIR"/*
 
 # === PREPARAZIONE AMBIENTE ===
 
-# 1. Backup del file originale per ripristinarlo dopo ogni mutazione
 echo "Creazione backup del file HTML originale..."
 cp "$DEST_FILE" "$BACKUP_FILE"
 
-# 2. Pre-installazione delle dipendenze Maven
 echo "Installazione delle dipendenze Maven per il progetto di test (mvn clean install -DskipTests)..."
 cd "$MAVEN_PROJECT_ROOT"
 mvn clean install -DskipTests > "${LOG_DIR}/maven_initial_setup.log" 2>&1
@@ -87,7 +85,6 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ Dipendenze Maven installate."
 
-# 3. Avvio dell'applicazione Angular
 echo "Avvio dell'applicazione Angular..."
 cd "$APP_ROOT_DIR"
 if [ ! -d "node_modules" ]; then
@@ -95,64 +92,46 @@ if [ ! -d "node_modules" ]; then
     npm install --silent
 fi
 
-# Assicurati che la directory di log esista prima di avviare ng serve
-# (già fatto all'inizio, ma non fa male qui)
 mkdir -p "$LOG_DIR"
-
 (ng serve --host 0.0.0.0 > "$LOG_FILE" 2>&1 &)
 NG_PID=$!
 
-# AGGIUNTA: Attesa per la creazione del file di log da parte di ng serve
 echo "In attesa che il file di log di Angular sia creato ($LOG_FILE)..."
-MAX_WAIT_FOR_LOG_FILE=10 # secondi
+MAX_WAIT_FOR_LOG_FILE=10
 ELAPSED_WAIT_FOR_LOG_FILE=0
 while [ ! -f "$LOG_FILE" ] && [ $ELAPSED_WAIT_FOR_LOG_FILE -lt $MAX_WAIT_FOR_LOG_FILE ]; do
-    sleep 0.5 # Aspetta mezzo secondo
+    sleep 0.5
     ELAPSED_WAIT_FOR_LOG_FILE=$((ELAPSED_WAIT_FOR_LOG_FILE + 1))
 done
 
 if [ ! -f "$LOG_FILE" ]; then
     echo "❌ Errore: Il file di log di Angular ($LOG_FILE) non è stato creato entro ${MAX_WAIT_FOR_LOG_FILE} secondi."
-    if [ ! -z "$NG_PID" ]; then
-        kill $NG_PID
-    fi
+    if [ ! -z "$NG_PID" ]; then kill $NG_PID; fi
     exit 1
 fi
 
-# Attesa avvio iniziale di Angular
-# MODIFICA: Utilizza -E per l'espressione regolare "OR" come nella sezione successiva
 echo "In attesa che l'applicazione Angular si avvii (max 30s)..."
 if ! timeout 30 grep -q -E "Application bundle generation complete|Compiled successfully" <(tail -f "$LOG_FILE"); then
     echo "❌ Timeout durante l'avvio iniziale di Angular. Lo script verrà interrotto."
     cat "$LOG_FILE"
-    if [ ! -z "$NG_PID" ]; then
-        kill $NG_PID
-    fi
+    if [ ! -z "$NG_PID" ]; then kill $NG_PID; fi
     exit 1
 fi
 echo "✅ Applicazione Angular avviata con successo."
 
 echo "Esecuzione di un 'warm-up' per il compilatore di Angular..."
-
-# 1. PRIMA misuriamo lo stato attuale del log.
 LAST_LOG_LINE_WARMUP=$(wc -l < "$LOG_FILE")
-
-# 2. ORA triggeriamo la modifica che aggiungerà nuove righe al log.
 touch "$DEST_FILE"
-
-# 3. Adesso il ciclo aspetterà correttamente le righe aggiunte DOPO la nostra misurazione.
 if timeout 10 sh -c "while ! tail -n +$((LAST_LOG_LINE_WARMUP + 1)) \"$LOG_FILE\" | grep -q -E 'Application bundle generation complete|Compiled successfully'; do sleep 1; done"; then
-    sleep 2 # Pausa di stabilizzazione
+    sleep 2
 fi
-
 
 # === ESECUZIONE CICLO DI TEST ===
 
-# Inizializza il file CSV per i risultati globali
-echo "locator_type,mutant,result,failure_cause" > "$GLOBAL_CSV_FILE"
+# [MODIFICA - CSV] Usa il punto e virgola come separatore per l'header del CSV
+echo "locator_type;mutant;result;failure_cause;failed_locator" > "$GLOBAL_CSV_FILE"
 echo "Inizio del ciclo di test sui mutanti..."
 
-# Cicla su ogni tipo di locator
 for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
     echo "====================================================="
     echo "=== ESECUZIONE TEST CON LOCATOR: ${CURRENT_LOCATOR_TYPE} ==="
@@ -161,33 +140,27 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
     CURRENT_TEST_SUITE_FILE="${TESTNG_SUITES_DIR}/testng-${CURRENT_LOCATOR_TYPE}.xml"
     if [ ! -f "$CURRENT_TEST_SUITE_FILE" ]; then
         echo "⚠️  Attenzione: File suite TestNG non trovato per ${CURRENT_LOCATOR_TYPE} in ${TESTNG_SUITES_DIR}. Salto questo locator."
-        echo "${CURRENT_LOCATOR_TYPE},N/A,error,\"TestNG suite file not found\"" >> "$GLOBAL_CSV_FILE"
+        # [MODIFICA - CSV] Usa il punto e virgola come separatore
+        echo "${CURRENT_LOCATOR_TYPE};N/A;error;\"TestNG suite file not found\";\"N/A\"" >> "$GLOBAL_CSV_FILE"
         continue
     fi
 
-    # Ciclo su ogni file mutante
     for MUTANT_FILE in "$SOURCE_DIR"/*; do
         CURRENT_MUTANT_NAME=$(basename "$MUTANT_FILE")
         echo "-------------------------------------"
         echo "Processing Mutant: $CURRENT_MUTANT_NAME (Locator Type: $CURRENT_LOCATOR_TYPE)"
 
-        # 1. Applica il mutante
         cp "$MUTANT_FILE" "$DEST_FILE"
-
-        # 2. Attendi la ricompilazione di Angular
         echo "Mutante applicato. In attesa della ricompilazione di Angular (max 30s)..."
         
         RECOMPILE_SUCCESS=false
         SECONDS=0
         TIMEOUT=30
-        # Registra quante righe ci sono nel log PRIMA di iniziare ad aspettare
         LAST_LOG_LINE=$(wc -l < "$LOG_FILE")
-
         while [ $SECONDS -lt $TIMEOUT ]; do
-            # Controlla solo le NUOVE righe aggiunte al file di log
             if tail -n +$((LAST_LOG_LINE + 1)) "$LOG_FILE" | grep -q -E "Application bundle generation complete|Compiled successfully"; then
                 RECOMPILE_SUCCESS=true
-                break # Esce dal ciclo while
+                break
             fi
             sleep 1
             SECONDS=$((SECONDS + 1))
@@ -195,20 +168,19 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
 
         if [ "$RECOMPILE_SUCCESS" = true ]; then
             echo "✅ Angular ha ricompilato."
-            sleep 2 # Pausa aggiuntiva per stabilizzazione
+            sleep 2
         else
             echo "❌ Timeout durante la ricompilazione di Angular. Il test potrebbe fallire."
         fi
 
-        # 3. Esegui i test Maven
         cd "$MAVEN_PROJECT_ROOT"
         echo "Esecuzione test Maven..."
         mvn test -Dtest.suite.file="$CURRENT_TEST_SUITE_FILE" -Dscreenshot.path="$SCREENSHOT_DIR" > "$MAVEN_TEST_LOG" 2>&1
         TEST_EXIT_CODE=$?
 
-        # 4. Analizza il risultato
         TEST_RESULT="failure"
         FAILURE_CAUSE="Unknown cause. Check $MAVEN_TEST_LOG for details."
+        FAILED_LOCATOR="N/A"
 
         if [ "$TEST_EXIT_CODE" -eq 0 ]; then
             TEST_RESULT="success"
@@ -216,8 +188,10 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
         else
             if grep -q "org.openqa.selenium.NoSuchElementException" "$MAVEN_TEST_LOG"; then
                 FAILURE_CAUSE="Selenium: NoSuchElementException"
+                FAILED_LOCATOR=$(grep -o 'Unable to locate element: {.*}' "$MAVEN_TEST_LOG" | head -n 1 | sed 's/Unable to locate element: //')
             elif grep -q "org.openqa.selenium.TimeoutException" "$MAVEN_TEST_LOG"; then
                 FAILURE_CAUSE="Selenium: TimeoutException"
+                FAILED_LOCATOR=$(grep -o 'waiting for .* located by: \(.*\)' "$MAVEN_TEST_LOG" | head -n 1 | sed 's/waiting for .* located by: //')
             elif grep -q "org.openqa.selenium.ElementNotInteractableException" "$MAVEN_TEST_LOG"; then
                 FAILURE_CAUSE="Selenium: ElementNotInteractableException"
             elif grep -q "org.openqa.selenium.ElementClickInterceptedException" "$MAVEN_TEST_LOG"; then
@@ -229,12 +203,16 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
             else
                 FAILURE_CAUSE="Generic Maven Test Failure"
             fi
+            
+            if [ -z "$FAILED_LOCATOR" ]; then
+                FAILED_LOCATOR="Details not found in log"
+            fi
         fi
         
         echo "Risultato: $TEST_RESULT"
 
-        # 5. Scrivi i risultati nei file di log e CSV
-        echo "${CURRENT_LOCATOR_TYPE},${CURRENT_MUTANT_NAME},${TEST_RESULT},\"${FAILURE_CAUSE}\"" >> "$GLOBAL_CSV_FILE"
+        # [MODIFICA - CSV] Usa il punto e virgola come separatore per la riga dei dati
+        echo "${CURRENT_LOCATOR_TYPE};${CURRENT_MUTANT_NAME};${TEST_RESULT};\"${FAILURE_CAUSE}\";\"${FAILED_LOCATOR}\"" >> "$GLOBAL_CSV_FILE"
         
         {
             echo "Timestamp: $(date)"
@@ -243,12 +221,12 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
             echo "Test Result: $TEST_RESULT"
             if [ "$TEST_RESULT" = "failure" ]; then
                 echo "Failure Cause: $FAILURE_CAUSE"
+                echo "Failed Locator: $FAILED_LOCATOR"
                 echo "See $MAVEN_TEST_LOG for full details."
             fi
             echo "-------------------------------------"
         } >> "$RESULT_LOG"
 
-        # 6. Ripristina il file originale
         cp "$BACKUP_FILE" "$DEST_FILE"
     done
 done
@@ -257,29 +235,67 @@ done
 echo "====================================================="
 echo "Terminazione dei processi..."
 
-# Termina il processo di Angular
 if [ ! -z "$NG_PID" ]; then
     kill $NG_PID
     wait $NG_PID 2>/dev/null
 fi
 echo "Applicazione Angular terminata."
 
-# Rimuovi il file di backup
 rm -f "$BACKUP_FILE"
+
+# === GENERAZIONE REPORT DI RIEPILOGO ===
+
+echo "Generazione del report di riepilogo..."
+
+# [MODIFICA - CSV] Usa il punto e virgola per l'header del riepilogo
+echo "Tipo Locatore;Totale Test;Test con successo;Fallimenti per Fragilità;Fallimenti per Obsolescenza" > "$SUMMARY_CSV_FILE"
+
+NUM_LOCATOR_TYPES=${#LOCATOR_TYPES[@]}
+# [MODIFICA - CSV] Usa il punto e virgola nei comandi grep e cut per leggere il CSV
+OBSOLESCENCE_FAILURES_COUNT=$(grep ';failure;' "$GLOBAL_CSV_FILE" | cut -d';' -f2 | sort | uniq -c | awk -v n=$NUM_LOCATOR_TYPES '$1==n {c++} END {print c+0}')
+
+for type in "${LOCATOR_TYPES[@]}"; do
+    # [MODIFICA - CSV] Usa il punto e virgola nel comando grep
+    if ! grep -q "^${type};" "$GLOBAL_CSV_FILE"; then
+        continue
+    fi
+    
+    # [MODIFICA - CSV] Usa il punto e virgola nel comando grep
+    TOTAL_TESTS=$(grep -c "^${type};" "$GLOBAL_CSV_FILE")
+    
+    # [MODIFICA - CSV] Usa il punto e virgola nel comando grep
+    SUCCESSFUL_TESTS=$(grep -c "^${type};.*;success;" "$GLOBAL_CSV_FILE")
+    
+    TOTAL_FAILURES=$((TOTAL_TESTS - SUCCESSFUL_TESTS))
+    FRAGILITY_FAILURES=$((TOTAL_FAILURES - OBSOLESCENCE_FAILURES_COUNT))
+
+    # [MODIFICA - CSV] Usa il punto e virgola per scrivere la riga di riepilogo
+    echo "${type};${TOTAL_TESTS};${SUCCESSFUL_TESTS};${FRAGILITY_FAILURES};${OBSOLESCENCE_FAILURES_COUNT}" >> "$SUMMARY_CSV_FILE"
+done
+
+echo "✅ Report di riepilogo generato."
+
+# === SEZIONE DI OUTPUT FINALE ===
 
 END_TIME=$(date +%s)
 DURATION=$((END_TIME - START_TIME))
 
+echo ""
 echo "=== PROCESSO DI TEST DI MUTAZIONE COMPLETATO ==="
 echo "Tempo totale di esecuzione: ${DURATION} secondi."
-echo "I risultati completi sono nel file CSV: $GLOBAL_CSV_FILE"
-echo "Log dettagliati dei singoli test in: $RESULT_LOG"
-echo "Screenshot dei fallimenti (se generati) in: $SCREENSHOT_DIR"
-echo "Ultimo log di output di Maven è in: $MAVEN_TEST_LOG"
-echo "====================================================="
-
-# Opzionale: stampa a video un riassunto dei risultati dal CSV
-echo "Riepilogo dei risultati:"
-tail -n +2 "$GLOBAL_CSV_FILE" | cut -d, -f1,3 | sort | uniq -c
-
-bash
+echo ""
+echo "--- File di Output Generati ---"
+echo "Risultati completi: $GLOBAL_CSV_FILE"
+echo "Riepologo risultati:  $SUMMARY_CSV_FILE"
+echo "Log dettagliati:    $RESULT_LOG"
+echo "Screenshot fallimenti: $SCREENSHOT_DIR/"
+echo ""
+echo "================= RIEPILOGO FINALE DEI RISULTATI ================="
+# [MODIFICA - CSV] Indica a 'column' di usare il punto e virgola come separatore di input
+if command -v column &> /dev/null; then
+    column -s';' -t < "$SUMMARY_CSV_FILE"
+else
+    cat "$SUMMARY_CSV_FILE"
+fi
+echo "=================================================================="
+echo ""

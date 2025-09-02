@@ -1,7 +1,6 @@
 PREREQUISITI:
-maven v. 3.9.X, link -> https://dlcdn.apache.org/maven/maven-3/3.9.11/source/apache-maven-3.9.11-src.zip
-java v. 17.0.5, link -> https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
-
+Maven v. 3.9.X, link -> https://dlcdn.apache.org/maven/maven-3/3.9.11/source/apache-maven-3.9.11-src.zip
+Java v. 17.0.5, link -> https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 
 Comandi per la creazione automatica dei mutanti in maniera analitica:
 

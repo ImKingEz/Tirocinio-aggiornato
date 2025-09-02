@@ -1,0 +1,42 @@
+
+Nei prossimi messaggi ti invierò un codice html, il tag preso in questione in quel momento e il tipo (id) di mutazione da effettuare al codice.
+
+Tali modifiche saranno effettuate:
+-al tag target
+-al fratello del tag target
+-al genitore del tag target
+-ad un antenato del tag target
+-al template contenente il tag target
+
+Ecco un esempio di distinzione tra i vari tag:
+<template>            <!-- $\epsilon$ (template) -->
+<p>                   <!-- $\gamma$ (ancestor) -->
+<div>                 <!-- $\beta$ (parent) -->
+<a onclick="go()">    <!-- $\alpha$ (target tag) -->
+<a href="\#top">      <!-- $\delta$ (sibling) -->
+</div>
+</p>
+</template>
+
+Ovviamente se nel codice ricevuto, alcuni di questi elementi non dovessero esistere, la mutazione per quell'elemento non viene effettuata.
+
+Tieni conto che per ogni mutazione devi far riferimento solo al tag preso in questione.
+
+Di seguito ti riporto le mutazioni (modifiche divise per id) da effettuare in ordine per ogni tag descritto in precedenza:
+-Per l'id "a" devi modificare il valore di un attributo al tag in questione. Devi dare priorità (in ordine di importanza) agli attributi "id" e "class", se non presenti scegliere un qualsiasi attributo ad eccezione di quelli che iniziano con "x-test-tpl" o "x-test-hook", quest'ultimi non devono essere considerati nelle modifiche.
+-Per l'id "b" devi rimuovere un attributo al tag in questione. Devi dare priorità (in ordine di importanza) agli attributi "id" e "class", se non presenti scegliere un qualsiasi attributo ad eccezione di quelli che iniziano con "x-test-tpl" o "x-test-hook", quest'ultimi non devono essere considerati nelle modifiche.
+-Per l'id "c" devi modificare l'identificativo di un attributo del tag in questione, ad esempio : <button id="3">premi</button> dopo la mutazione diventa <button newId="3">premi</button>. Devi dare priorità (in ordine di importanza) agli attributi "id" e "class", se non presenti scegliere un qualsiasi attributo ad eccezione di quelli che iniziano con "x-test-tpl" o "x-test-hook", quest'ultimi non devono essere considerati nelle modifiche.
+-Per l'id "d" devi modificare il contenuto testuale (se presente ovviamente) del tag in questione.
+-Per l'id "e" devi rimuovere il contenuto testuale (se presente ovviamente) del tag in questione.
+-Per l'id "f" devi spostare il tag in questione (con i tag in esso contenuti) all'interno di un tag in cui è contenuto, però questa modifica può essere effettuata solo se il tag in questione è contenuto in un altro tag.
+-Per l'id "g" devi spostare il tag in questione (con i tag in esso contenuti) in qualsiasi punto dell'albero html e questa modifica può essere sempre effettuata.
+-Per l'id "h" devi spostare il tag in questione (con i tag in esso contenuti) in un altro tag template (diverso da quello in cui si trova ora), però questa modifica può essere effettuata solo se nel codice sono presenti almeno 2 tag template, tieni presente che un tag è un template se ha un attributo che inizia con "x-test-tpl", se non ci sono altri tag template questa modifica non è possibile farla.
+-Per l'id "i" devi eliminare il tag in questione, però si deve eliminare solo il tag preso in considerazione e non anche i tag contenuti in esso ed il testo se presenti.
+-Per l'id "j" devi modificare il tipo del tag preso in questione, però il tag modificato dovrà sempre essere un tag html standard.
+-Per l'id "k" devi inserire un nuovo tag html all'albero html e si intende l'inserimento di un nuovo tag html standard come fratello del tag in questione.
+
+Un'altra cosa molto importante, voglio che tutti i codici html (mutanti) che mi invii devono essere tutti funzionanti/eseguibili (fai attenzione quando riscrivi i codici mutanti le scritte non modificate devono essere uguali ovvero preserva il camel case), ovvero non devono generarmi un'errore quando avvio il frontend in Angular 19.
+
+Inviami sempre il codice completo mutato e con estensione .txt.
+
+Rispondimi solo con OK se hai capito tutto, dal prossimo messaggio ti invierò il tag target e la modifica da effettuare.

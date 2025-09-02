@@ -1,1 +1,0 @@
-echo "inserisci qui i comandi per lo starting del Front-End della tua applciazione web"

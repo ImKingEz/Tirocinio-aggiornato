@@ -10,7 +10,7 @@ ARG PROJECT_DIR_NAME=angular-example-no-id
 RUN apt-get update && apt-get install -y \
     bash curl wget gnupg ca-certificates build-essential unzip libnss3 \
     fonts-liberation procps dos2unix libxss1 libappindicator3-1 libgbm1 \
-    lsb-release xdg-utils jq && rm -rf /var/lib/apt/lists/*
+    lsb-release xdg-utils jq bsdmainutils && rm -rf /var/lib/apt/lists/*
 
 # Installazione di Google Chrome (invariato)
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
@@ -59,7 +59,7 @@ WORKDIR /app
 # Copia l'intero contenuto della cartella del progetto.
 # Assumiamo che all'interno di ${PROJECT_DIR_NAME} ci sia una cartella 'frontend'
 # che contiene l'applicazione Angular.
-COPY mutanti_paper_ed_utilities/${PROJECT_DIR_NAME}/ .
+COPY progetti-per-test/${PROJECT_DIR_NAME}/ .
 
 # Naviga alla directory dell'applicazione Angular all'interno del container
 # per installare le dipendenze in un ambiente pulito.

@@ -1,0 +1,7 @@
+Tipo Locatore;Totale Test;Test con successo;Fallimenti per Fragilità;Fallimenti per Obsolescenza
+hook;42;36;5;1
+absolute;42;26;15;1
+relative;42;38;3;1
+robula;42;30;11;1
+selenium;42;38;3;1
+katalon;42;37;4;1
