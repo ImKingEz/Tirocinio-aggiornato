@@ -6,6 +6,11 @@ public class HtmlTagMovementWithinContainerRule implements MutationRule {
 
     @Override
     public boolean apply(Element element) {
+        String tagName = element.tagName().toLowerCase();
+        if (tagName.equals("html") || tagName.equals("head") || tagName.equals("body")) {
+            return false;
+        }
+
         Element parent = element.parent();
         // La mutazione ha senso solo se il parent esiste e ha più di un figlio elemento.
         if (parent == null || parent.childrenSize() <= 1) {

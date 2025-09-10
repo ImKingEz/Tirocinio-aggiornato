@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KatalonLocatorSuite">
+    <test name="KatalonLocatorTest">
+        <classes>
+            <class name="com.bbtutorials.users.KatalonXPathTest"/>
+        </classes>
+    </test>
+</suite>

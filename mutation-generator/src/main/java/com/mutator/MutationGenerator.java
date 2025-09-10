@@ -46,7 +46,7 @@ public class MutationGenerator implements Callable<Integer> {
             System.err.println("Error: Target element could not be found with selector: '" + targetSelector + "'");
             return 1;
         }
-        System.out.println("Found target element (α): " + alpha.tagName() + (alpha.id().isEmpty() ? "" : "#" + alpha.id()));
+        System.out.println("Found target element (alfa): " + alpha.tagName() + (alpha.id().isEmpty() ? "" : "#" + alpha.id()));
 
         // 4. Avvia il processo di mutazione
         Mutator mutator = new Mutator(doc, alpha, outputDir);

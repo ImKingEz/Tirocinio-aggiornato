@@ -71,7 +71,10 @@ Output dei risultati:
 Dopo l'esecuzione, troverai i risultati, i log e gli screenshot nelle directory `output_csv`, `output_logs` e `output_screenshots` nella tua cartella radice.
 
 - outputCsv/mutants_results_<timestamp>.csv
-  Contiene per ogni mutante il nome file e il risultato del test (success, failure o timeout).
+  Contiene per ogni mutante il nome file e il risultato del test (success, failure o timeout) con il locatore che si è rotto nel caso in cui il test sia fallito.
+
+- outputCsv/summary_results_<timestamp>.csv
+  Contiene per ogni locatore quanti test sono stati effettuati e quanti sono falliti (per obsolescenza e non).
 
 - logs/mutant_test_results.log
   Contiene log dettagliati del test per ciascun mutante.

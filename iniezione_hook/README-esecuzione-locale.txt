@@ -7,4 +7,4 @@ PASSAGGI PER ESEGUIRE Application.java IN LOCALE SU WINDOWS:
  1) Aprire il terminale nella cartella "test-hook/test-guard" ed eseguire il comando : "npm install"
  2) Aprire il terminale nella cartella "Tesi-injector-plugin" poi eseguire i comandi:
    - mvn clean install
-   - java -jar target\Tesi-injector-plugin-1.0-SNAPSHOT.jar ".html" "angularjs" "C:\\tuo\\path\\Tesi-StrumentoGenerale-master\\insert-here-your-web-app\\tua\\app"
+   - java -jar target\Tesi-injector-plugin-1.0-SNAPSHOT.jar ".html" "angularjs" "C:\\path\\del\\tuo\\progetto"

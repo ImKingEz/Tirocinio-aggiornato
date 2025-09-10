@@ -8,14 +8,18 @@ public class AbsoluteXPathTest extends BaseTest {
   public void testContactFormAbsoluteXPath() throws Exception {
     driver.get("http://localhost:4200/");
 
-    driver.findElement(By.xpath("/html/body/app-root/app-navbar/nav/div[2]/div/a[2]")).click();
+    // Clicca sul link "Daily Meme"
+    driver.findElement(By.xpath("/html/body/app-root/div/app-nav/nav/div[2]/div[1]/a[2]")).click();
 
-    driver.findElement(By.xpath("/html/body/app-root/app-navbar/nav/div[2]/div/a[1]")).click();
+    // Clicca sul link "Home"
+    driver.findElement(By.xpath("/html/body/app-root/div/app-nav/nav/div[2]/div[1]/a[1]")).click();
 
-    driver.findElement(By.xpath("/html/body/app-root/app-navbar/nav/div/div[2]/app-search/form/div/input")).click();
-    driver.findElement(By.xpath("/html/body/app-root/app-navbar/nav/div/div[2]/app-search/form/div/input")).clear();
-    driver.findElement(By.xpath("/html/body/app-root/app-navbar/nav/div/div[2]/app-search/form/div/input")).sendKeys("test");
+    // Interagisce con il campo di ricerca
+    driver.findElement(By.xpath("/html/body/app-root/div/app-nav/nav/div[1]/div[2]/app-search/form/div[1]/input")).click();
+    driver.findElement(By.xpath("/html/body/app-root/div/app-nav/nav/div[1]/div[2]/app-search/form/div[1]/input")).clear();
+    driver.findElement(By.xpath("/html/body/app-root/div/app-nav/nav/div[1]/div[2]/app-search/form/div[1]/input")).sendKeys("test");
 
-    driver.findElement(By.xpath("/html/body/app-root/app-navbar/nav/div/div[2]/app-search/form/div[2]/button[2]")).click();
+    // Clicca sul pulsante "Cerca"
+    driver.findElement(By.xpath("/html/body/app-root/div/app-nav/nav/div[1]/div[2]/app-search/form/div[2]/button[2]")).click();
   }
 }

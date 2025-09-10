@@ -8,7 +8,7 @@ Comandi per la creazione automatica dei mutanti in maniera analitica:
 mvn clean install
 
 2.
-java -jar target/mutation-generator-1.0-SNAPSHOT.jar -f "path\al\file\da\mutare" -s "#selettore-css" -o "tuo\path\Tirocinio-aggiornato\mutanti_paper_ed_utilities\NOME-PROGETTO\mutantsToTest"
+java -jar target/mutation-generator-1.0-SNAPSHOT.jar -f "path\al\file\da\mutare" -s "selettore-css" -o "tuo\path\Tirocinio-aggiornato\progetti-per-test\NOME-PROGETTO\mutantsToTest"
 
 -f: file su cui generare i mutanti
 -s: selettore css del tag da mutare

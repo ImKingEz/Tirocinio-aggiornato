@@ -1,0 +1,45 @@
+<nav class="flex z-20 w-full flex-col bg-[#2B2B2B] text-[#C3C3C3] md:h-[60px] md:flex-row md:items-center" x-test-tpl-nav-1>
+  <div class="flex h-[60px] w-full items-center justify-between px-4 md:contents" x-test-hook-div-2>
+    <div class="flex items-center justify-center md:flex-[0_0_10%] md:pl-4" x-test-hook-div-3>
+      <img src="logo.png" alt="Logo di MemeMuseum" class="block max-w-[60px] object-contain" x-test-hook-img-4 />
+    </div>
+    <div class="flex items-center justify-center md:flex-[0_0_30%] relative h-full w-full" x-test-hook-div-5>
+      @if (isSearchVisible()) {
+        <app-search class="absolute top-4 md:left-0 md:ml-0 z-10 ml-3 md:w-fit w-full" x-test-hook-app-search-6 />
+      }
+    </div>
+  </div>
+
+  <div class="flex h-[60px] w-full items-center justify-between px-4 md:contents" x-test-hook-div-7>
+    <div class="flex items-center justify-center gap-[15px] md:flex-[0_0_20%]" x-test-hook-div-8>
+      <a routerLink="/home" routerLinkActive="border-b-[#63B2FF] text-[#63B2FF]" aria-label="Vai alla Homepage" x-test-hook-a-9>
+        <svg class="size-9" viewBox="0 -960 960 960" fill="none" xmlns="http://www.w3.org/2000/svg" x-test-hook-svg-10>
+          <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" class="fill-current" x-test-hook-path-11 />
+        </svg>
+      </a>
+      <a routerLink="/daily" routerLinkActive="border-b-[#63B2FF] text-[#63B2FF]" aria-label="Vai alla pagina Daily Meme" class="flex h-[60px] cursor-pointer items-center px-2 focus:outline-none border-b-[3px] border-transparent" x-test-hook-a-12>
+        <svg class="size-9" viewBox="0 -960 960 960" fill="none" xmlns="http://www.w3.org/2000/svg" x-test-hook-svg-13>
+          <path d="m392-420.46 33.08-108.62-87-67.07h108.23L480-704.31l33.69 108.16h108.23l-87.61 67.07 33.07 108.62L480-488l-88 67.54ZM260-70.77v-286.31q-38-39.69-59-91.77-21-52.07-21-111.15 0-125.54 87.23-212.77T480-860q125.54 0 212.77 87.23T780-560q0 59.08-21 111.15-21 52.08-59 91.77v286.31l-220-70-220 70ZM480-320q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70ZM320-158.62l160-42.92 160 42.92v-148.61q-34.23 22.31-74.92 34.77Q524.38-260 480-260q-44.38 0-85.08-12.46-40.69-12.46-74.92-34.77v148.61Zm160-74.3Z" class="fill-current" x-test-hook-path-14 />
+        </svg>
+      </a>
+    </div>
+    <div class="relative flex items-center justify-end md:flex-[0_0_40%] md:pr-[5%]" x-test-hook-div-15>
+      @if(!authService.isAuthenticated()) {
+        <button #accountButton (click)="toggleLoginDropdown()" type="button" aria-label="Gestione dell'account" data-testid="nav-account-button" x-test-hook-button-16>
+          <img src="account.png" alt="Account" class="max-w-[35px] object-contain cursor-pointer" x-test-hook-img-17 />
+        </button>
+        @if(isLoginDropdownOpen()) {
+          <div #authDropdown class="absolute right-0 top-full z-50 mt-2" x-test-hook-div-18>
+            <app-auth x-test-hook-app-auth-19 />
+          </div>
+        }
+      } @else {
+        <p class="hidden md:inline" x-test-hook-p-20>Autenticato come: &#64;{{authService.getUser()}}</p>
+        <button (click)="onLogout()" class="ml-3 flex items-center justify-center rounded-lg bg-[#63B2FF] px-2 py-1.5 font-semibold text-black hover:bg-blue-400 active:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-[#63B2FF] focus:ring-offset-2 focus:ring-offset-[#1C1C1C]" data-testid="nav-logout-button" x-test-hook-button-21>
+          <img src="logout.png" class="mr-2 size-5" x-test-hook-img-22 />
+          Log out
+        </button>
+      }
+    </div>
+  </div>
+</nav>
