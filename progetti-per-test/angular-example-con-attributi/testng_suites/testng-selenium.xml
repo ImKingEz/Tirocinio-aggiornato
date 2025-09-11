@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SeleniumLocatorSuite">
-    <test name="SeleniumLocatorTest">
-        <classes>
-            <class name="com.bbtutorials.users.SeleniumXPathTest"/>
-        </classes>
-    </test>
-</suite>

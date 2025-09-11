@@ -1,1 +1,0 @@
-<input type="text" formControlName="tagsQuery" placeholder="es. calcio, divertimento" class="flex-grow border-none bg-transparent text-gray-800 placeholder-gray-500 focus:outline-none p-0" x-test-hook-input-19 id="tagsQuery" />

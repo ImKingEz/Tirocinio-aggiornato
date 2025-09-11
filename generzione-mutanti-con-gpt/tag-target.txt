@@ -1,0 +1,5 @@
+<a routerLink="/home" routerLinkActive="border-b-[#63B2FF] text-[#63B2FF]" aria-label="Vai alla Homepage" class="flex h-[60px] cursor-pointer items-center px-2 focus:outline-none border-b-[3px] border-transparent" x-test-hook-a-9>
+  <svg class="size-9" viewBox="0 -960 960 960" fill="none" xmlns="http://www.w3.org/2000/svg" x-test-hook-svg-10>
+     <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" class="fill-current" x-test-hook-path-11/>
+  </svg>
+</a>

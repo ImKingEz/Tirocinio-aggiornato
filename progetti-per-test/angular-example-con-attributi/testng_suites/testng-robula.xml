@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RobulaLocatorSuite">
-    <test name="RobulaLocatorTest">
-        <classes>
-            <class name="com.bbtutorials.users.RobulaXPathTest"/>
-        </classes>
-    </test>
-</suite>
