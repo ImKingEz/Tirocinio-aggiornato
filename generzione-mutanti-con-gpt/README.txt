@@ -1,4 +1,5 @@
 ### PREREQUISITI
+Python 3.13.x -> https://www.python.org/downloads/
 
 Esegui in Powershell questi comandi:
 1) pip install openai beautifulsoup4

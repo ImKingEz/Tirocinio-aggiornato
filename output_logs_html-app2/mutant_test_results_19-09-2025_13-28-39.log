@@ -1,0 +1,1524 @@
+Timestamp: Fri Sep 19 13:29:19 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:29:28 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:29:40 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:29:48 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:29:57 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:30:17 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//*[@x-test-tpl-html-1]//*[@x-test-hook-app-root-8]//*[@x-test-tpl-main-1]//*[@x-test-hook-input-20]"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:30:25 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:30:36 UTC 2025
+Locator Type: hook
+Mutant: mutant_alpha(input)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:30:47 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:30:56 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:04 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:11 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:24 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:32 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:40 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:51 UTC 2025
+Locator Type: hook
+Mutant: mutant_beta(div)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:31:59 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:32:08 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:32:16 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:32:27 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:32:35 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:32:44 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:32:52 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:03 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:11 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_text_content_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:19 UTC 2025
+Locator Type: hook
+Mutant: mutant_delta_prev(label)_text_content_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:31 UTC 2025
+Locator Type: hook
+Mutant: mutant_epsilon(main)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:39 UTC 2025
+Locator Type: hook
+Mutant: mutant_epsilon(main)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:46 UTC 2025
+Locator Type: hook
+Mutant: mutant_epsilon(main)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:33:54 UTC 2025
+Locator Type: hook
+Mutant: mutant_epsilon(main)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:05 UTC 2025
+Locator Type: hook
+Mutant: mutant_epsilon(main)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:14 UTC 2025
+Locator Type: hook
+Mutant: mutant_epsilon(main)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:23 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:32 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:43 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:51 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:34:59 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:35:11 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:35:19 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:35:28 UTC 2025
+Locator Type: hook
+Mutant: mutant_gamma(div)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:35:51 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:36:09 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:36:31 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:36:53 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:37:11 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:37:34 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[1]/div[1]/div[2]/div/input"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:37:52 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:38:14 UTC 2025
+Locator Type: absolute
+Mutant: mutant_alpha(input)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:38:36 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:38:53 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:39:15 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:39:33 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:39:54 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:40:15 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:40:33 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:40:54 UTC 2025
+Locator Type: absolute
+Mutant: mutant_beta(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:41:12 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:41:34 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:41:55 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:42:13 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:42:34 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:42:52 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:43:14 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:43:35 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:43:53 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_text_content_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:44:14 UTC 2025
+Locator Type: absolute
+Mutant: mutant_delta_prev(label)_text_content_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:44:33 UTC 2025
+Locator Type: absolute
+Mutant: mutant_epsilon(main)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:44:54 UTC 2025
+Locator Type: absolute
+Mutant: mutant_epsilon(main)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:45:15 UTC 2025
+Locator Type: absolute
+Mutant: mutant_epsilon(main)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:45:34 UTC 2025
+Locator Type: absolute
+Mutant: mutant_epsilon(main)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:45:55 UTC 2025
+Locator Type: absolute
+Mutant: mutant_epsilon(main)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:46:13 UTC 2025
+Locator Type: absolute
+Mutant: mutant_epsilon(main)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:46:35 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:46:56 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:47:14 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:47:35 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:47:53 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:48:14 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:48:35 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:48:52 UTC 2025
+Locator Type: absolute
+Mutant: mutant_gamma(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:49:13 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:49:30 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:49:51 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:50:12 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:50:29 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:50:50 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:50:58 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:51:19 UTC 2025
+Locator Type: relative
+Mutant: mutant_alpha(input)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:51:27 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:51:34 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:51:44 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:52:06 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:52:26 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:52:44 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:52:52 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:53:12 UTC 2025
+Locator Type: relative
+Mutant: mutant_beta(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:53:20 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:53:27 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:53:38 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:53:55 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:54:15 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:54:32 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:54:52 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:55:12 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:55:20 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_text_content_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:55:27 UTC 2025
+Locator Type: relative
+Mutant: mutant_delta_prev(label)_text_content_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:55:35 UTC 2025
+Locator Type: relative
+Mutant: mutant_epsilon(main)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:55:45 UTC 2025
+Locator Type: relative
+Mutant: mutant_epsilon(main)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:55:53 UTC 2025
+Locator Type: relative
+Mutant: mutant_epsilon(main)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:56:10 UTC 2025
+Locator Type: relative
+Mutant: mutant_epsilon(main)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:56:20 UTC 2025
+Locator Type: relative
+Mutant: mutant_epsilon(main)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:56:37 UTC 2025
+Locator Type: relative
+Mutant: mutant_epsilon(main)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:56:44 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:56:55 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:57:02 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:57:19 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:57:40 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:00 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:07 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:24 UTC 2025
+Locator Type: relative
+Mutant: mutant_gamma(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:35 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:42 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:50 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:58:57 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:59:08 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:59:24 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//*[@type='text']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 13:59:32 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:59:43 UTC 2025
+Locator Type: robula
+Mutant: mutant_alpha(input)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:59:50 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 13:59:58 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:05 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:16 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:24 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:31 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:39 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:50 UTC 2025
+Locator Type: robula
+Mutant: mutant_beta(div)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:00:57 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:05 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:12 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:23 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:31 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:38 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:46 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:01:57 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:05 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_text_content_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:12 UTC 2025
+Locator Type: robula
+Mutant: mutant_delta_prev(label)_text_content_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:20 UTC 2025
+Locator Type: robula
+Mutant: mutant_epsilon(main)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:31 UTC 2025
+Locator Type: robula
+Mutant: mutant_epsilon(main)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:38 UTC 2025
+Locator Type: robula
+Mutant: mutant_epsilon(main)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:46 UTC 2025
+Locator Type: robula
+Mutant: mutant_epsilon(main)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:02:54 UTC 2025
+Locator Type: robula
+Mutant: mutant_epsilon(main)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:05 UTC 2025
+Locator Type: robula
+Mutant: mutant_epsilon(main)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:12 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:20 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:24 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:38 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_html_tag_movement_to_root.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:46 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_html_tag_movement_within_container.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:03:53 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_html_tag_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:04:04 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:04:12 UTC 2025
+Locator Type: robula
+Mutant: mutant_gamma(div)_html_tag_type_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:04:29 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:04:49 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:05:06 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:05:26 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:05:47 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:06:04 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:06:11 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:06:31 UTC 2025
+Locator Type: selenium
+Mutant: mutant_alpha(input)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:06:38 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:06:46 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:06:56 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:07:13 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:07:33 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:07:50 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:08:01 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:08:18 UTC 2025
+Locator Type: selenium
+Mutant: mutant_beta(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:08:25 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:08:36 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:08:43 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:09:00 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:09:20 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:09:40 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:09:57 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:10:18 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:10:25 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_text_content_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:10:33 UTC 2025
+Locator Type: selenium
+Mutant: mutant_delta_prev(label)_text_content_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:10:40 UTC 2025
+Locator Type: selenium
+Mutant: mutant_epsilon(main)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:10:50 UTC 2025
+Locator Type: selenium
+Mutant: mutant_epsilon(main)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:10:58 UTC 2025
+Locator Type: selenium
+Mutant: mutant_epsilon(main)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:11:18 UTC 2025
+Locator Type: selenium
+Mutant: mutant_epsilon(main)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:11:25 UTC 2025
+Locator Type: selenium
+Mutant: mutant_epsilon(main)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:11:42 UTC 2025
+Locator Type: selenium
+Mutant: mutant_epsilon(main)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:11:53 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:12:00 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:12:08 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:12:29 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:12:46 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:13:07 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:13:14 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:13:35 UTC 2025
+Locator Type: selenium
+Mutant: mutant_gamma(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:13:53 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_attribute_identifier_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:14:14 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_attribute_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:14:31 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_attribute_value_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:14:55 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:15:16 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:15:33 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:15:41 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:16:01 UTC 2025
+Locator Type: katalon
+Mutant: mutant_alpha(input)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:16:09 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:16:20 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:16:27 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:16:44 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:17:05 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:17:26 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:17:34 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:17:51 UTC 2025
+Locator Type: katalon
+Mutant: mutant_beta(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:18:02 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:18:10 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:18:18 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:18:38 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:18:55 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:19:15 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:19:33 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_html_tag_sibling_insertion.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:19:53 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:20:01 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_text_content_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:20:12 UTC 2025
+Locator Type: katalon
+Mutant: mutant_delta_prev(label)_text_content_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:20:20 UTC 2025
+Locator Type: katalon
+Mutant: mutant_epsilon(main)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:20:29 UTC 2025
+Locator Type: katalon
+Mutant: mutant_epsilon(main)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:20:37 UTC 2025
+Locator Type: katalon
+Mutant: mutant_epsilon(main)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:20:58 UTC 2025
+Locator Type: katalon
+Mutant: mutant_epsilon(main)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:21:05 UTC 2025
+Locator Type: katalon
+Mutant: mutant_epsilon(main)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:21:26 UTC 2025
+Locator Type: katalon
+Mutant: mutant_epsilon(main)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:21:34 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_attribute_identifier_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:21:42 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_attribute_removal.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:21:52 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_attribute_value_modification.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:22:10 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_html_tag_movement_to_root.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:22:31 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_html_tag_movement_within_container.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:22:48 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_html_tag_removal.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------
+Timestamp: Fri Sep 19 14:22:59 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_html_tag_sibling_insertion.txt
+Test Result: success
+-------------------------------------
+Timestamp: Fri Sep 19 14:23:16 UTC 2025
+Locator Type: katalon
+Mutant: mutant_gamma(div)_html_tag_type_modification.txt
+Test Result: failure
+Failure Cause: Selenium: NoSuchElementException
+Failed Locator: {"method":"xpath","selector":"//input[@id='tagsQuery']"}
+See /app/output_logs/maven_test_output.log for full details.
+-------------------------------------

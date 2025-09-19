@@ -1,0 +1,24 @@
+# Ignora i metadati di Git
+.git
+.gitignore
+
+# Ignora le dipendenze di Node.js (vanno installate nel container)
+node_modules
+
+# Ignora gli artefatti di build di Angular/Node
+dist
+*.log
+npm-debug.log*
+
+# Ignora gli artefatti di build di Maven (se presenti)
+target
+
+# Ignora i file di configurazione degli IDE
+.vscode
+.idea
+*.suo
+*.user
+
+# Ignora i file specifici del sistema operativo
+Thumbs.db
+.DS_Store

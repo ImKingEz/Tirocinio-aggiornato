@@ -1,0 +1,248 @@
+<main class="block flex-grow flex flex-col relative" x-test-tpl-main-1>
+
+    <!-- SEZIONE FILTRI -->
+    <section class="py-6 bg-[#eef1f5]" x-test-hook-section-2>
+        <form action="#" method="get" x-test-hook-form-3>
+            <div class="container max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" x-test-hook-div-4>
+                <div class="flex flex-col md:flex-row flex-wrap gap-4 md:gap-6 justify-center" x-test-hook-div-5>
+
+                    <!-- BLOCCO FILTRA MEME -->
+                    <div class="search-sub-block border border-[#d1d9e0] p-5 rounded-lg bg-[#f8f9fa] w-full md:flex-1 md:min-w-[320px] shadow-[0_2px_4px_rgba(0,0,0,0.05)]"
+                        x-test-hook-div-6>
+                        <h3 class="text-[1.1rem] font-semibold text-gray-800 mb-5 text-center md:text-left"
+                            x-test-hook-h3-7>Filtra meme per :</h3>
+                        <div class="controls-row flex flex-wrap gap-3 items-end" x-test-hook-div-8>
+                            <div class="form-group flex flex-col items-center" x-test-hook-div-9>
+                                <label for="uploadDate-button" id="date-label"
+                                    class="block text-sm font-medium text-gray-700 mb-2 text-center"
+                                    x-test-hook-label-10>Data di upload</label>
+                                <button type="button" id="uploadDate-button" aria-labelledby="date-label"
+                                    class="custom-date-input-pill relative inline-flex items-center bg-[#D97706] text-white rounded-full text-[0.9rem] font-medium cursor-pointer min-w-[140px] text-left focus:outline-none py-[0.55rem] pl-[0.9rem] pr-[2.4rem]"
+                                    x-test-hook-button-11>
+                                    <span class="pill-text flex-grow leading-normal"
+                                        x-test-hook-span-12>Scegli...</span>
+                                    <span
+                                        class="absolute right-[0.7rem] top-1/2 -translate-y-1/2 flex items-center justify-center"
+                                        x-test-hook-span-13>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#FFFFFF" x-test-hook-svg-14>
+                                            <path
+                                                d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"
+                                                x-test-hook-path-15 />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <input id="uploadDate" name="uploaddate" type="date" class="sr-only"
+                                    x-test-hook-input-16 />
+                            </div>
+                            <div class="form-group flex-1 relative" x-test-hook-div-17>
+                                <div class="custom-text-input-grey flex items-center bg-gray-400 py-[0.55rem] px-[0.8rem] rounded-md text-[0.9rem] font-medium focus-within:border focus-within:border-amber-400 focus-within:shadow-[0_0_0_2px_rgba(217,119,6,0.25)] w-full"
+                                    x-test-hook-div-18>
+                                    <label for="tagsQuery" class="mr-[0.5em] text-gray-800 whitespace-nowrap"
+                                        x-test-hook-label-19>tag:</label>
+                                    <input type="text" id="tagsQuery" name="tagsQuery"
+                                        placeholder="es. calcio, divertimento"
+                                        class="flex-grow border-none bg-transparent text-gray-800 placeholder-gray-500 focus:outline-none p-1"
+                                        x-test-hook-input-20 />
+                                </div>
+                                <p class="absolute top-full mt-1 text-xs text-gray-500 pl-1 hidden sm:block"
+                                    x-test-hook-p-21>
+                                    💡Inserendo solo spazi vuoti non ci sarà nessun'influenza sulla ricerca.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BLOCCO GESTISCI VISUALIZZAZIONE -->
+                    <div class="search-sub-block border border-[#d1d9e0] p-5 rounded-lg bg-[#f8f9fa] w-full md:flex-1 md:min-w-[250px] shadow-[0_2px_4px_rgba(0,0,0,0.05)]"
+                        x-test-hook-div-22>
+                        <h3 class="search-block-title text-[1.1rem] font-semibold text-gray-800 mb-5 text-center md:text-left"
+                            x-test-hook-h3-23>Gestisci la visualizzazione</h3>
+                        <div class="controls-row flex flex-wrap justify-center md:justify-start gap-3 items-end mb-4"
+                            x-test-hook-div-24>
+
+                            <div class="form-group flex flex-col items-center" x-test-hook-div-25>
+                                <label for="sortby" class="block text-sm font-medium text-gray-700 mb-2 text-center"
+                                    x-test-hook-label-26>Ordina per</label>
+                                <div class="relative w-full" x-test-hook-div-27>
+                                    <select id="sortby" name="sortby"
+                                        class="pill-select appearance-none bg-[#D97706] text-white py-[0.55rem] pl-[0.9rem] pr-[2.4rem] rounded-full border-0 text-[0.9rem] font-medium cursor-pointer min-w-[140px] text-left focus:outline-none focus:shadow-[0_0_0_2px_#B45309,0_0_0_4px_rgba(255,255,255,0.7)] w-full"
+                                        x-test-hook-select-28>
+                                        <option value="" disabled selected class="bg-white text-black"
+                                            x-test-hook-option-29>Scegli...</option>
+                                        <option value="date" class="bg-white text-black" x-test-hook-option-30>data di
+                                            upload</option>
+                                        <option value="upvotes" class="bg-white text-black" x-test-hook-option-31>
+                                            upvotes</option>
+                                        <option value="downvotes" class="bg-white text-black" x-test-hook-option-32>
+                                            downvotes</option>
+                                    </select>
+                                    <div class="absolute right-[0.9rem] top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center"
+                                        x-test-hook-div-33>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                            class="fill-white w-[0.9em] h-[0.9em]" x-test-hook-svg-34>
+                                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+                                                x-test-hook-path-35 />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group flex flex-col items-center" x-test-hook-div-36>
+                                <label for="sortorder" class="block text-sm font-medium text-gray-700 mb-2 text-center"
+                                    x-test-hook-label-37>Ordina in modo</label>
+                                <div class="relative w-full" x-test-hook-div-38>
+                                    <select id="sortorder" name="sortorder"
+                                        class="pill-select appearance-none bg-[#D97706] text-white py-[0.55rem] pl-[0.9rem] pr-[2.4rem] rounded-full border-0 text-[0.9rem] font-medium cursor-pointer min-w-[140px] text-left focus:outline-none focus:shadow-[0_0_0_2px_#B45309,0_0_0_4px_rgba(255,255,255,0.7)] w-full"
+                                        x-test-hook-select-39>
+                                        <option value="" disabled selected class="bg-white text-black"
+                                            x-test-hook-option-40>Scegli...</option>
+                                        <option value="asc" class="bg-white text-black" x-test-hook-option-41>crescente
+                                        </option>
+                                        <option value="desc" class="bg-white text-black" x-test-hook-option-42>
+                                            decrescente</option>
+                                    </select>
+                                    <div class="absolute right-[0.9rem] top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center"
+                                        x-test-hook-div-43>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                            class="fill-white w-[0.9em] h-[0.9em]" x-test-hook-svg-44>
+                                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+                                                x-test-hook-path-45 />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group flex flex-col items-center" x-test-hook-div-46>
+                                <label for="limit" class="block text-sm font-medium text-gray-700 mb-2 text-center"
+                                    x-test-hook-label-47>Meme per pagina</label>
+                                <div class="relative w-full" x-test-hook-div-48>
+                                    <select id="limit" name="limit"
+                                        class="pill-select appearance-none bg-[#D97706] text-white py-[0.55rem] pl-[0.9rem] pr-[2.4rem] rounded-full border-0 text-[0.9rem] font-medium cursor-pointer min-w-[140px] text-left focus:outline-none focus:shadow-[0_0_0_2px_#B45309,0_0_0_4px_rgba(255,255,255,0.7)] w-full"
+                                        x-test-hook-select-49>
+                                        <option value="" disabled selected class="bg-white text-black"
+                                            x-test-hook-option-50>Scegli...</option>
+                                        <option value="1" class="bg-white text-black" x-test-hook-option-51>1</option>
+                                        <option value="2" class="bg-white text-black" x-test-hook-option-52>2</option>
+                                        <option value="3" class="bg-white text-black" x-test-hook-option-53>3</option>
+                                        <option value="4" class="bg-white text-black" x-test-hook-option-54>4</option>
+                                        <option value="5" class="bg-white text-black" x-test-hook-option-55>5</option>
+                                        <option value="6" class="bg-white text-black" x-test-hook-option-56>6</option>
+                                    </select>
+                                    <div class="absolute right-[0.9rem] top-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center"
+                                        x-test-hook-div-57>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                            class="fill-white w-[0.9em] h-[0.9em]" x-test-hook-svg-58>
+                                            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"
+                                                x-test-hook-path-59 />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-6" x-test-hook-div-60>
+                            <button type="reset" id="reset-filters-button"
+                                class="bg-[#D97706] hover:bg-[#B45309] text-white font-semibold text-sm py-1.5 px-6 rounded-lg shadow-md focus:outline-none transition duration-150 ease-in-out"
+                                x-test-hook-button-61>
+                                Resetta Filtri
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-2 bg-[#eef1f5] mt-4" x-test-hook-div-62>
+                <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-center"
+                    x-test-hook-div-63>
+                    <button type="submit"
+                        class="bg-[#D97706] hover:bg-[#B45309] text-white font-semibold py-2 px-8 rounded-lg shadow-md focus:outline-none transition duration-150 ease-in-out"
+                        x-test-hook-button-64>
+                        Cerca
+                    </button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- MAIN CONTENT - GRIGLIA MEME -->
+    <div class="home-content grow py-8" x-test-hook-div-65>
+        <div class="meme-grid grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-9 justify-items-center px-4 max-w-[1200px] mx-auto"
+            x-test-hook-div-66>
+
+            <!-- Esempio di Meme Item 1 -->
+            <div class="border rounded-lg shadow-lg bg-white overflow-hidden w-full" x-test-hook-div-67>
+                <img src="https://via.placeholder.com/400x300.png?text=Meme+Divertente" alt="Meme 1"
+                    class="w-full h-56 object-cover" x-test-hook-img-68 />
+                <div class="p-4" x-test-hook-div-69>
+                    <h4 class="font-bold text-lg mb-2" x-test-hook-h4-70>Quando il codice compila al primo colpo</h4>
+                    <div class="flex justify-between items-center text-sm text-gray-600" x-test-hook-div-71>
+                        <span x-test-hook-span-72>Upvotes: 128</span>
+                        <span x-test-hook-span-73>Downvotes: 12</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Esempio di Meme Item 2 -->
+            <div class="border rounded-lg shadow-lg bg-white overflow-hidden w-full" x-test-hook-div-74>
+                <img src="https://via.placeholder.com/400x300.png?text=Altro+Meme" alt="Meme 2"
+                    class="w-full h-56 object-cover" x-test-hook-img-75 />
+                <div class="p-4" x-test-hook-div-76>
+                    <h4 class="font-bold text-lg mb-2" x-test-hook-h4-77>La mia faccia durante la riunione del lunedì
+                    </h4>
+                    <div class="flex justify-between items-center text-sm text-gray-600" x-test-hook-div-78>
+                        <span x-test-hook-span-79>Upvotes: 99</span>
+                        <span x-test-hook-span-80>Downvotes: 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Esempio di Meme Item 3 -->
+            <div class="border rounded-lg shadow-lg bg-white overflow-hidden w-full" x-test-hook-div-81>
+                <img src="https://via.placeholder.com/400x300.png?text=Meme+a+caso" alt="Meme 3"
+                    class="w-full h-56 object-cover" x-test-hook-img-82 />
+                <div class="p-4" x-test-hook-div-83>
+                    <h4 class="font-bold text-lg mb-2" x-test-hook-h4-84>Cercare di fixare un bug alle 5 di pomeriggio
+                    </h4>
+                    <div class="flex justify-between items-center text-sm text-gray-600" x-test-hook-div-85>
+                        <span x-test-hook-span-86>Upvotes: 250</span>
+                        <span x-test-hook-span-87>Downvotes: 23</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aggiungi altri meme item qui se necessario -->
+
+        </div>
+    </div>
+
+    <!-- SEZIONE PAGINAZIONE -->
+    <div class="py-4 bg-[#eef1f5]" x-test-hook-div-88>
+        <div class="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8" x-test-hook-div-89>
+            <div class="flex flex-col items-center gap-1" x-test-hook-div-90>
+                <span class="text-base text-gray-600 font-medium" x-test-hook-span-91>pagina</span>
+                <div class="flex items-center gap-4" x-test-hook-div-92>
+                    <button type="button" disabled
+                        class="p-1 rounded-md hover:bg-gray-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-150 ease-in-out"
+                        aria-label="Pagina precedente" x-test-hook-button-93>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 fill-gray-700"
+                            x-test-hook-svg-94>
+                            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" x-test-hook-path-95 />
+                        </svg>
+                    </button>
+
+                    <span class="text-2xl font-bold text-gray-800" x-test-hook-span-96>1</span>
+
+                    <button type="button"
+                        class="p-1 rounded-md hover:bg-gray-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-150 ease-in-out"
+                        aria-label="Pagina successiva" x-test-hook-button-97>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 fill-gray-700"
+                            x-test-hook-svg-98>
+                            <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" x-test-hook-path-99 />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

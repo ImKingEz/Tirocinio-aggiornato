@@ -48,8 +48,10 @@ Assicurati di essere nella directory radice (`Tirocinio-aggiornato`) quando eseg
 Usa il flag `--build-arg` per specificare il nome della cartella del tuo progetto.
 Sostituisci `NOME_PROGETTO_VARIABILE` con il nome effettivo della tua cartella.
 
-
-docker build --build-arg PROJECT_DIR_NAME=NOME_PROGETTO_VARIABILE -t mutant-tester .
+docker build `
+  --build-arg PROJECT_DIR_NAME=NOME_PROGETTO_VARIABILE `
+  --build-arg CACHE_BUSTER=$(Get-Date -UFormat %s) `
+  -t mutant-tester .
 
 2.2. Eseguire il Container Docker (Windows Powershell)
 

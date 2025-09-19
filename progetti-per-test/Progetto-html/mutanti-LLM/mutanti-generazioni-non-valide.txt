@@ -1,0 +1,115 @@
+MUTAZIONI GENERATE NON NECESSARIE
+{
+      "element_type": "target",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "genitore",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "genitore",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "antenato",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "antenato",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+ {
+      "element_type": "template",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "template",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "template",
+      "mutation_type": "h",
+      "mutation_description": "Spostamento tra template",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_movement_between_templates.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+{
+      "element_type": "template",
+      "mutation_type": "f",
+      "mutation_description": "Spostamento tag nel container",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_movement_within_container.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+MUTAZIONE GENERATA NON VALIDA
+
+{
+      "element_type": "template",
+      "mutation_type": "g",
+      "mutation_description": "Spostamento tag ovunque",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_movement_anywhere.txt",
+      "error": null,
+      "validation_errors": []
+},
+
+
+

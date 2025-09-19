@@ -1,0 +1,5082 @@
+
+Warning: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disable-host-check" if that's the
+case.
+    
+Component HMR has been enabled, see https://angular.dev/hmr for more info.
+❯ Building...
+✔ Building...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  89.77 kB | 
+main.js              | main             |  41.36 kB | 
+styles.css           | styles           |  96 bytes | 
+
+                     | Initial total    | 131.22 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 567.22 kB | 
+main.server.mjs      | main.server      |  42.70 kB | 
+server.mjs           | server           |   1.86 kB | 
+
+Application bundle generation complete. [1.780 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+1:28:55 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+1:28:55 PM [vite] (ssr) Re-optimizing dependencies because vite config has changed
+  ➜  Local:   http://localhost:4200/
+  ➜  Network: http://172.17.0.2:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.178 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.17 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.52 kB | 
+
+Application bundle generation complete. [0.178 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.122 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.137 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.103 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.01 kB | 
+
+Application bundle generation complete. [0.161 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.108 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.102 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.19 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.54 kB | 
+
+Application bundle generation complete. [0.109 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.05 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 41.06 kB | 
+
+Application bundle generation complete. [0.139 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.111 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.114 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.60 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 39.94 kB | 
+
+Application bundle generation complete. [0.137 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.117 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.093 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.128 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.099 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.32 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.134 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.95 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.29 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.119 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.107 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.47 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.112 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.02 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.37 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.35 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.70 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.48 kB | 
+
+Application bundle generation complete. [0.105 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.102 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.05 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.40 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.34 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.69 kB | 
+
+Application bundle generation complete. [0.146 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.117 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.17 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.52 kB | 
+
+Application bundle generation complete. [0.095 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.151 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.101 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.01 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.106 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.109 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.19 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.54 kB | 
+
+Application bundle generation complete. [0.098 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.05 kB | 
+
+Application bundle generation complete. [0.126 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 41.06 kB | 
+
+Application bundle generation complete. [0.101 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.200 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.60 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 39.94 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.095 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.089 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.123 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.116 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.32 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.129 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.100 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.95 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.29 kB | 
+
+Application bundle generation complete. [0.127 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.141 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.47 kB | 
+
+Application bundle generation complete. [0.111 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.093 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.136 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.02 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.37 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.35 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.70 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.126 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.098 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.48 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.153 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.108 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.100 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.05 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.40 kB | 
+
+Application bundle generation complete. [0.112 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.34 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.69 kB | 
+
+Application bundle generation complete. [0.108 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.104 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.107 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.17 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.52 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.100 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.103 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.141 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.01 kB | 
+
+Application bundle generation complete. [0.126 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.109 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.094 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.19 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.54 kB | 
+
+Application bundle generation complete. [0.119 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.05 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 41.06 kB | 
+
+Application bundle generation complete. [0.127 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.103 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.123 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.60 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 39.94 kB | 
+
+Application bundle generation complete. [0.140 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.149 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.114 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.091 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.32 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.094 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.95 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.29 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.102 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.095 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.47 kB | 
+
+Application bundle generation complete. [0.094 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.02 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.37 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.35 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.70 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.48 kB | 
+
+Application bundle generation complete. [0.097 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.105 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.078 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.05 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.40 kB | 
+
+Application bundle generation complete. [0.116 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.34 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.69 kB | 
+
+Application bundle generation complete. [0.089 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.105 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.091 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.17 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.52 kB | 
+
+Application bundle generation complete. [0.114 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.01 kB | 
+
+Application bundle generation complete. [0.100 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.102 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.19 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.54 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.05 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 41.06 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.093 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.60 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 39.94 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.32 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.080 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.95 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.29 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.098 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.080 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.119 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.47 kB | 
+
+Application bundle generation complete. [0.097 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.02 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.37 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.35 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.70 kB | 
+
+Application bundle generation complete. [0.080 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.080 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.098 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.48 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.077 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.05 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.40 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.34 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.69 kB | 
+
+Application bundle generation complete. [0.113 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.081 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.17 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.52 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.110 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.01 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.107 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.19 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.54 kB | 
+
+Application bundle generation complete. [0.089 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.05 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 41.06 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.097 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.60 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 39.94 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.083 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.078 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.093 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.32 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.076 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.104 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.95 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.29 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.100 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.111 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.47 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.078 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.02 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.37 kB | 
+
+Application bundle generation complete. [0.077 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.35 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.70 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.126 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.48 kB | 
+
+Application bundle generation complete. [0.102 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.080 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.079 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.05 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.40 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.34 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.69 kB | 
+
+Application bundle generation complete. [0.107 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.102 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.17 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.52 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.078 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.103 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.160 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.01 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.094 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.19 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.54 kB | 
+
+Application bundle generation complete. [0.105 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.05 kB | 
+
+Application bundle generation complete. [0.091 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 41.06 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.093 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.097 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.60 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 39.94 kB | 
+
+Application bundle generation complete. [0.082 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.098 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.112 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.105 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.084 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.32 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.089 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.125 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 38.95 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.29 kB | 
+
+Application bundle generation complete. [0.137 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.109 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.108 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.47 kB | 
+
+Application bundle generation complete. [0.096 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.088 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.45 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.31 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.66 kB | 
+
+Application bundle generation complete. [0.164 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.02 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.37 kB | 
+
+Application bundle generation complete. [0.183 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.35 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.70 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.090 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.22 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.57 kB | 
+
+Application bundle generation complete. [0.110 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.13 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.48 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.28 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.63 kB | 
+
+Application bundle generation complete. [0.086 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.24 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.59 kB | 
+
+Application bundle generation complete. [0.092 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.20 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.55 kB | 
+
+Application bundle generation complete. [0.105 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.05 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.40 kB | 
+
+Application bundle generation complete. [0.114 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.34 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.69 kB | 
+
+Application bundle generation complete. [0.089 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 39.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 40.56 kB | 
+
+Application bundle generation complete. [0.101 seconds]
+
+▲ [WARNING] TS-998113: All imports are unused [plugin angular-compiler]
+
+    src/app/app.component.ts:6:2:
+      6 │   imports: [RouterOutlet],
+        ╵   ~~~~~~~
+
+
+Component update sent to client(s).

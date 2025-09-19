@@ -1,3 +1,6 @@
+Prerequisiti:
+Python 3.13.x -> https://www.python.org/downloads/
+
 Istruzioni per generare i locatori Robula+
 
 1) Aprire la cartella robula-plus nel terminale

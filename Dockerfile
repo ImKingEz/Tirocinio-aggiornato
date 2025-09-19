@@ -38,9 +38,6 @@ ENV PATH="$MAVEN_HOME/bin:$PATH"
 # Installazione di Angular CLI (invariato)
 RUN npm install -g @angular/cli@19.2.0
 
-# Verifica versioni (invariato)
-RUN node -v && npm -v && ng version && google-chrome --version
-
 # Installazione di ChromeDriver (invariato)
 RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) && \
     CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | \
@@ -52,26 +49,26 @@ RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) &
     chmod +x /usr/local/bin/chromedriver && \
     rm -rf /tmp/chromedriver.zip /usr/local/bin/chromedriver-linux64
 
-# === MODIFICA CHIAVE QUI ===
 # Imposta la directory di lavoro principale
 WORKDIR /app
 
-# Copia l'intero contenuto della cartella del progetto.
-# Assumiamo che all'interno di ${PROJECT_DIR_NAME} ci sia una cartella 'frontend'
-# che contiene l'applicazione Angular.
-COPY progetti-per-test/${PROJECT_DIR_NAME}/ .
+# Copia SOLO i file che definiscono le dipendenze del frontend.
+# Il .dockerignore assicura che node_modules locali non vengano copiate.
+COPY progetti-per-test/${PROJECT_DIR_NAME}/frontend/package.json ./frontend/
+COPY progetti-per-test/${PROJECT_DIR_NAME}/frontend/package-lock.json ./frontend/
 
-# Naviga alla directory dell'applicazione Angular all'interno del container
-# per installare le dipendenze in un ambiente pulito.
+# Questo layer dipende SOLO da package.json e package-lock.json.
+# Verrà preso dalla cache finché non modifichi le dipendenze.
 WORKDIR /app/frontend
+RUN npm install --silent
 
-# Rimuovi eventuali dipendenze e package-lock.json preesistenti
-# (specialmente se copiati dal sistema host) e reinstalla.
-# Questo risolve il problema delle dipendenze opzionali e architetture mismatch.
-RUN rm -rf node_modules package-lock.json && npm install --silent
-
-# Torna alla directory root del progetto per gli script successivi
 WORKDIR /app
+
+# Un argomento che servirà a invalidare la cache.
+ARG CACHE_BUSTER
+RUN echo "Forzo la riesecuzione del layer con il valore: ${CACHE_BUSTER}"
+
+COPY progetti-per-test/${PROJECT_DIR_NAME}/ .
 
 # Copia lo script di esecuzione e imposta i permessi
 COPY runMutantsScript.sh .

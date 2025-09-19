@@ -1,0 +1,628 @@
+{
+  "timestamp": "2025-09-19T11:29:07.231539",
+  "total_mutations_attempted": 55,
+  "successful_mutations": 50,
+  "failed_mutations": 5,
+  "mutations": [
+    {
+      "element_type": "target",
+      "mutation_type": "a",
+      "mutation_description": "Modifica valore attributo",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_attribute_value_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "b",
+      "mutation_description": "Rimozione attributo",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_attribute_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "c",
+      "mutation_description": "Modifica identificatore attributo",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_attribute_identifier_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "input",
+      "success": false,
+      "filename": null,
+      "error": "Nessuna modifica applicata",
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "f",
+      "mutation_description": "Spostamento tag nel container",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_html_tag_movement_within_container.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "g",
+      "mutation_description": "Spostamento tag ovunque",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_html_tag_movement_anywhere.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "h",
+      "mutation_description": "Spostamento tra template",
+      "tag_name": "input",
+      "success": false,
+      "filename": null,
+      "error": "Nessuna modifica applicata",
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "i",
+      "mutation_description": "Rimozione tag",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_html_tag_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "j",
+      "mutation_description": "Modifica tipo tag",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_html_tag_type_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "target",
+      "mutation_type": "k",
+      "mutation_description": "Inserimento nuovo tag",
+      "tag_name": "input",
+      "success": true,
+      "filename": "mutant_alpha(input)_html_tag_insertion.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "a",
+      "mutation_description": "Modifica valore attributo",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_attribute_value_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "b",
+      "mutation_description": "Rimozione attributo",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_attribute_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "c",
+      "mutation_description": "Modifica identificatore attributo",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_attribute_identifier_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "f",
+      "mutation_description": "Spostamento tag nel container",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_html_tag_movement_within_container.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "g",
+      "mutation_description": "Spostamento tag ovunque",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_html_tag_movement_anywhere.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "h",
+      "mutation_description": "Spostamento tra template",
+      "tag_name": "div",
+      "success": false,
+      "filename": null,
+      "error": "Nessuna modifica applicata",
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "i",
+      "mutation_description": "Rimozione tag",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_html_tag_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "j",
+      "mutation_description": "Modifica tipo tag",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_html_tag_type_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "genitore",
+      "mutation_type": "k",
+      "mutation_description": "Inserimento nuovo tag",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_beta(div)_html_tag_insertion.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "a",
+      "mutation_description": "Modifica valore attributo",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_attribute_value_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "b",
+      "mutation_description": "Rimozione attributo",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_attribute_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "c",
+      "mutation_description": "Modifica identificatore attributo",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_attribute_identifier_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "f",
+      "mutation_description": "Spostamento tag nel container",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_html_tag_movement_within_container.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "g",
+      "mutation_description": "Spostamento tag ovunque",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_html_tag_movement_anywhere.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "h",
+      "mutation_description": "Spostamento tra template",
+      "tag_name": "div",
+      "success": false,
+      "filename": null,
+      "error": "Nessuna modifica applicata",
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "i",
+      "mutation_description": "Rimozione tag",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_html_tag_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "j",
+      "mutation_description": "Modifica tipo tag",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_html_tag_type_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "antenato",
+      "mutation_type": "k",
+      "mutation_description": "Inserimento nuovo tag",
+      "tag_name": "div",
+      "success": true,
+      "filename": "mutant_gamma(div)_html_tag_insertion.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "a",
+      "mutation_description": "Modifica valore attributo",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_attribute_value_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "b",
+      "mutation_description": "Rimozione attributo",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_attribute_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "c",
+      "mutation_description": "Modifica identificatore attributo",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_attribute_identifier_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "f",
+      "mutation_description": "Spostamento tag nel container",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_movement_within_container.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "g",
+      "mutation_description": "Spostamento tag ovunque",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_movement_anywhere.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "h",
+      "mutation_description": "Spostamento tra template",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_movement_between_templates.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "i",
+      "mutation_description": "Rimozione tag",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "j",
+      "mutation_description": "Modifica tipo tag",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_type_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "template",
+      "mutation_type": "k",
+      "mutation_description": "Inserimento nuovo tag",
+      "tag_name": "main",
+      "success": true,
+      "filename": "mutant_epsilon(main)_html_tag_insertion.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "a",
+      "mutation_description": "Modifica valore attributo",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_attribute_value_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "b",
+      "mutation_description": "Rimozione attributo",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_attribute_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "c",
+      "mutation_description": "Modifica identificatore attributo",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_attribute_identifier_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "d",
+      "mutation_description": "Modifica contenuto testuale",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_text_content_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "e",
+      "mutation_description": "Rimozione contenuto testuale",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_text_content_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "f",
+      "mutation_description": "Spostamento tag nel container",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_html_tag_movement_within_container.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "g",
+      "mutation_description": "Spostamento tag ovunque",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_html_tag_movement_anywhere.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "h",
+      "mutation_description": "Spostamento tra template",
+      "tag_name": "label",
+      "success": false,
+      "filename": null,
+      "error": "Nessuna modifica applicata",
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "i",
+      "mutation_description": "Rimozione tag",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_html_tag_removal.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "j",
+      "mutation_description": "Modifica tipo tag",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_html_tag_type_modification.txt",
+      "error": null,
+      "validation_errors": []
+    },
+    {
+      "element_type": "fratello",
+      "mutation_type": "k",
+      "mutation_description": "Inserimento nuovo tag",
+      "tag_name": "label",
+      "success": true,
+      "filename": "mutant_delta(label)_html_tag_insertion.txt",
+      "error": null,
+      "validation_errors": []
+    }
+  ],
+  "statistics": {
+    "by_type": {
+      "a": {
+        "success": 5,
+        "failed": 0
+      },
+      "b": {
+        "success": 5,
+        "failed": 0
+      },
+      "c": {
+        "success": 5,
+        "failed": 0
+      },
+      "d": {
+        "success": 5,
+        "failed": 0
+      },
+      "e": {
+        "success": 4,
+        "failed": 1
+      },
+      "f": {
+        "success": 5,
+        "failed": 0
+      },
+      "g": {
+        "success": 5,
+        "failed": 0
+      },
+      "h": {
+        "success": 1,
+        "failed": 4
+      },
+      "i": {
+        "success": 5,
+        "failed": 0
+      },
+      "j": {
+        "success": 5,
+        "failed": 0
+      },
+      "k": {
+        "success": 5,
+        "failed": 0
+      }
+    },
+    "by_element": {
+      "target": {
+        "success": 9,
+        "failed": 2
+      },
+      "genitore": {
+        "success": 10,
+        "failed": 1
+      },
+      "antenato": {
+        "success": 10,
+        "failed": 1
+      },
+      "template": {
+        "success": 11,
+        "failed": 0
+      },
+      "fratello": {
+        "success": 10,
+        "failed": 1
+      }
+    }
+  }
+}
