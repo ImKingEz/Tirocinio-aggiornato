@@ -59,8 +59,7 @@ public class Mutator {
         if (alpha.nextElementSibling() != null) {
             Element deltaNext = alpha.nextElementSibling();
             targets.put("delta_next(" + deltaNext.tagName() + ")", deltaNext);
-        }
-        if (alpha.previousElementSibling() != null) {
+        } else if (alpha.previousElementSibling() != null) {
             Element deltaPrev = alpha.previousElementSibling();
             targets.put("delta_prev(" + deltaPrev.tagName() + ")", deltaPrev);
         }
