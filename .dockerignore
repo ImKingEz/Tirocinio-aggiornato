@@ -2,8 +2,13 @@
 .git
 .gitignore
 
+# Ignora i log e gli output generati localmente
+**/output_csv
+**/output_logs
+**/output_screenshots
+
 # Ignora le dipendenze di Node.js (vanno installate nel container)
-node_modules
+**/node_modules
 
 # Ignora gli artefatti di build di Angular/Node
 dist
@@ -11,7 +16,7 @@ dist
 npm-debug.log*
 
 # Ignora gli artefatti di build di Maven (se presenti)
-target
+**/target
 
 # Ignora i file di configurazione degli IDE
 .vscode
@@ -22,3 +27,4 @@ target
 # Ignora i file specifici del sistema operativo
 Thumbs.db
 .DS_Store
+*.iml

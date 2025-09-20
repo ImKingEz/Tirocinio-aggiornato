@@ -176,7 +176,7 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
 
         cd "$MAVEN_PROJECT_ROOT"
         echo "Esecuzione test Maven..."
-        mvn test -Dtest.suite.file="$CURRENT_TEST_SUITE_FILE" -Dscreenshot.path="$SCREENSHOT_DIR" > "$MAVEN_TEST_LOG" 2>&1
+        mvn clean test -Dtest.suite.file="$CURRENT_TEST_SUITE_FILE" -Dscreenshot.path="$SCREENSHOT_DIR" > "$MAVEN_TEST_LOG" 2>&1
         TEST_EXIT_CODE=$?
 
         TEST_RESULT="failure"

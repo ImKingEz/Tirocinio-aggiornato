@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SeleniumLocatorSuite">
-    <test name="SeleniumLocatorTest">
+<suite name="RelativeLocatorSuite">
+    <test name="RelativeLocatorTest">
         <classes>
-            <class name="com.bbtutorials.users.SeleniumXPathTest"/>
+            <class name="com.bbtutorials.users.RelativeXPathTest"/>
         </classes>
     </test>
 </suite>

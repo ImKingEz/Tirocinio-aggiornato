@@ -1,4 +1,0 @@
-katalon;mutant_delta_prev(label)_html_tag_movement_within_container.txt;failure;"Generic Maven Test Failure";"N/A"
-katalon;mutant_delta_prev(label)_html_tag_removal.txt;failure;"Selenium: NoSuchElementException";"{"method":"xpath","selector":"//input[@id='tagsQuery']"}"
-katalon;mutant_delta_prev(label)_html_tag_sibling_insertion.txt;failure;"Selenium: NoSuchElementException";"{"method":"xpath","selector":"//input[@id='tagsQuery']"}"
-katalon;mutant_delta_prev(label)_html_tag_type_modification.txt;failure;"Selenium: NoSuchElementException";"{"method":"xpath","selector":"//input[@id='tagsQuery']"}"
