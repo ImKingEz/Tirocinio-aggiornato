@@ -64,8 +64,8 @@ if [ ! -f "$DEST_FILE" ]; then
     exit 1
 fi
 
-# LOCATOR_TYPES=("hook" "absolute" "relative" "robula" "selenium" "katalon")
-LOCATOR_TYPES=("relative")
+LOCATOR_TYPES=("hook" "absolute" "relative" "robula" "selenium" "katalon")
+# LOCATOR_TYPES=("relative")
 
 # Pulizia di esecuzioni precedenti
 echo "Pulizia di log e screenshot di esecuzioni precedenti..."
