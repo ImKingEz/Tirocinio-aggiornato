@@ -4,7 +4,18 @@
 #           SCRIPT PER ESECUZIONE TEST DI MUTAZIONE SU APPLICAZIONE ANGULAR
 # ==============================================================================
 #
-# ... (descrizione invariata) ...
+# Questo script automatizza il processo di test di mutazione:
+# 1. Avvia un'applicazione Angular.
+# 2. Cicla attraverso diversi tipi di locator Selenium (es. hook, robula, etc.).
+# 3. Per ogni tipo di locator, cicla attraverso una serie di file "mutanti".
+# 4. Per ogni mutante:
+#    a. Sostituisce un file sorgente dell'app con il mutante.
+#    b. Attende la ricompilazione di Angular.
+#    c. Esegue una suite di test Maven/TestNG specifica per il locator.
+#    d. Registra il risultato (success/failure), la causa e il locator fallito.
+#    e. Ripristina il file sorgente originale.
+# 5. Produce un file CSV completo con tutti i risultati.
+# 6. Produce un file CSV di riepilogo con le statistiche aggregate.
 #
 
 # === CONFIGURAZIONE ===
