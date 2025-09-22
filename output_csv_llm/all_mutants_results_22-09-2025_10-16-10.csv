@@ -1,0 +1,8 @@
+locator_type;mutant;result;failure_cause;failed_locator
+hook;mutant_alpha(input)_attribute_identifier_modification.txt;success;"N/A";"N/A"
+hook;mutant_alpha(input)_attribute_removal.txt;success;"N/A";"N/A"
+hook;mutant_alpha(input)_attribute_value_modification.txt;success;"N/A";"N/A"
+hook;mutant_alpha(input)_html_tag_insertion.txt;success;"N/A";"N/A"
+hook;mutant_alpha(input)_html_tag_movement_anywhere.txt;success;"N/A";"N/A"
+hook;mutant_alpha(input)_html_tag_movement_within_container.txt;success;"N/A";"N/A"
+hook;mutant_alpha(input)_html_tag_removal.txt;failure;"Selenium: NoSuchElementException";"{"method":"xpath","selector":"//*[@x-test-tpl-html-1]//*[@x-test-hook-app-root-8]//*[@x-test-tpl-main-1]//*[@x-test-hook-input-20]"}"

@@ -79,4 +79,6 @@ build/
 # Log mutanti
 output_csv/
 output_logs/
+output_screenshots/
+output_dom/
 *.png

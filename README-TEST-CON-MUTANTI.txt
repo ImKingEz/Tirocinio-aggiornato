@@ -66,6 +66,7 @@ docker run `
   -v "${PWD}\output_csv:/app/output_csv" `
   -v "${PWD}\output_logs:/app/output_logs" `
   -v "${PWD}\output_screenshots:/app/output_screenshots" `
+  -v "${PWD}\output_dom:/app/output_dom" `
   mutant-tester
 
 
@@ -83,6 +84,12 @@ Dopo l'esecuzione, troverai i risultati, i log e gli screenshot nelle directory 
 
 - logs/ng-serve-log.txt
   Log del server Angular.
+
+- logs/recompilation_debug_<timestamp>.log
+  Contiene log delle ricompilazioni Angular
+
+- dom/<locator>_<mutation>.html
+  Contiene il DOM al momento dell'esecuzione del test
 
 --------------------------------------------------------------
 3. Debugging

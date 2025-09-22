@@ -7,8 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 public class SeleniumXPathTest extends BaseTest {
   @Test
   public void testContactFormSeleniumXPath() throws Exception {
-    driver.findElement(By.xpath("//input[@id='tagsQuery']")).clear();
-    driver.findElement(By.xpath("//input[@id='tagsQuery']")).sendKeys("calcio");
+    driver.findElement(By.id("tagsQuery")).clear();
+    driver.findElement(By.id("tagsQuery")).sendKeys("calcio");
 
     driver.findElement(By.cssSelector("#sortby")).click();
     new Select(driver.findElement(By.cssSelector("#sortby"))).selectByVisibleText("data di upload");

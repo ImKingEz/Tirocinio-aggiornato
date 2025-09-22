@@ -49,13 +49,16 @@ RUN CHROME_MAJOR_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1) &
     chmod +x /usr/local/bin/chromedriver && \
     rm -rf /tmp/chromedriver.zip /usr/local/bin/chromedriver-linux64
 
+# Un argomento che servirà a invalidare la cache.
+ARG CACHE_BUSTER
+RUN echo "Forzo la riesecuzione del layer con il valore: ${CACHE_BUSTER}"
+
 # Imposta la directory di lavoro principale
 WORKDIR /app
 
 # Copia SOLO i file che definiscono le dipendenze del frontend.
 # Il .dockerignore assicura che node_modules locali non vengano copiate.
 COPY progetti-per-test/${PROJECT_DIR_NAME}/frontend/package.json ./frontend/
-COPY progetti-per-test/${PROJECT_DIR_NAME}/frontend/package-lock.json ./frontend/
 
 # Questo layer dipende SOLO da package.json e package-lock.json.
 # Verrà preso dalla cache finché non modifichi le dipendenze.
@@ -63,10 +66,6 @@ WORKDIR /app/frontend
 RUN npm install --silent
 
 WORKDIR /app
-
-# Un argomento che servirà a invalidare la cache.
-ARG CACHE_BUSTER
-RUN echo "Forzo la riesecuzione del layer con il valore: ${CACHE_BUSTER}"
 
 COPY progetti-per-test/${PROJECT_DIR_NAME}/ .
 
