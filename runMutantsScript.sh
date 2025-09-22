@@ -62,7 +62,8 @@ if [ ! -f "$DEST_FILE" ]; then
     exit 1
 fi
 
-LOCATOR_TYPES=("hook" "absolute" "relative" "robula" "selenium" "katalon")
+# LOCATOR_TYPES=("hook" "absolute" "relative" "robula" "selenium" "katalon")
+LOCATOR_TYPES=("absolute")
 
 # Pulizia di esecuzioni precedenti
 echo "Pulizia di log e screenshot di esecuzioni precedenti..."
@@ -177,14 +178,37 @@ for CURRENT_LOCATOR_TYPE in "${LOCATOR_TYPES[@]}"; do
               -Ddom.path="$DOM_DIR" > "$MAVEN_TEST_LOG" 2>&1
             TEST_EXIT_CODE=$?
 
-            if [ "$TEST_EXIT_CODE" -eq 0 ]; then
-                TEST_RESULT="success"; FAILURE_CAUSE="N/A"; FAILED_LOCATOR="N/A"
+                        if [ "$TEST_EXIT_CODE" -eq 0 ]; then
+                # Caso di successo: il test è passato
+                TEST_RESULT="success"
+                FAILURE_CAUSE="N/A"
+                FAILED_LOCATOR="N/A"
             else
+                # Caso di fallimento: il test non è passato
                 TEST_RESULT="failure"
+                
                 if grep -q "org.openqa.selenium.NoSuchElementException" "$MAVEN_TEST_LOG"; then
-                    FAILURE_CAUSE="Selenium: NoSuchElementException"; FAILED_LOCATOR=$(grep -o 'Unable to locate element: {.*}' "$MAVEN_TEST_LOG" | head -n 1 | sed 's/Unable to locate element: //')
+                    FAILURE_CAUSE="Selenium: NoSuchElementException"
+                elif grep -q "org.openqa.selenium.TimeoutException" "$MAVEN_TEST_LOG"; then
+                    FAILURE_CAUSE="Selenium: TimeoutException"
+                elif grep -q "org.openqa.selenium.ElementNotInteractableException" "$MAVEN_TEST_LOG"; then
+                    FAILURE_CAUSE="Selenium: ElementNotInteractableException"
+                elif grep -q "org.openqa.selenium.ElementClickInterceptedException" "$MAVEN_TEST_LOG"; then
+                    FAILURE_CAUSE="Selenium: ElementClickInterceptedException"
+                elif grep -q "java.lang.AssertionError" "$MAVEN_TEST_LOG"; then
+                    FAILURE_CAUSE="TestNG: AssertionError"
+                elif grep -q "Could not start a new session" "$MAVEN_TEST_LOG"; then
+                    FAILURE_CAUSE="Selenium: Could not start a new session (WebDriver/Browser issue)"
                 else
-                    FAILURE_CAUSE="Generic Maven Test Failure"; FAILED_LOCATOR="Details not found in log"
+                    FAILURE_CAUSE="Generic Maven Test Failure"
+                fi
+
+                LOCATOR_INFO=$(grep -m 1 -o -E 'Unable to locate element: \{.*\}|located by: [^)]+' "$MAVEN_TEST_LOG")
+                
+                if [ -n "$LOCATOR_INFO" ]; then
+                    FAILED_LOCATOR=$(echo "$LOCATOR_INFO" | sed -e 's/Unable to locate element: //' -e 's/.*located by: //')
+                else
+                    FAILED_LOCATOR="N/A (not found in log)"
                 fi
             fi
 

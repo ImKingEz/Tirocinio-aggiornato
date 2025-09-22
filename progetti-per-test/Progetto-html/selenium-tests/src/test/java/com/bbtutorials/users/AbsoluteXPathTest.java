@@ -24,7 +24,7 @@ public class AbsoluteXPathTest extends BaseTest {
     driver.findElement(limit).click();
     new Select(driver.findElement(limit)).selectByVisibleText("4");
 
-    By resetButton = By.xpath("/html/body/app-root/main/section/form/div[1]/div/div[2]/div[1]/div[4]/button");
+    By resetButton = By.xpath("/html/body/app-root/main/section/form/div[1]/div/div[2]/div[2]/button");
     driver.findElement(resetButton).click();
 
     By submitButton = By.xpath("/html/body/app-root/main/section/form/div[2]/div/button");

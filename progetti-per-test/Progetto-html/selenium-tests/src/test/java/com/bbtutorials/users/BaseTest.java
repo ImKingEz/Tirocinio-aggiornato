@@ -18,9 +18,6 @@ public abstract class BaseTest {
   protected WebDriver driver;
   protected String baseUrl;
   protected JavascriptExecutor js;
-  // Queste variabili non sembrano usate, le lascio commentate per pulizia
-  // protected boolean acceptNextAlert = true;
-  // protected StringBuffer verificationErrors = new StringBuffer();
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
@@ -41,17 +38,11 @@ public abstract class BaseTest {
     driver.get(baseUrl);
   }
 
-  /**
-   * Metodo eseguito DOPO ogni metodo di test.
-   * Salva sempre uno screenshot e un dump del DOM.
-   */
   @AfterMethod(alwaysRun = true)
   public void afterTestActions() {
-    // Leggiamo le properties passate dallo script shell
     String locatorType = System.getProperty("locator.type", "unknown_locator");
     String mutantName = System.getProperty("mutant.name", "unknown_mutant.txt");
 
-    // Rimuoviamo l'estensione .txt per avere un nome file pulito
     String baseFileName = locatorType + "_" + mutantName.replace(".txt", "");
 
     takeScreenshot(baseFileName);
@@ -115,14 +106,8 @@ public abstract class BaseTest {
     if (driver != null) {
       driver.quit();
     }
-    // La gestione di verificationErrors non sembra necessaria con TestNG, che già gestisce le assertion.
-    // String verificationErrorString = verificationErrors.toString();
-    // if (!"".equals(verificationErrorString)) {
-    //   fail(verificationErrorString);
-    // }
   }
 
-  // Metodi di utilità invariati
   protected boolean isElementPresent(By by) {
     try {
       driver.findElement(by);
