@@ -1,5 +1,0 @@
-Riassumendo la Differenza Cruciale
-Script che funziona: La sintassi non-HTML si trova in attributi o come testo, e le strutture logiche (@for, @if) non racchiudono gli elementi che stai cercando. Il parser riesce a "navigare" attorno alle parti problematiche.
-Script che non funziona: La sintassi non-HTML (@if) avvolge completamente gli elementi target, causando la rimozione dell'intero blocco da parte del parser.
-Questo conferma il mio punto originale, anche se in modo più sfumato: è sempre meglio lavorare sull'HTML renderizzato dal browser. Facendo così, elimini completamente questa incertezza sul comportamento del parser. Tutte le direttive @if, @for, {{...}} vengono risolte da Angular e trasformate in HTML puro e standard, garantendo che lxml (e quindi Robula+) veda esattamente la stessa cosa che vede l'utente.
-Grazie per aver condiviso il secondo esempio, è stato molto utile per chiarire questo comportamento
