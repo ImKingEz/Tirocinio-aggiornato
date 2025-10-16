@@ -6,22 +6,28 @@ import org.openqa.selenium.support.ui.Select;
 
 public class RobulaXPathTest extends BaseTest {
   @Test
-  public void testContactFormRobulaXPath() throws Exception {
-    driver.findElement(By.xpath("//*[@type='text']")).click();
-    driver.findElement(By.xpath("//*[@type='text']")).clear();
-    driver.findElement(By.xpath("//*[@type='text']")).sendKeys("calcio");
+  public void testContactFormAbsoluteXPath() throws Exception {
+    By tagsInput = By.xpath("//input[@id='tagsQuery']");
+    driver.findElement(tagsInput).click();
+    driver.findElement(tagsInput).clear();
+    driver.findElement(tagsInput).sendKeys("calcio");
 
-    driver.findElement(By.xpath("//*[@id='sortby']")).click();
-    new Select(driver.findElement(By.xpath("//*[@id='sortby']"))).selectByVisibleText("data di upload");
+    By sortBy = By.xpath("//select[@id='sortby']");
+    driver.findElement(sortBy).click();
+    new Select(driver.findElement(sortBy)).selectByVisibleText("data di upload");
 
-    driver.findElement(By.xpath("//*[@id='sortorder']")).click();
-    new Select(driver.findElement(By.xpath("//*[@id='sortorder']"))).selectByVisibleText("crescente");
+    By sortOrder = By.xpath("//select[@id='sortorder']");
+    driver.findElement(sortOrder).click();
+    new Select(driver.findElement(sortOrder)).selectByVisibleText("crescente");
 
-    driver.findElement(By.xpath("//*[@id='limit']")).click();
-    new Select(driver.findElement(By.xpath("//*[@id='limit']"))).selectByVisibleText("4");
+    By limit = By.xpath("//select[@id='limit']");
+    driver.findElement(limit).click();
+    new Select(driver.findElement(limit)).selectByVisibleText("4");
 
-    driver.findElement(By.xpath("//*[@type='reset']")).click();
-    
-    driver.findElement(By.xpath("//*[@type='submit']")).click();
+    By resetButton = By.xpath("//button[@id='reset-filters-button']");
+    driver.findElement(resetButton).click();
+
+    By submitButton = By.xpath("//button[@type='submit']");
+    driver.findElement(submitButton).click();
   }
 }
